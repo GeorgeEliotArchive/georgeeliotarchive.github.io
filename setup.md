@@ -3,10 +3,11 @@
 ## Seup enviornement on MAC
 - Install Apache Service on Mac
     -   Install httpd
+    ````
           brew install httpd
           brew services start hpptd
           brew services list
-    
+    ````
     
 
     -   Update configuration
