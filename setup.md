@@ -11,6 +11,13 @@
     - Group ***** (via command line: ls -lh)
     - DocumentRoot "/usr/local/var/www"  (must be correct)
     - Directory "/usr/local/var/www    (must be correct)
+    - ServerRoot "/usr/local/opt/httpd"
+    - LoadModule php_module "/usr/local/opt/php/lib/httpd/modules/libphp.so"
+
+    - https://php.watch/versions/8.0/mod_php-rename
+        <IfModule php_module>
+    DirectoryIndex index.html default.php index.php
+    AddHandler application/x-httpd-php .php
 
 -   brew services restart httpd     
 
