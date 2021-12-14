@@ -9,7 +9,7 @@
     - LoadModule rewrite_module lib/httpd/modules/mod_rewrite.so
     - User ***** (via command line: ls -lh)
     - Group ***** (via command line: ls -lh)
-    - DocumentRoot "/usr/local/var/www"  <span style="color:red">must be correct</span> 
+    - DocumentRoot "/usr/local/var/www"  <span style="color:red"> **must be correct**</span> 
     - Directory "/usr/local/var/www    <span style="color:red">must be correct</span> 
     - ServerRoot "/usr/local/opt/httpd"
     - LoadModule php_module "/usr/local/opt/php/lib/httpd/modules/libphp.so"
