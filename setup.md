@@ -45,9 +45,11 @@
 -   The guide of [install the papche on ubuntu20.04](https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-20-04).
 
 -   Install Php7.4
-    -   The reference link of [install php7.4 for ubunuto](https://linuxize.com/post/how-to-install-php-on-ubuntu-20-04/)
+    -   The reference link of [install php7.4 for ubunutu20.04](https://linuxize.com/post/how-to-install-php-on-ubuntu-20-04/)
     -   command lines:
-        ``` sudo apt install php libapache2-mod-php ```
-        ``` sudo systemctl restart apache2 ```
+        ``` 
+        sudo apt install php libapache2-mod-php
+        sudo systemctl restart apache2 
+        ```
         
   
