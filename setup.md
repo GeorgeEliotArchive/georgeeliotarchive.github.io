@@ -24,7 +24,8 @@
     -   brew services restart httpd     
 
 
--    Install PHP on Mac
+-   Install PHP on Mac
+
     - brew install php
     - php -version
 
@@ -35,6 +36,7 @@
 
 -   Install Php7.4
     -   reference link: https://linuxize.com/post/how-to-install-php-on-ubuntu-20-04/
-    -   sudo apt install php libapache2-mod-php
-    -   sudo systemctl restart apache2
+    -   command lines:
+        -   sudo apt install php libapache2-mod-php
+        -   sudo systemctl restart apache2
   
