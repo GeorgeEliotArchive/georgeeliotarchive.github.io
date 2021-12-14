@@ -2,11 +2,18 @@
 
 ## Seup enviornement on MAC
 - Install Apache Service on Mac
+    -   Install httpd
+    ```
+    brew install httpd
+    brew services start hpptd
+    brew services list
+    ```
+    
 
-    -   brew install httpd
-    -   brew services start hpptd
-    -   brew services list
-    -   sudo vi /usr/local/etc/httpd/httpd.conf
+    -   Update configuration
+    ```
+    sudo vi /usr/local/etc/httpd/httpd.conf
+    ```   
         - Listen 80
         - LoadModule rewrite_module lib/httpd/modules/mod_rewrite.so
         - User ***** (via command line: ls -lh)
@@ -21,13 +28,17 @@
             DirectoryIndex index.html default.php index.php \
             AddHandler application/x-httpd-php .php
 
-    -   brew services restart httpd     
+    -  restart httpd 
+    ```
+    brew services restart httpd     
+    ```
 
 
 -   Install PHP on Mac
-
-    - brew install php
-    - php -version
+    ```
+    brew install php
+    php -version
+    ```
 
 
 ## Setup Enviornement on Ubunto 20.04
