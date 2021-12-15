@@ -2,7 +2,7 @@
 
 ## Before going to work...
 
-1. Setup local working environment on mac and ubuntu20.04 [link for setup](/)
+1. [Setup local working environment on mac and ubuntu20.04 ](setup)
        
     
 2. Lectures and knowledge for the project
