@@ -1,4 +1,3 @@
-# Home
 # Welcome to George Eliot Archive
 
 ## Before going to work...
