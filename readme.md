@@ -2,7 +2,7 @@
 
 ## Before going to work...
 
-1. Setup local working environment on mac and ubuntu20.04[setup php, html and javastript](setup)
+1. Setup local working environment on mac and ubuntu20.04 [link for setup](setup)
        
     
 2. Lectures and knowledge for the project
