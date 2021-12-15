@@ -1,4 +1,4 @@
-# Welcome to George Eliot Archive
+# main page
 
 ## Before going to work...
 
