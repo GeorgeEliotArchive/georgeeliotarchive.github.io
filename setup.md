@@ -1,8 +1,8 @@
 [Go back](https://georgeeliotarchive.github.io/)
 # Setup environement for development
 -   Apache2
--   php 7 or 8
--   javascript
+-   Php 7 or 8
+-   Javascript
 
 
 ## MAC OSX 
@@ -46,7 +46,7 @@
     php -version
     ```
 
-## Ubunto 20.04
+## Ubuntu 20.04
 -   The guide of [install the apapche2 on ubuntu20.04](https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-20-04).
 -   Install Php7.4
     -   The reference link of [install php7.4 for ubunutu20.04](https://linuxize.com/post/how-to-install-php-on-ubuntu-20-04/)
