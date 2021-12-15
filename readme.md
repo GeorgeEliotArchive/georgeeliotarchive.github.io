@@ -1,4 +1,4 @@
-# main page
+# Main page
 
 ## Before going to work...
 
