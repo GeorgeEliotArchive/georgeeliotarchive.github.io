@@ -7,17 +7,18 @@
 
 2. Useful tools and websites
 
-    -   playground for html, css and javascript [codepen.io](https://codepen.io)
-    -   Excellent CSS designs [csszengarden.com](http://www.csszengarden.com/)
+    -   [playground for html, css and javascript - codepen.io](https://codepen.io)
+    -   [CSS designs csszengarden.com](http://www.csszengarden.com/)
+    -   [Resources for developers, by developers](https://developer.mozilla.org/en-US/)
 
 
 3. Checking list for learning progress
 
     -   Lectures and knowledge for the project
 
-        - [x] 3.5 hours course for Javascript [Javascript full course youtube](https://www.youtube.com/watch?v=PkZNo7MFNFg)
-        - [x] 11 hours integration course [Html, css and Javascript full course](https://www.youtube.com/watch?v=TdqQqyc7pfU&t=27445s)
-        - [ ] 13 hours full course for d3 [Data Visualization with D3.js](https://www.youtube.com/watch?v=_8V5o2UHG0E)
+        - [x] **3.5 hours** by _freeCodeCamp_ [Learn JavaScript - Full Course for Beginners](https://www.youtube.com/watch?v=PkZNo7MFNFg)
+        - [x] **11 hours** by _Dr.Colleen Van Lent of University of Michigan_ [Web Development Full Course (Front End) | HTML,CSS,JavaScript](https://www.youtube.com/watch?v=TdqQqyc7pfU&t=27445s)
+        - [ ] **13 hours** by _freeCodeCamp_ [Data Visualization with D3.js](https://www.youtube.com/watch?v=_8V5o2UHG0E)
 
 
     -   Books must be read
