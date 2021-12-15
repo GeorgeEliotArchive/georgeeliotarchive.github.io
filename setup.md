@@ -1,6 +1,6 @@
 # Setup environement for development
 
-## Seup enviornement on MAC
+## Setup enviornement on MAC
 - Install Apache Service on Mac
     -   Install httpd
     ````
