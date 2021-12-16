@@ -20,6 +20,8 @@
 
         - [x] **11 hours** by _Dr Colleen Van Lent_ [Web Development Full Course - Front End - HTML,CSS,JavaScript](https://www.youtube.com/watch?v=TdqQqyc7pfU&t=27445s)
 
+        - [ ] **1 Hour** A Roadmap [Web Development In 2021 - A Practical Guide](https://www.youtube.com/watch?v=VfGW0Qiy2I0)
+
         - [ ] **13 hours** by _freeCodeCamp_ [Data Visualization with D3.js](https://www.youtube.com/watch?v=_8V5o2UHG0E)
 
 
