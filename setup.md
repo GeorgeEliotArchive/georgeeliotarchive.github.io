@@ -15,7 +15,7 @@
         ```
     
 
-    -   **Update configuration**  _Path may vary on httpt installation_
+    -   **Update configuration --**  _Path may vary on httpt installation_
     
         ```
         sudo vi /usr/local/etc/httpd/httpd.conf
