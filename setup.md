@@ -8,11 +8,11 @@
 ## MAC OSX 
 - Install Apache Service on Mac
     -   Install httpd
-    ````
-          brew install httpd
-          brew services start httpd
-          brew services list
-    ````
+        ```
+        brew install httpd
+        brew services start httpd
+        brew services list
+        ```
     
 
     -   **Update configuration**  _Path may vary on httpt installation_
