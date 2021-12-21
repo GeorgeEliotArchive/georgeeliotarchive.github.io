@@ -27,10 +27,10 @@
         -   Group ***** (via command line: ls -lh)
         
         -   The following paths must be altered to be exact as in your computer
-            -   DocumentRoot "/usr/local/var/www"  
-            -   Directory "/usr/local/var/www"  
-            -   ServerRoot "/usr/local/opt/httpd". 
-            -   LoadModule php_module "/usr/local/opt/php/lib/httpd/modules/libphp.so"
+            -   DocumentRoot "/****/var/www"  
+            -   Directory "/****/var/www"  
+            -   ServerRoot "/*****/opt/httpd". 
+            -   LoadModule php_module "*******/lib/httpd/modules/libphp.so"
             -   ServerName localhost
 
         -   Adding php module - https://php.watch/versions/8.0/mod_php-rename    
