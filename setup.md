@@ -22,18 +22,18 @@
     sudo vi /usr/local/etc/httpd/httpd.conf
     or sudo vi /opt/homebrew/etc/httpd/httpd.conf
     ```   
-        - Listen 80
-        - LoadModule rewrite_module lib/httpd/modules/mod_rewrite.so
-        - User ***** (via command line: ls -lh)
-        - Group ***** (via command line: ls -lh)
-        - _The following paths must be altered to be exact as in your computer_
-            - DocumentRoot "/usr/local/var/www"  
-            - Directory "/usr/local/var/www"  
-            - ServerRoot "/usr/local/opt/httpd". 
-            - LoadModule php_module "/usr/local/opt/php/lib/httpd/modules/libphp.so"
-            - ServerName localhost
+        -   Listen 80
+        -   LoadModule rewrite_module lib/httpd/modules/mod_rewrite.so
+        -   User ***** (via command line: ls -lh)
+        -   Group ***** (via command line: ls -lh)
+        -   The following paths must be altered to be exact as in your computer
+            -   DocumentRoot "/usr/local/var/www"  
+            -   Directory "/usr/local/var/www"  
+            -   ServerRoot "/usr/local/opt/httpd". 
+            -   LoadModule php_module "/usr/local/opt/php/lib/httpd/modules/libphp.so"
+            -   ServerName localhost
 
-        - https://php.watch/versions/8.0/mod_php-rename    
+        -   https://php.watch/versions/8.0/mod_php-rename    
             ```
             <IfModule php_module\> 
             DirectoryIndex index.html default.php index.php 
