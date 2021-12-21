@@ -15,17 +15,17 @@
     ````
     
 
-    -   Update configuration
-       
-    _Location of the configuration varies on httpt installation_
-    ```
-    sudo vi /usr/local/etc/httpd/httpd.conf
-    or sudo vi /opt/homebrew/etc/httpd/httpd.conf
-    ```   
+    -   **Update configuration**  _Path may vary on httpt installation_
+    
+        ```
+        sudo vi /usr/local/etc/httpd/httpd.conf
+        or sudo vi /opt/homebrew/etc/httpd/httpd.conf
+        ```      
         -   Listen 80
         -   LoadModule rewrite_module lib/httpd/modules/mod_rewrite.so
         -   User ***** (via command line: ls -lh)
         -   Group ***** (via command line: ls -lh)
+        
         -   The following paths must be altered to be exact as in your computer
             -   DocumentRoot "/usr/local/var/www"  
             -   Directory "/usr/local/var/www"  
@@ -33,24 +33,24 @@
             -   LoadModule php_module "/usr/local/opt/php/lib/httpd/modules/libphp.so"
             -   ServerName localhost
 
-        -   https://php.watch/versions/8.0/mod_php-rename    
-            ```
+        -   Adding php module - https://php.watch/versions/8.0/mod_php-rename    
+        
             <IfModule php_module\> 
             DirectoryIndex index.html default.php index.php 
             AddHandler application/x-httpd-php .php
             </IfModule>
-            ```
+            
 
-    -  restart httpd 
+    -  **restart httpd**
     ```
     brew services restart httpd     
     ```
-    -  start apache web service
+    -  **start apache web service**
     ```
     sudo apachectl start 
     ```
 
--   Install PHP on Mac
+-   **Install PHP on Mac**
     ```
     brew install php
     php -version
