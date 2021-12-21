@@ -10,14 +10,17 @@
     -   Install httpd
     ````
           brew install httpd
-          brew services start hpptd
+          brew services start httpd
           brew services list
     ````
     
 
     -   Update configuration
+    -   
+    _Location of the configuration varies on httpt installation_
     ```
     sudo vi /usr/local/etc/httpd/httpd.conf
+    or sudo vi /opt/homebrew/etc/httpd/httpd.conf
     ```   
         - Listen 80
         - LoadModule rewrite_module lib/httpd/modules/mod_rewrite.so
