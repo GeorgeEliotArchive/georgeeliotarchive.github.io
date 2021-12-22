@@ -35,7 +35,7 @@
 
         -   Adding php module - https://php.watch/versions/8.0/mod_php-rename    
         
-            <IfModule php_module\> 
+            <IfModule php_module> 
             DirectoryIndex index.html default.php index.php 
             AddHandler application/x-httpd-php .php
             </IfModule>
