@@ -6,6 +6,13 @@
 
 
 ## MAC OSX 
+
+-   **Install PHP on Mac**
+    ```
+    brew install php
+    php -version
+    ```
+    
 - Install Apache Service on Mac
     -   Install httpd
         ```
@@ -50,11 +57,7 @@
     sudo apachectl start 
     ```
 
--   **Install PHP on Mac**
-    ```
-    brew install php
-    php -version
-    ```
+
 
 ## Ubuntu 20.04
 -   The guide of [install the apapche2 on ubuntu20.04](https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-20-04).
