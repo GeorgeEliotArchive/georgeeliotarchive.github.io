@@ -22,7 +22,7 @@
 
         - [X] **1 Hour** A Roadmap [Web Development In 2021 - A Practical Guide](https://www.youtube.com/watch?v=VfGW0Qiy2I0)
         
-        - [X] **2 Hours** [Learning REACT with an example](https://www.youtube.com/watch?v=w7ejDZ8SWv8&t=5148s)
+       
         
         - [ ] **17 Hours** [d3.js - Complete Developer Data Visualization Guide](https://www.udemy.com/course/the-complete-d3js-data-visualization-guide/)
         
@@ -32,6 +32,10 @@
     -   Books must be read
 
         - [ ] Learning PHP,MySQL & JavaScript by _Robin Nixon_ [6th Edition 2021](https://www.oreilly.com/library/view/learning-php-mysql/9781492093817/)
+
+    -   React, database, host and deployment
+        - [X] **2 Hours** [Learning REACT with an example](https://www.youtube.com/watch?v=w7ejDZ8SWv8&t=5148s)
+        - [ ] [Build a Full-Stack React Application](https://aws.amazon.com/getting-started/hands-on/build-react-app-amplify-graphql/)
 
 
 
