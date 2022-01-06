@@ -1,48 +1,70 @@
-# Welcome to George Eliot Archive
+# Getting Started with Create React App
 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Relationship
-[Relationship development web](https://georgeeliotarchive.github.io/relationship/)
+## Available Scripts
 
-## Before going to work...
+In the project directory, you can run:
 
-1. [Setup local working environment on mac and ubuntu20.04](https://georgeeliotarchive.github.io/setup)
-       
+### `npm start`
 
-2. Useful tools and websites
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-    -   [playground for html, css and javascript - codepen.io](https://codepen.io)
-    -   [CSS designs csszengarden.com](http://www.csszengarden.com/)
-    -   [Resources for developers, by developers](https://developer.mozilla.org/en-US/)
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
+### `npm test`
 
-3. Checking list for learning progress
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-    -   Lectures and knowledge for the project
+### `npm run build`
 
-        - [x] **3.5 hours** by _freeCodeCamp_ [Learn JavaScript - Full Course for Beginners](https://www.youtube.com/watch?v=PkZNo7MFNFg)
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-        - [x] **11 hours** by _Dr Colleen Van Lent_ [Web Development Full Course - Front End - HTML,CSS,JavaScript](https://www.youtube.com/watch?v=TdqQqyc7pfU&t=27445s)
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-        - [X] **1 Hour** A Roadmap [Web Development In 2021 - A Practical Guide](https://www.youtube.com/watch?v=VfGW0Qiy2I0)
-        
-       
-        
-        - [ ] **17 Hours** [d3.js - Complete Developer Data Visualization Guide](https://www.udemy.com/course/the-complete-d3js-data-visualization-guide/)
-        
-        - [ ] **13 hours** by _freeCodeCamp_ [Data Visualization with D3.js](https://www.youtube.com/watch?v=_8V5o2UHG0E)
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### `npm run eject`
 
-    -   Books must be read
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-        - [ ] Learning PHP,MySQL & JavaScript by _Robin Nixon_ [6th Edition 2021](https://www.oreilly.com/library/view/learning-php-mysql/9781492093817/)
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-    -   React, database, host and deployment
-        - [X] **2 Hours** [Learning REACT with an example](https://www.youtube.com/watch?v=w7ejDZ8SWv8&t=5148s)
-        - [ ] [Build a Full-Stack React Application](https://aws.amazon.com/getting-started/hands-on/build-react-app-amplify-graphql/)
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
+## Learn More
 
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-## Start to work...
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
