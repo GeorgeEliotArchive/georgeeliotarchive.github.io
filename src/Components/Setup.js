@@ -35,9 +35,7 @@ class SetupEnv extends React.Component {
             md: text
         })
     }
-  
-   
-  
+    
     render() {
         const MyParagraph = ({ children, ...props }) => (
             <div {...props}>{children}</div>
