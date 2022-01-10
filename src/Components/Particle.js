@@ -63,10 +63,10 @@ export default class Particle extends React.Component {
             "modes": {
               "attract": {
                 "distance": 200,
-                "duration": 0.5,
+                "duration": 0.4,
                 "easing": "ease-out-quad",
                 "factor": 1,
-                "maxSpeed": 5,
+                "maxSpeed": 50,
                 "speed": 1
               },
               "bounce": {
@@ -75,7 +75,7 @@ export default class Particle extends React.Component {
               "bubble": {
                 "distance": 200,
                 "duration": 0.4,
-                "mix": true
+                "mix": false
               },
               "connect": {
                 "distance": 80,
@@ -128,7 +128,7 @@ export default class Particle extends React.Component {
                 "easing": "ease-out-quad"
               },
               "slow": {
-                "factor": 30,
+                "factor": 3,
                 "radius": 200
               },
               "trail": {
@@ -140,7 +140,7 @@ export default class Particle extends React.Component {
                     "value": "#ff0000",
                     "animation": {
                       "enable": true,
-                      "speed": 200,
+                      "speed": 400,
                       "sync": true
                     }
                   },
