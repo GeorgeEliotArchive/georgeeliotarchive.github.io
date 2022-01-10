@@ -1,14 +1,15 @@
 
 import React from "react"
-import ReactDOM from "react-dom"
+// import ReactDOM from "react-dom"
 
 import '../Css/App.css';
 import Markdown from 'markdown-to-jsx'
 
 
 
+
 // #1
-export default class Setup extends React.Component {
+export default class Setupenv extends React.Component {
     render() {
         return (
             <div>                
@@ -26,7 +27,7 @@ class SetupEnv extends React.Component {
     }
   
     async componentDidMount() {
-        const file = await import(`../Md/Setup.md`);
+        const file = await import(`../Md/setup.md`);
         const response = await fetch(file.default);
         const text = await response.text();
   
@@ -35,10 +36,28 @@ class SetupEnv extends React.Component {
         })
     }
   
+   
+  
     render() {
+        const MyParagraph = ({ children, ...props }) => (
+            <div {...props}>{children}</div>
+        );
+
         return (
-            <div className="ongoing">
-                <Markdown children={this.state.md} />
+            <div className="main_content setupenv">
+                <Markdown 
+                options={{wrapper: "pre", forceWrapper: true,forceBlock: true,
+                    overrides: {
+                        
+                        code: {
+                            component: MyParagraph,
+                            props: {
+                                className: 'highlight',
+                            },
+                        },
+                    }                    
+                }}
+                children={this.state.md} />
             </div>
         )
     }

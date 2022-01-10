@@ -5,6 +5,7 @@ import ReactDOM from "react-dom"
 import '../Css/App.css';
 import Particle from './Particle';
 import Markdown from 'markdown-to-jsx'
+import Setupenv from "./Setup";
 
 
 /*
@@ -23,8 +24,7 @@ class App extends React.Component {
                 <Header username="this is the development of George Eliot Programs"/>
                 <Greeting />
                 <Background />
-                <Ongoing />
-                <Learning />
+                <Showmain />
             </div>
             
         )
@@ -79,7 +79,7 @@ class Greeting extends React.Component {
     return (      
       <div>
         <h1>Good {this.state.timeOfDay} to you, sir or madam!</h1>      
-        <h2 className = 'button' id="more" onClick={this.toggleTime}> {this.state.showTime ? "Hide time" : "What Time is it now" }</h2>  
+        <h2 className = 'button_main' id="more" onClick={this.toggleTime}> {this.state.showTime ? "Hide time" : "What Time is it now" }</h2>  
         <h2 className="timedate">{this.state.showTime ? <Text /> : null} </h2>
       </div>
     )
@@ -119,7 +119,7 @@ class Ongoing extends React.Component {
 
   render() {
       return (
-          <div className="ongoing">
+          <div className="main_content ongoing">
               <Markdown children={this.state.md} />
           </div>
       )
@@ -146,7 +146,7 @@ class Learning extends React.Component {
 
   render() {
       return (
-          <div className="article">
+          <div className="main_content learning">
               <Markdown children={this.state.md} />
           </div>
       )
@@ -154,7 +154,50 @@ class Learning extends React.Component {
 }
 
 
+class Showmain extends React.Component {
+    state = {
+        active: 1
+      }
 
+    toggleView= (selection) => {
+        this.setState(() => {
+            return {
+                active: selection
+            }
+        })
+    }
+  
+    ActiveView(){
+      switch (this.state.active) {
+        case 1:
+          return <Ongoing />;
+        case 2:
+          return <Learning />;
+        case 3:
+          return <Setupenv />
+        default:
+          return <Ongoing />;
+      }
+    };
+  
+    render() {
+        return (
+        <div >
+            <button className="ongoing button_main button_ongoing" id="more" onClick={() => this.toggleView(1)}>
+            On-going Progress
+            </button>
+            <button className="learning button_main button_learning" id="more" onClick={() => this.toggleView(2)}>
+            Knowledge Center
+            </button>
+            <button className="setupenv button_main button_setupenv" id="more" onClick={() => this.toggleView(3)}>
+            Setup Enivronment
+            </button>
+            
+            {this.ActiveView()}
+        </div>
+        );
+    }
+  };
 
 ReactDOM.render(<App />, document.getElementById("root"))
 

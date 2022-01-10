@@ -1,16 +1,13 @@
 # Before going to work...
-
-1. [Setup local working environment on mac and ubuntu20.04](https://georgeeliotarchive.github.io/setup_env/)
-       
-
-2. Useful tools and websites
+   
+1. Useful tools and websites
 
     -   [playground for html, css and javascript - codepen.io](https://codepen.io)
     -   [CSS designs csszengarden.com](http://www.csszengarden.com/)
     -   [Resources for developers, by developers](https://developer.mozilla.org/en-US/)
 
 
-3. Checking list for learning progress
+2. Checking list for learning progress
 
     -   Lectures and knowledge for the project
 

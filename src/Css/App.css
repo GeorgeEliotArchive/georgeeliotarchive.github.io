@@ -40,6 +40,31 @@ h1 {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  border-radius: 4px;
+}
+.highlight {
+  background-color: black;
+}
+.button_main {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 4px;
+}
+.button_ongoing {
+  position: relative;
+}
+.button_learning {
+  position: relative;
+}
+.button_setupenv {
+  position: relative;
 }
 
 .timedate {
@@ -61,7 +86,7 @@ h1 {
   cursor:pointer;
 }
 
-.article {
+.main_content {
   display: inline-block;
   position: relative;
   background-color: darkslateblue;
@@ -75,22 +100,16 @@ h1 {
   font-size: 16px;
   border: 1px solid blue;
 }
-
-.ongoing {
-  display: inline-block;
-  position: relative;
-  background-color: darkolivegreen;
-  width: 80%;
-  border: none;
-  color: whitesmoke;
-  padding: 15px 32px;
-  text-align: left;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border: 1px solid blue;
+.learning {
+  background-color: darkslateblue;
 }
 
+.ongoing {
+  background-color: darkolivegreen;
+}
+.setupenv {
+  background-color: darkslategrey;
+}
 a:link {
   color: lightgreen;
 }

@@ -1,4 +1,3 @@
-[Go back](https://georgeeliotarchive.github.io/)
 # Setup environement for development
 -   Apache2
 -   Php 7 or 8
@@ -17,7 +16,7 @@
     -   Install httpd
         ```
         brew install httpd
-        brew services start httpd
+        brew services start httpd        
         brew services list
         ```
     
