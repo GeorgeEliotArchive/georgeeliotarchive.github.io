@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Karla', sans-serif;
+  
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+div#root {
+  height: 100vh;
+  /* width: 1200px; */
+  width: 100vw;
+  padding: 50px;
+  padding-left: 10%;
+  
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* background-color: #ddeae1; */
+  color: #4de76e;
+}
+
+h1 {
+  margin: 0;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  /* text-align: center; */
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.timedate {
+  position: relative;
+  display: inline-block;
+  border: none;
+  color: white;
+  padding-left: 32px;
+  /* text-align: center; */
+  text-decoration: none;
+  font-size: 16px;
+}
+
+#more {
+  /* background:none; */
+  border:none;
+  /* color:#FFF; */
+  font-family:Verdana, Geneva, sans-serif;
+  cursor:pointer;
+}
+
+.article {
+  display: inline-block;
+  position: relative;
+  background-color: darkslateblue;
+  width: 80%;
+  border: none;
+  color: whitesmoke;
+  padding: 15px 32px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border: 1px solid blue;
+}
+
+.ongoing {
+  display: inline-block;
+  position: relative;
+  background-color: darkolivegreen;
+  width: 80%;
+  border: none;
+  color: whitesmoke;
+  padding: 15px 32px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border: 1px solid blue;
+}
+
+a:link {
+  color: red;
+}
+a:visited {
+  color: lightsalmon;
+}
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
+
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+	background: #00356B;
+}
+
+#particles-js canvas {
+  display: block;
+  vertical-align: bottom;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+  -webkit-transition: opacity .8s ease, -webkit-transform 1.4s ease;
+  transition: opacity .8s ease, transform 1.4s ease
+}
+
+#particles-js {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -10;
+  top: 0;
+  left: 0
+}
