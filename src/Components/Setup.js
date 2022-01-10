@@ -6,8 +6,6 @@ import '../Css/App.css';
 import Markdown from 'markdown-to-jsx'
 
 
-
-
 // #1
 export default class Setupenv extends React.Component {
     render() {
