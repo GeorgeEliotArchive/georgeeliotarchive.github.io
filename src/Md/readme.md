@@ -1,6 +1,6 @@
 # Before going to work...
 
-1. [Setup local working environment on mac and ubuntu20.04](https://georgeeliotarchive.github.io/setup)
+1. [Setup local working environment on mac and ubuntu20.04](https://georgeeliotarchive.github.io/setup_env/)
        
 
 2. Useful tools and websites
