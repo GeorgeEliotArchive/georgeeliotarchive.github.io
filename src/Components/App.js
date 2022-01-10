@@ -69,7 +69,7 @@ class Greeting extends React.Component {
   toggleTime = () => {
     this.setState(prevState => {
         return {
-            showTime: prevState.showTime === "Yes" ? "No" : "Yes"
+            showTime: prevState.showTime === true ? false : true
         }
     })
 }
@@ -79,7 +79,7 @@ class Greeting extends React.Component {
     return (      
       <div>
         <h1>Good {this.state.timeOfDay} to you, sir or madam!</h1>      
-        <h2 className = 'button' id="more" onClick={this.toggleTime}> What time and date is it now? </h2>  
+        <h2 className = 'button' id="more" onClick={this.toggleTime}> {this.state.showTime ? "Hide time" : "What Time is it now" }</h2>  
         <h2 className="timedate">{this.state.showTime ? <Text /> : null} </h2>
       </div>
     )
