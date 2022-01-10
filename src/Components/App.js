@@ -154,6 +154,7 @@ class Learning extends React.Component {
 }
 
 
+// Show the Main content in the page
 class Showmain extends React.Component {
     state = {
         active: 1
