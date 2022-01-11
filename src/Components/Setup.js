@@ -1,16 +1,14 @@
 
 import React from "react"
-// import ReactDOM from "react-dom"
-
 import '../Css/App.css';
-import Markdown from 'markdown-to-jsx'
+import Markdown from 'markdown-to-jsx';
 
 
 // #1
 export default class Setupenv extends React.Component {
     render() {
         return (
-            <div>                
+            <div className="main_content setupenv">                
                 <SetupEnv />
             </div>
             
@@ -40,9 +38,9 @@ class SetupEnv extends React.Component {
         );
 
         return (
-            <div className="main_content setupenv">
+            // <div className="main_content setupenv">
                 <Markdown 
-                options={{wrapper: "pre", forceWrapper: true,forceBlock: true,
+                options={{wrapper: "pre", forceWrapper: false,forceBlock: false,
                     overrides: {
                         
                         code: {
@@ -54,7 +52,7 @@ class SetupEnv extends React.Component {
                     }                    
                 }}
                 children={this.state.md} />
-            </div>
+            // </div>
         )
     }
   }
