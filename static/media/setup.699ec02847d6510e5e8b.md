@@ -1,4 +1,4 @@
-# Setup environement for development
+# Set up local working enivronment.
 -   Apache2
 -   Php 7 or 8
 -   Javascript
