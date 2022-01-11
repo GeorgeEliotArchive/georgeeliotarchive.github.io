@@ -14,12 +14,13 @@ code {
 }
 
 div#root {
-  height: 100vh;
-  /* width: 1200px; */
+  height: 100vh;  
   width: 100vw;
+  max-width: 1600px;
+  min-width: 1000px;
   padding: 50px;
-  padding-left: 10%;
-  
+  padding-right: 5%;
+  padding-left: 5%;  
   display: flex;
   flex-direction: column;
   /* align-items: center; */
@@ -90,7 +91,7 @@ h1 {
   display: inline-block;
   position: relative;
   background-color: darkslateblue;
-  width: 80%;
+  width: 100%;
   border: none;
   color: whitesmoke;
   padding: 15px 32px;
