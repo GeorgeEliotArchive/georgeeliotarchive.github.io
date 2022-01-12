@@ -20,7 +20,6 @@
         brew services list
         ```
     
-
     -   **Update configuration --**  _Path may vary on httpt installation_
     
         ```
@@ -55,7 +54,6 @@
     ```
     sudo apachectl start 
     ```
-
 
 
 ## Ubuntu 20.04
