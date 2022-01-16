@@ -6,6 +6,7 @@ import '../Css/App.css';
 import Particle from './Particle';
 import Markdown from 'markdown-to-jsx'
 import Setupenv from "./Setup";
+import Ongoing  from "./Ongoing";
 
 
 /*
@@ -101,31 +102,6 @@ class Background extends React.Component {
 }
 
 
-class Ongoing extends React.Component {
-  constructor(props) {
-      super(props)
-      this.state = { md: '' }
-  }
-
-  async componentDidMount() {
-      const file = await import(`../Md/ongoing.md`);
-      const response = await fetch(file.default);
-      const text = await response.text();
-
-      this.setState({
-          md: text
-      })
-  }
-
-  render() {
-      return (
-          <div className="main_content ongoing">
-              <Markdown children={this.state.md} />
-          </div>
-      )
-  }
-}
-
 
 
 class Learning extends React.Component {
@@ -179,7 +155,7 @@ class Showmain extends React.Component {
         default:
           return <Ongoing />;
       }
-    };
+    }
   
     render() {
         return (
@@ -198,7 +174,7 @@ class Showmain extends React.Component {
         </div>
         );
     }
-  };
+  }
 
 ReactDOM.render(<App />, document.getElementById("root"))
 
