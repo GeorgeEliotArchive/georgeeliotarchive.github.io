@@ -39,6 +39,9 @@ pre {
   white-space: pre;
   margin: 1em 0px;
 }
+.show_main{
+  padding-bottom: 100px;
+}
 
 .button {
   background-color: #4CAF50; /* Green */
@@ -76,8 +79,8 @@ pre {
   position: relative;
 }
 
-.button_relationship {
-  margin-left: 65px;
+.button_sub_ongoing{
+  margin-left: 25px;
   background-color: olivedrab;
 }
 
@@ -115,6 +118,9 @@ pre {
   font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
   font-size: 16px;
   border: 1px solid blue;
+}
+.sub_ongoing{
+  border:none;
 }
 .learning {
   background-color: darkslateblue;
@@ -167,4 +173,60 @@ a:active {
   z-index: -10;
   top: 0;
   left: 0
+}
+
+pre,  /* stackoverflow */
+.md:not(.use-csslab) pre code
+ {
+  white-space: pre-wrap;
+}
+
+.highlight_quote {
+  background-color: #00356B;
+  font-style: oblique;
+}
+
+blockquote{
+  font-size: 1.4em;
+  width:80%;
+  margin:10px auto;
+  font-family:Open Sans;
+  font-style:italic;
+  color: #555555;
+  padding:1.2em 10px 10px 10px;
+  border-left:8px solid #78C0A8 ;
+  line-height:1.6;
+  position: relative;
+  background:#EDEDED;
+}
+
+blockquote::before{
+  font-family:Arial;
+  content: "\201C";
+  color:#78C0A8;
+  font-size:4em;
+  position: absolute;
+  left: 10px;
+  top:-10px;
+}
+
+blockquote::after{
+  content: '';
+}
+
+blockquote span{
+  display:block;
+  color:#333333;
+  font-style: normal;
+  font-weight: bold;
+  margin-top:1em;
+}
+
+mdname{
+  color: lightskyblue;
+  font-weight: 500;
+}
+mdemail{
+  color:lightcoral;
+  font-weight: 600;
 }

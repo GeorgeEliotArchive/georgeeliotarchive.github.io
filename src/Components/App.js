@@ -159,9 +159,9 @@ class Showmain extends React.Component {
   
     render() {
         return (
-        <div >
+        <div className="show_main">
             <button className="ongoing button_main button_ongoing" id="more" onClick={() => this.toggleView(1)}>
-            On-going Progress
+            On-going Development
             </button>
             <button className="learning button_main button_learning" id="more" onClick={() => this.toggleView(2)}>
             Knowledge Center
