@@ -40,7 +40,7 @@ pre {
   margin: 1em 0px;
 }
 .show_main{
-  padding-bottom: 100px;
+  padding-bottom: 20px;
 }
 
 .button {
@@ -80,6 +80,7 @@ pre {
 }
 
 .button_sub_ongoing{
+  width: 400px;
   margin-left: 25px;
   background-color: olivedrab;
 }
@@ -235,4 +236,41 @@ mdname{
 mdemail{
   color:lightcoral;
   font-weight: 600;
+}
+
+
+.footer{
+  margin-top: 0px;
+  /* padding: 1rem; */
+  /* background-color: rgb(235, 195, 64); */
+  background-color: darkgoldenrod;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color:#00356B;
+  border: 2px solid darkslategrey;
+}
+img {
+  padding-right: 20px;
+  display: inline-block;
+  max-width:120px;
+  max-height:80px;
+  width: auto;
+  height: auto;
+}
+.right_image{
+  float: right;
+  max-height:30px;
+  padding-right: 0px;
+}
+.center_image{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.foot_text{
+  text-align: center;
+  font-size:x-small;
+
 }

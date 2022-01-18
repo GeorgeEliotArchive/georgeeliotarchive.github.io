@@ -7,6 +7,7 @@ import Particle from './Particle';
 import Markdown from 'markdown-to-jsx'
 import Setupenv from "./Setup";
 import Ongoing  from "./Ongoing";
+import Footer from './footer';
 
 
 /*
@@ -26,6 +27,7 @@ class App extends React.Component {
                 <Greeting />
                 <Background />
                 <Showmain />
+                <Footer />
             </div>
             
         )

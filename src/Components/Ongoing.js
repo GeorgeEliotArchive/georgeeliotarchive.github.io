@@ -80,20 +80,40 @@ class Chronologydev extends React.Component {
     }
   }
 
+class Chronologydev2019 extends React.Component {
+    render() {
+        return (
+            <div >                         
+                <iframe width="100%" scrolling="yes" height="900" title="relationship" src="https://georgeeliotarchive.github.io/chronology/version_2019" />         
+            </div>
+        )
+    }
+  }
+
 
 class Chronology extends React.Component {
     constructor(props) {
         super(props)
         this.state = { 
             onshow: false,
-            text: "Show"}
+            text: "Show",
+            onshow2019:false,
+            text2019:"Show",}
     }    
 
-    toggleView= () => {
+    toggleView = () => {
         this.setState(prevState => {
             return {
                 onshow: !prevState.onshow,
                 text: prevState.text === "Show" ? "Hide" : "Show"
+            }
+        })
+    }
+    toggleView2019 = () => {
+        this.setState(prevState => {
+            return {
+                onshow2019: !prevState.onshow2019,
+                text2019: prevState.text2019 === "Show" ? "Hide" : "Show"
             }
         })
     }
@@ -106,18 +126,37 @@ class Chronology extends React.Component {
             return null
         }
       }
+
+      ActiveView2019(){
+        if (this.state.onshow2019) {
+            return <Chronologydev2019 />
+          }
+          else{
+              return null
+          }
+      }
   
     render() {
         return (
             <div className="main_content ongoing sub_ongoing ongoing_chronology">
                 
             <Chronologymd />
-            <button className="button_main button_sub_ongoing" id="more" onClick={() => this.toggleView()}>
+            <p>
+                <button className="button_main button_sub_ongoing" id="more" onClick={() => this.toggleView()}>
+                    {/* Show relationship development progress */}
+                    {this.state.text} Development of Chronology
+                </button>    
+                {this.ActiveView()}
+            </p>    
+            <p>
+            <button className="button_main button_sub_ongoing" id="more" onClick={() => this.toggleView2019()}>
                 {/* Show relationship development progress */}
-                {this.state.text} Development of Chronology
-            </button>                      
+                {this.state.text2019} Another Version of Chronology
+            </button>                   
 
-            {this.ActiveView()}
+            
+            {this.ActiveView2019()}
+            </p>
             </div>
         )
     }
