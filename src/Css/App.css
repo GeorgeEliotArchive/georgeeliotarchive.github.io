@@ -250,19 +250,22 @@ mdemail{
   width: 100%;
   color:#00356B;
   border: 2px solid darkslategrey;
+  padding-top: 10px
 }
 img {
-  padding-right: 20px;
+  /* padding-right: 20px; */
+  margin-left: 25px;
+  /* margin-top: 25px; */
   display: inline-block;
-  max-width:120px;
-  max-height:80px;
+  max-width:80px;
+  max-height:40px;
   width: auto;
   height: auto;
 }
 .right_image{
   float: right;
   max-height:30px;
-  padding-right: 0px;
+  margin-right: 25px;
 }
 .center_image{
   display: flex;
