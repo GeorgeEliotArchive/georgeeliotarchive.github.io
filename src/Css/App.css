@@ -120,7 +120,7 @@ pre {
   border: 1px solid blue;
 }
 .sub_ongoing{
-  border:none;
+  border: 2px solid darkolivegreen;
 }
 .learning {
   background-color: darkslateblue;
@@ -128,6 +128,12 @@ pre {
 
 .ongoing {
   background-color: darkolivegreen;
+}
+.ongoing_chronology{
+  background-color: rgb(71, 87, 43);
+}
+.ongoing_relationship{
+  background-color: rgb(71, 87, 43);
 }
 .setupenv {
   background-color: darkslategrey;

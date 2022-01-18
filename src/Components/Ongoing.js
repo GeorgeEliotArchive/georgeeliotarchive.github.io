@@ -55,7 +55,7 @@ class Relationship extends React.Component {
   
     render() {
         return (
-            <div className="main_content ongoing sub_ongoing">
+            <div className="main_content ongoing sub_ongoing ongoing_relationship">
                 <Markdown children={this.state.md} />      
                 <button className="button_main button_sub_ongoing" id="more" onClick={() => this.toggleView()}>
                     {/* Show relationship development progress */}
@@ -109,7 +109,8 @@ class Chronology extends React.Component {
   
     render() {
         return (
-            <div className="main_content ongoing sub_ongoing">
+            <div className="main_content ongoing sub_ongoing ongoing_chronology">
+                
             <Chronologymd />
             <button className="button_main button_sub_ongoing" id="more" onClick={() => this.toggleView()}>
                 {/* Show relationship development progress */}
@@ -191,7 +192,9 @@ export default class Ongoing extends React.Component {
 
         return (
             <div className="main_content ongoing">    
+            <br />
             <Markdown children={this.state.md} />         
+            
             <Relationship />
             <Chronology />
                
