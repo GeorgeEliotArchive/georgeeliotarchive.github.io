@@ -103,6 +103,7 @@ pre {
   /* color:#FFF; */
   font-family:Verdana, Geneva, sans-serif;
   cursor:pointer;
+  /* background: #111; */
 }
 
 .main_content {
@@ -150,6 +151,7 @@ pre {
 }
 .setupenv {
   background-color: darkslategrey;
+  border: none;
   /* background-color: inherit; */
 }
 a:link {

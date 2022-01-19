@@ -136,13 +136,14 @@ class Showmain extends React.Component {
     render() {
         return (
         <div className="show_main">
-            <button className="onging button_main glow-on-hover button_ongoing"  onClick={() => this.toggleView(1)}>
+            {/* <button className="onging button_main glow-on-hover button_ongoing"  onClick={() => this.toggleView(1)}> */}
+            <button className="onging button_main glow-on-hover "  onClick={() => this.toggleView(1)}>
             On-going Development
             </button>
-            <button className="button_main glow-on-hover button_knowledge" id="more" onClick={() => this.toggleView(2)}>
+            <button className="button_main glow-on-hover " id="more" onClick={() => this.toggleView(2)}>
             Knowledge Center
             </button>
-            <button className="button_main glow-on-hover button_setupenv" id="more" onClick={() => this.toggleView(3)}>
+            <button className="button_main glow-on-hover " id="more" onClick={() => this.toggleView(3)}>
             Setup Enivronment
             </button>
             
