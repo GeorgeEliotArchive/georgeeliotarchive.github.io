@@ -26,7 +26,7 @@ class App extends React.Component {
             <div>                
                 <Header username="this is the development of George Eliot Programs"/>
                 <Greeting />
-                {/* <Background /> */}
+                <Background />
                 <Showmain />
                 <Footer />
             </div>
