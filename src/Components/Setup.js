@@ -11,7 +11,7 @@ export default class Setupenv extends React.Component {
             <div className="main_content" >
                 <h1 className="background_inherd">Set Up Local Working Enivronment</h1>
             
-            <p className="setupenv">                
+            <p className="main_content setupenv">                
                 <SetupEnv />
             </p>
             </div>
