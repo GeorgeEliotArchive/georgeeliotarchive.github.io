@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkgeorgeeliotarchive_github_io=self.webpackChunkgeorgeeliotarchive_github_io||[]).push([[997],{6997:function(e,i,c){e.exports=c.p+"static/media/ongoing.0dcc157b207d6cc06406.md"}}]);

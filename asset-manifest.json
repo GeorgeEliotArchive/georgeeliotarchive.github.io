@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/static/css/main.28804435.css",
-    "main.js": "/static/js/main.a925e05a.js",
-    "static/js/201.1ae98da2.chunk.js": "/static/js/201.1ae98da2.chunk.js",
-    "static/js/530.0ce44217.chunk.js": "/static/js/530.0ce44217.chunk.js",
+    "main.css": "/static/css/main.f243d5f0.css",
+    "main.js": "/static/js/main.ef32024f.js",
+    "static/js/530.8b9e8711.chunk.js": "/static/js/530.8b9e8711.chunk.js",
     "static/js/513.441d009f.chunk.js": "/static/js/513.441d009f.chunk.js",
-    "static/js/137.7b7558d2.chunk.js": "/static/js/137.7b7558d2.chunk.js",
-    "static/js/997.b14a03fe.chunk.js": "/static/js/997.b14a03fe.chunk.js",
+    "static/js/137.bc95f20f.chunk.js": "/static/js/137.bc95f20f.chunk.js",
+    "static/js/997.d0d44115.chunk.js": "/static/js/997.d0d44115.chunk.js",
+    "static/js/820.14073812.chunk.js": "/static/js/820.14073812.chunk.js",
     "static/js/787.804f032f.chunk.js": "/static/js/787.804f032f.chunk.js",
     "static/media/logo_archive.jpg": "/static/media/logo_archive.4e325b3ec0bb73a928ac.jpg",
     "static/media/logo_nebraska.jpg": "/static/media/logo_nebraska.0ca2cacad23d2c376357.jpg",
     "static/media/logo_auhorizontal.png": "/static/media/logo_auhorizontal.c2ea09a73c2adb1112ee.png",
-    "static/media/setup.md": "/static/media/setup.5383941c5c4e4ce2956c.md",
-    "static/media/dev_chronology.md": "/static/media/dev_chronology.d870727164f74af5f734.md",
-    "static/media/readme.md": "/static/media/readme.7fd06eec2e9cf8258cfd.md",
+    "static/media/setup.md": "/static/media/setup.8ef5c6413830ed82bdc9.md",
+    "static/media/dev_chronology.md": "/static/media/dev_chronology.242313ec3d1512e36b1d.md",
+    "static/media/knowledge.md": "/static/media/knowledge.66bd1527270fc9d3b426.md",
     "static/media/dev_relationship.md": "/static/media/dev_relationship.075c066ccfca731228a7.md",
     "index.html": "/index.html",
-    "static/media/ongoing.md": "/static/media/ongoing.0dcc157b207d6cc06406.md",
-    "main.28804435.css.map": "/static/css/main.28804435.css.map",
-    "main.a925e05a.js.map": "/static/js/main.a925e05a.js.map",
+    "static/media/ongoing.md": "/static/media/ongoing.a8cd8fc4015213e04af0.md",
+    "main.f243d5f0.css.map": "/static/css/main.f243d5f0.css.map",
+    "main.ef32024f.js.map": "/static/js/main.ef32024f.js.map",
     "787.804f032f.chunk.js.map": "/static/js/787.804f032f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.28804435.css",
-    "static/js/main.a925e05a.js"
+    "static/css/main.f243d5f0.css",
+    "static/js/main.ef32024f.js"
   ]
 }
