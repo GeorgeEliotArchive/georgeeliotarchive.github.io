@@ -1,5 +1,3 @@
-# Before going to work...
-   
 1. Useful tools and websites
 
     -   [playground for html, css and javascript - codepen.io](https://codepen.io)

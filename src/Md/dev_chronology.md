@@ -1,5 +1,4 @@
-## George Eliot Chronology Development
-
+##  George Eliot Chronology Development
 
 -   The **George Eliot Archive’s** interactive chronology (below) details the events of <mdname>George Eliot’s</mdname> life as determined by the existing documentary evidence. This project began in collaboration with <mdname>Timothy Hands</mdname>, whose *A George Eliot Chronology (1989)* provides the foundational information that we have updated and expanded with additional biographical information gleaned from Eliot’s letters and journals and transformed into this data visualization model.
 

@@ -57,7 +57,7 @@ class Relationship extends React.Component {
         return (
             <div className="main_content ongoing sub_ongoing ongoing_relationship">
                 <Markdown children={this.state.md} />      
-                <button className="button_main button_sub_ongoing" id="more" onClick={() => this.toggleView()}>
+                <button className="glow-on-hover" type="button"  id="more" onClick={() => this.toggleView()}>
                     {/* Show relationship development progress */}
                     {this.state.text} Development of Relationship
                 </button>                      
@@ -142,14 +142,14 @@ class Chronology extends React.Component {
                 
             <Chronologymd />
             <p>
-                <button className="button_main button_sub_ongoing" id="more" onClick={() => this.toggleView()}>
+                <button className="glow-on-hover" type="button" id="more" onClick={() => this.toggleView()}>
                     {/* Show relationship development progress */}
                     {this.state.text} Development of Chronology
                 </button>    
                 {this.ActiveView()}
             </p>    
             <p>
-            <button className="button_main button_sub_ongoing" id="more" onClick={() => this.toggleView2019()}>
+            <button className="glow-on-hover" type="button" id="more" onClick={() => this.toggleView2019()}>
                 {/* Show relationship development progress */}
                 {this.state.text2019} Another Version of Chronology
             </button>                   
@@ -230,15 +230,17 @@ export default class Ongoing extends React.Component {
         
 
         return (
-            <div className="main_content ongoing">    
-            <br />
-            <Markdown children={this.state.md} />         
             
+            <p className="main_content ongoing">    
+            <Markdown children={this.state.md} />   
+            <br />      
+            {/* <hr /> */}
             <Relationship />
+            {/* <hr className="new1" /> */}
             <Chronology />
                
 
-            </div>
+            </p>
         )
     }
   }

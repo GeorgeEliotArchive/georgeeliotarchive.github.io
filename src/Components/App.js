@@ -4,9 +4,10 @@ import ReactDOM from "react-dom"
 
 import '../Css/App.css';
 import Particle from './Particle';
-import Markdown from 'markdown-to-jsx'
+// import Markdown from 'markdown-to-jsx'
 import Setupenv from "./Setup";
 import Ongoing  from "./Ongoing";
+import Knowledge from "./knowledge";
 import Footer from './footer';
 
 
@@ -105,33 +106,6 @@ class Background extends React.Component {
 
 
 
-
-class Learning extends React.Component {
-  constructor(props) {
-      super(props)
-      this.state = { md: '' }
-  }
-
-  async componentDidMount() {
-      const file = await import(`../Md/readme.md`);
-      const response = await fetch(file.default);
-      const text = await response.text();
-
-      this.setState({
-          md: text
-      })
-  }
-
-  render() {
-      return (
-          <div className="main_content learning">
-              <Markdown children={this.state.md} />
-          </div>
-      )
-  }
-}
-
-
 // Show the Main content in the page
 class Showmain extends React.Component {
     state = {
@@ -151,7 +125,7 @@ class Showmain extends React.Component {
         case 1:
           return <Ongoing />;
         case 2:
-          return <Learning />;
+          return <Knowledge />;
         case 3:
           return <Setupenv />
         default:
@@ -162,13 +136,13 @@ class Showmain extends React.Component {
     render() {
         return (
         <div className="show_main">
-            <button className="ongoing button_main button_ongoing" id="more" onClick={() => this.toggleView(1)}>
+            <button className="onging button_main glow-on-hover button_ongoing"  onClick={() => this.toggleView(1)}>
             On-going Development
             </button>
-            <button className="learning button_main button_learning" id="more" onClick={() => this.toggleView(2)}>
+            <button className="button_main glow-on-hover button_knowledge" id="more" onClick={() => this.toggleView(2)}>
             Knowledge Center
             </button>
-            <button className="setupenv button_main button_setupenv" id="more" onClick={() => this.toggleView(3)}>
+            <button className="button_main glow-on-hover button_setupenv" id="more" onClick={() => this.toggleView(3)}>
             Setup Enivronment
             </button>
             

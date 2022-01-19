@@ -8,8 +8,12 @@ import Markdown from 'markdown-to-jsx';
 export default class Setupenv extends React.Component {
     render() {
         return (
-            <div className="main_content setupenv">                
+            <div className="main_content" >
+                <h1 className="background_inherd">Set Up Local Working Enivronment</h1>
+            
+            <p className="setupenv">                
                 <SetupEnv />
+            </p>
             </div>
             
         )
@@ -38,7 +42,8 @@ class SetupEnv extends React.Component {
         );
 
         return (
-            // <div className="main_content setupenv">
+            <div>         
+
                 <Markdown 
                 options={{wrapper: "pre", forceWrapper: false,forceBlock: false,
                     overrides: {
@@ -52,7 +57,8 @@ class SetupEnv extends React.Component {
                     }                    
                 }}
                 children={this.state.md} />
-            // </div>
+            </div>
+           
         )
     }
   }
