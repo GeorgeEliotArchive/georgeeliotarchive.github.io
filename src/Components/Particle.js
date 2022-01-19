@@ -40,8 +40,8 @@ export default class Particle extends React.Component {
               },
               image: {
                 src: "https://cdn.matteobruni.it/images/particles/github.svg",
-                width: 50,
-                height: 50
+                width: 100,
+                height: 100
               }
             },
             opacity: {
@@ -55,14 +55,14 @@ export default class Particle extends React.Component {
               }
             },
             size: {
-              value: 2.5,
+              value: 5,
               random: {
                 enable: true,
                 minimumValue: 1
               },
               animation: {
                 enable: true,
-                speed: 3,
+                speed: 5,
                 minimumValue: 2,
                 sync: true,
                 startValue: "min",
@@ -74,7 +74,7 @@ export default class Particle extends React.Component {
             },
             move: {
               enable: true,
-              speed: 3.5,
+              speed: 3,
               direction: "none",
               random: false,
               straight: false,
@@ -107,8 +107,8 @@ export default class Particle extends React.Component {
                 }
               },
               bubble: {
-                distance: 200,
-                size: 20,
+                distance: 400,
+                size: 40,
                 duration: 2,
                 opacity: 0.8,
                 speed: 3
