@@ -62,7 +62,7 @@ export default class Particle extends React.Component {
               },
               animation: {
                 enable: true,
-                speed: 5,
+                speed: 3,
                 minimumValue: 2,
                 sync: true,
                 startValue: "min",
