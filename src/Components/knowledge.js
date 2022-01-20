@@ -8,9 +8,9 @@ import Markdown from 'markdown-to-jsx';
 export default class Knowledge extends React.Component {
     render() {
         return (
-            <div className="main_content">                
+            <p className="main_content">                
                 <Knowledgemd />
-            </div>
+            </p>
             
         )
     }
@@ -35,14 +35,16 @@ class Knowledgemd extends React.Component {
     render() {        
 
         return (
-            <div>
-            <h1 className="background_inherd">Before Going To Work....</h1>
+            <div >
+            <h1 >Before Going To Work....</h1>
             <p className="main_content knowledge">
+            
                 
                 <Markdown              
                 children={this.state.md} />
-            </p>
+                </p>
             </div>
+            
         )
     }
   }

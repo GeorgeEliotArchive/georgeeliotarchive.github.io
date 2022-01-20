@@ -8,13 +8,13 @@ import Markdown from 'markdown-to-jsx';
 export default class Setupenv extends React.Component {
     render() {
         return (
-            <div className="main_content" >
+            <p className="main_content" >
                 <h1 className="background_inherd">Set Up Local Working Enivronment</h1>
             
-            <p className="main_content setupenv">                
+            <div className="main_content setupenv">                
                 <SetupEnv />
-            </p>
             </div>
+            </p>
             
         )
     }
