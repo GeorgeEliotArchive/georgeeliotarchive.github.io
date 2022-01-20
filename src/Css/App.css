@@ -147,7 +147,7 @@ pre {
   /* background-color: inherit; */
 }
 a:link {
-  color: lightgreen;
+  color: rgb(26, 45, 218);
 }
 a:visited {
   color: lightsalmon;
@@ -206,12 +206,14 @@ blockquote{
   margin:10px auto;
   font-family:Open Sans;
   font-style:italic;
-  color: #555555;
+  /* color: #555555; */
+  color:whitesmoke;
   padding:1.2em 10px 10px 10px;
   border-left:8px solid #78C0A8 ;
-  line-height:1.6;
+  line-height:1.2;
   position: relative;
-  background:#EDEDED;
+  /* background:#EDEDED; */
+  background: rgba(72,61,139,0.4);
 }
 
 blockquote::before{
@@ -250,7 +252,8 @@ mdemail{
   margin-top: 0px;
   /* padding: 1rem; */
   /* background-color: rgb(235, 195, 64); */
-  background-color: darkgoldenrod;
+  /* background-color: darkgoldenrod; */
+  background-color: white;
   position: relative;
   bottom: 0;
   left: 0;
@@ -304,7 +307,8 @@ hr {
   border: none;
   outline: none;
   color: #fff;
-  background: #111;
+  /* background: #111; */
+  background: rgba(33,33,3,0.4);
   /* background: #222; */
   cursor: pointer;
   position: relative;
@@ -338,7 +342,7 @@ hr {
 }
 
 .glow-on-hover:hover:before {
-  opacity: 1;
+  opacity: 0.6;
 }
 
 .glow-on-hover:after {
