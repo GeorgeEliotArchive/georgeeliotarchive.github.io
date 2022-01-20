@@ -21,8 +21,8 @@ div#root {
   max-width: 1600px;
   min-width: 1000px;
   padding: 50px;
-  padding-right: 5%;
-  padding-left: 5%;  
+  padding-right: 50px;
+  padding-left: 50px;  
   display: flex;
   flex-direction: column;
   /* align-items: center; */
@@ -253,7 +253,7 @@ mdemail{
   /* padding: 1rem; */
   /* background-color: rgb(235, 195, 64); */
   /* background-color: darkgoldenrod; */
-  background-color: rgba(255,255,255,0.98);
+  background-color: rgba(255,255,255,1);
   position: relative;
   bottom: 0;
   left: 0;
@@ -261,7 +261,7 @@ mdemail{
   color:#00356B;
   border: 2px solid darkslategrey;
   padding-top: 10px;
-  opacity: 0.5;
+  opacity: 0.7;
 }
 img {
   /* padding-right: 20px; */
