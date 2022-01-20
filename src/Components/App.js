@@ -83,7 +83,7 @@ class Greeting extends React.Component {
     return (      
       <div>
         <h1>Good {this.state.timeOfDay} to you, sir or madam!</h1>      
-        <h2 className = 'button_main' id="more" onClick={this.toggleTime}> {this.state.showTime ? "Hide time" : "What Time is it now" }</h2>  
+        <h2 className = 'button_main button_border' id="more" onClick={this.toggleTime}> {this.state.showTime ? "Hide time" : "What Time is it now" }</h2>  
         <h2 className="timedate">{this.state.showTime ? <Text /> : null} </h2>
       </div>
     )
