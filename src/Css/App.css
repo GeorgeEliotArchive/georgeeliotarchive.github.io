@@ -309,7 +309,7 @@ hr {
   outline: none;
   color: #fff;
   /* background: #111; */
-  background: rgba(33,33,3,0.4);
+  background: rgba(90, 90, 90, 0.4);
   /* background: #222; */
   cursor: pointer;
   position: relative;
@@ -335,11 +335,12 @@ hr {
 }
 
 .glow-on-hover:active {
-  color: #000
+  color: #000;
 }
 
 .glow-on-hover:active:after {
   background: transparent;
+
 }
 
 .glow-on-hover:hover:before {
@@ -357,6 +358,7 @@ hr {
   left: 0;
   top: 0;
   border-radius: 10px;
+  
 }
 
 @keyframes glowing {
