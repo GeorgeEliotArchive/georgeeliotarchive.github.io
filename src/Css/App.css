@@ -15,7 +15,7 @@
   --accent: #B8DBD9;
   --button-border: #B8DBD9;
   --link-color: lightblue;  
-  --button-background: rgba(0, 76, 153, 0.4);
+  --button-background: rgba(84, 146, 209, 0.4);
 }
 
 .theme-light {
@@ -27,7 +27,7 @@
   --accent: #888888;
   --button-border: #5E4B56;
   --link-color: darkblue; 
-  --button-background: rgba(204, 204, 255, 0.4);
+  --button-background: rgba(221, 174, 19, 0.507);
 }
 
 /* html, #root {
@@ -332,7 +332,7 @@ mdemail{
   /* background-color: rgb(235, 195, 64); */
   /* background-color: darkgoldenrod; */
   background-color: rgba(255,255,255,1);
-  position: relative;
+  /* position: relative; */
   bottom: 0;
   left: 0;
   width: 100%;
@@ -342,28 +342,46 @@ mdemail{
   opacity: 0.7;
 }
 img {
-  /* padding-right: 20px; */
-  margin-left: 25px;
-  /* margin-top: 25px; */
-  display: inline-block;
+  /* display: inline-block; */
   max-width:80px;
   max-height:40px;
   width: auto;
   height: auto;
+  /* position: absolute; */
 }
 .right_image{
   float: right;
+  display: flex;
   max-height:30px;
   margin-right: 25px;
+  position: relative;
+}
+
+.left_image{
+  display: flex; 
+  float: left;
+  max-height:30px;
+  margin-left: 25px;
+  position: relative;
+}
+.text_inblock{
+  margin-top: 0px;
+  display: inline-block;
 }
 .center_image{
   display: flex;
+  position: relative;
   justify-content: center;
-  align-items: center;
+  margin: auto;
+
 }
 .foot_text{
-  text-align: center;
+  display: flex;
+  position: relative;
+  margin: auto;
+  /* text-align: center; */
   font-size:x-small;
+  justify-content: center;
 }
 
 hr {
