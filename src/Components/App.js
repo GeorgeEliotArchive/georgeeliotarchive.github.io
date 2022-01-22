@@ -2,9 +2,11 @@
 import React from "react"
 import ReactDOM from "react-dom"
 
+import Togglebk from "./toggle_bk";
+
+
 import '../Css/App.css';
 import Particle from './Particle';
-// import Markdown from 'markdown-to-jsx'
 import Setupenv from "./Setup";
 import Ongoing  from "./Ongoing";
 import Knowledge from "./knowledge";
@@ -21,8 +23,13 @@ Challenge:
 
 // #1
 class App extends React.Component {
+
     render() {
+
         return (
+          <div>
+            <Togglebk />
+
             <div>                
                 <Header username="this is the development of George Eliot Programs"/>
                 <Greeting />
@@ -30,6 +37,8 @@ class App extends React.Component {
                 <Showmain />
                 <Footer />
             </div>
+          
+          </div>
             
         )
     }
@@ -95,6 +104,7 @@ class Greeting extends React.Component {
 // Hint: any "display logic" can be placed inside the `render`
 // method before the `return` statement
 class Background extends React.Component {
+
   
      
     render() {
@@ -134,7 +144,12 @@ class Showmain extends React.Component {
     }
   
     render() {
-        return (
+      
+      
+
+        return (       
+          
+
         <div className="show_main">
             {/* <button className="onging button_main glow-on-hover button_ongoing"  onClick={() => this.toggleView(1)}> */}
             <button className="onging button_main glow-on-hover "  onClick={() => this.toggleView(1)}>
@@ -146,9 +161,11 @@ class Showmain extends React.Component {
             <button className="button_main glow-on-hover " id="more" onClick={() => this.toggleView(3)}>
             Setup Enivronment
             </button>
+            {/* <hr></hr> */}
             
             {this.ActiveView()}
         </div>
+
         );
     }
   }

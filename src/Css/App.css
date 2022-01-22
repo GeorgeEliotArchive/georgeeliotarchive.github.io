@@ -1,14 +1,97 @@
+
 * {
   box-sizing: border-box;
 }
 
+.theme-dark {
+  /* --dark-text: #292929; */
+  --dark-text: lightgreen;
+  --light-text: #F9F8F8;  
+  --button-background: #586F7C;
+  /* --dark-background: #2F4550; */
+  --pure-background: #000;
+  --dark-background: #111111;
+  --light-background: #444444;
+  --accent: #B8DBD9;
+  --button-border: #B8DBD9;
+  --link-color: lightblue;  
+  --button-background: rgba(0, 76, 153, 0.4);
+}
+
+.theme-light {
+  --dark-text: #5E4B56;
+  --light-text: #5E4B56;
+  --button-background: #888888;
+  --dark-background: #DBE7E4;
+  --light-background: #EDDCD2;
+  --accent: #888888;
+  --button-border: #5E4B56;
+  --link-color: darkblue; 
+  --button-background: rgba(204, 204, 255, 0.4);
+}
+
+/* html, #root {
+  background-color: var(--pure-background);
+  background: var(--pure-background);
+  color: var(--dark-text);
+} */
+
+nav {
+  /* background-color: var(--dark-background); */
+  color: var(--light-text);
+}
+
+.main-container {
+  background-color: var(--light-background);
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.label {
+  width: 50px;
+  height: 26px;
+  background-color:var(--button-background);;
+  display: flex;
+  border-radius:50px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+  transform: scale(1.5);
+  border: 1px solid var(--light-text);
+}
+
+.ball {
+  width: 20px;
+  height: 20px;
+  background-color: var(--light-text);
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+
+/*  target the elemenent after the label*/
+.checkbox:checked + .label .ball{
+  transform: translateX(24px);
+}
+
+
 body {
-  margin: 0;
+  margin: auto;
+  background: var(--dark-background);
+  color: var(--dark-text);
   font-family: 'Karla', sans-serif;
-  background-color: #000;
-  /* background-color: #111111; */
   
 }
+
+
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -18,8 +101,10 @@ code {
 div#root {
   height: 100vh;  
   width: 100vw;
-  max-width: 1600px;
-  min-width: 1000px;
+  max-width: 1200px;
+  margin: auto;
+
+  /* min-width: 1000px; */
   padding: 50px;
   padding-right: 50px;
   padding-left: 50px;  
@@ -27,7 +112,7 @@ div#root {
   flex-direction: column;
   /* align-items: center; */
   /* background-color: #ddeae1; */
-  color: #4de76e;
+  /* color: #4de76e; */
 }
 
 h1 {
@@ -54,7 +139,7 @@ pre {
 .button_main {
   /* background-color: #4CAF50; */
   border: none;
-  color: white;
+  /* color: white; */
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -67,17 +152,6 @@ pre {
   border: 1px solid dimgray;
 }
 
-.button_knowledge {
-  position: relative;
-  font-size: 16px;
-  background: darkslateblue !important;
-  /* background-color: inherit !important; */
-}
-.button_setupenv {
-  position: relative;
-  font-size: 16px;
-  background: darkslategrey !important;
-}
 
 
 
@@ -85,7 +159,7 @@ pre {
   position: relative;
   display: inline-block;
   border: none;
-  color: white;
+  /* color: white; */
   padding-left: 32px;
   /* text-align: center; */
   text-decoration: none;
@@ -102,12 +176,11 @@ pre {
 .main_content {
   display: inline-block;
   position: relative;
-  /* background-color: darkslateblue; */
-  background-color: inherit;
+  background: inherit;
   width: 100%;
   border: none;
   /* color: whitesmoke; */
-  color: lightgreen;
+  /* color: lightgreen; */
   padding: 15px 32px;
   text-align: left;
   text-decoration: none;
@@ -115,7 +188,7 @@ pre {
   font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
   font-size: 16px;
   /* border: 1px solid blue; */
-  /* border: 1px solid dimgray; */
+  border: 1px  groove var(--light-text);
 }
 .sub_ongoing{
   /* border: 2px solid darkolivegreen; */
@@ -147,7 +220,7 @@ pre {
   /* background-color: inherit; */
 }
 a:link {
-  color: rgb(26, 45, 218);
+  color: var(--link-color);
 }
 a:visited {
   color: lightsalmon;
@@ -207,7 +280,7 @@ blockquote{
   font-family:Open Sans;
   font-style:italic;
   /* color: #555555; */
-  color:whitesmoke;
+  /* color:whitesmoke; */
   padding:1.2em 10px 10px 10px;
   border-left:8px solid #78C0A8 ;
   line-height:1.2;
@@ -292,7 +365,7 @@ hr {
   color: red;
   background: red;
   background-color: red;
-  width: 60%;
+  width: 100%;
   /* align-items: left; */
   float: left;
 }
@@ -307,9 +380,9 @@ hr {
   height: 50px;
   border: none;
   outline: none;
-  color: #fff;
+  /* color: #fff; */
   /* background: #111; */
-  background: rgba(90, 90, 90, 0.4);
+  background: var(--button-background);
   /* background: #222; */
   cursor: pointer;
   position: relative;

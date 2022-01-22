@@ -6,7 +6,7 @@ import importImageArchive from '../Images/logo_archive.jpg';
 import importImageCopyright from '../Images/copy_right_88x31.png';
 
 const Footer = () => (
-  <p className="footer">
+  <div className="footer">
     
           <div>
       <img src={importImageNnebraska} alt='Negraska'></img>
@@ -22,7 +22,7 @@ const Footer = () => (
         Copyright license</a>: CC-BY-NC-SA 4.0 Sharing is permitted for non-commercial purposes with attribution to this database, 
         the George Eliot Archive, edited by Beverley Park Rilett.
   </div>
-  </p>
+  </div>
 );
 
 export default Footer;

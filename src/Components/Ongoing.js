@@ -17,6 +17,8 @@ class Relationshipdev extends React.Component {
 
 
 class Relationship extends React.Component {
+    _isMounted = false;
+
     constructor(props) {
         super(props)
         this.state = { 
@@ -26,14 +28,20 @@ class Relationship extends React.Component {
     }
   
     async componentDidMount() {
+        this._isMounted = true;
+        
         const file = await import(`../Md/dev_relationship.md`);
         const response = await fetch(file.default);
         const text = await response.text();
-  
-        this.setState({
-            md: text
-        })
+        if (this._isMounted){
+            this.setState({
+                md: text
+            })
+        }
     }
+    componentWillUnmount() {
+        this._isMounted = false;
+      }
 
     toggleView= () => {
         this.setState(prevState => {
@@ -141,14 +149,14 @@ class Chronology extends React.Component {
             <div className="main_content ongoing sub_ongoing ongoing_chronology">
                 
             <Chronologymd />
-            <p>
+            <div>
                 <button className="glow-on-hover" type="button" id="more" onClick={() => this.toggleView()}>
                     {/* Show relationship development progress */}
                     {this.state.text} Development of Chronology
                 </button>    
                 {this.ActiveView()}
-            </p>    
-            <p>
+            </div>    
+            <div>
             <button className="glow-on-hover" type="button" id="more" onClick={() => this.toggleView2019()}>
                 {/* Show relationship development progress */}
                 {this.state.text2019} Another Version of Chronology
@@ -156,27 +164,36 @@ class Chronology extends React.Component {
 
             
             {this.ActiveView2019()}
-            </p>
+            </div>
             </div>
         )
     }
   }
 
 class Chronologymd extends React.Component {
+    _isMounted = false;
+    
     constructor(props) {
         super(props)
         this.state = { md: '' }
     }
   
     async componentDidMount() {
+        this._isMounted = true;
+
         const file = await import(`../Md/dev_chronology.md`);
         const response = await fetch(file.default);
         const text = await response.text();
-  
-        this.setState({
-            md: text
-        })
+        if(this._isMounted){
+            this.setState({
+                md: text
+            })
+        }
     }
+
+    componentWillUnmount() {
+        this._isMounted = false;
+      }
     
     render() {
         // const MyParagraph = ({ children, ...props }) => (
@@ -206,6 +223,8 @@ class Chronologymd extends React.Component {
 
 
 export default class Ongoing extends React.Component {
+    _isMounted = false;
+
     constructor(props) {
         super(props)
         this.state = { 
@@ -216,14 +235,21 @@ export default class Ongoing extends React.Component {
         }
     }
     async componentDidMount() {
+        this._isMounted = true;
+
         const file = await import(`../Md/ongoing.md`);
         const response = await fetch(file.default);
         const text = await response.text();
-  
-        this.setState({
-            md: text
-        })
+        if(this._isMounted){
+            this.setState({
+                md: text
+            })
+        }
     }
+
+    componentWillUnmount() {
+        this._isMounted = false;
+      }
   
   
     render() {
@@ -231,7 +257,7 @@ export default class Ongoing extends React.Component {
 
         return (
             
-            <p className="main_content ongoing">    
+            <div className="main_content ongoing">    
             <Markdown children={this.state.md} />   
             <br />      
             {/* <hr /> */}
@@ -240,7 +266,7 @@ export default class Ongoing extends React.Component {
             <Chronology />
                
 
-            </p>
+            </div>
         )
     }
   }
