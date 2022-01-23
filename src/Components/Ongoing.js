@@ -63,15 +63,39 @@ class Relationship extends React.Component {
   
     render() {
         return (
-            <div className="main_content ongoing sub_ongoing ongoing_relationship">
-                <Markdown children={this.state.md} />      
-                <button className="glow-on-hover" type="button"  id="more" onClick={() => this.toggleView()}>
-                    {/* Show relationship development progress */}
-                    {this.state.text} Development of Relationship
-                </button>                      
+               
+            <div className="nowrapper">
+                <div className="main_content ongoing sub_ongoing ongoing_relationship">
+                    <Markdown children={this.state.md} />   
+                </div>
+                <div className="force_center " >
+                    <a className="arrow-icon" id="more" onClick={() => this.toggleView()}>
+                        <div className={this.state.onshow ? "open" : null} >
+                            {/* Show relationship development progress */}
+                            <span className="left-bar"></span>
+                            <span className="right-bar"></span>
+                        </div> 
+                        
+                    </a> 
+                    <div className="arrow_right_text">
+                    {this.state.text} Relationship
+                    </div>
+                </div>
+                <div>
+                    <br />                
+                    {this.ActiveView()}
+                </div>
+            </div> 
 
-            {this.ActiveView()}
-            </div>
+            // <div className="main_content ongoing sub_ongoing ongoing_relationship">
+            //     <Markdown children={this.state.md} />      
+            //     <button className="glow-on-hover" type="button"  id="more" onClick={() => this.toggleView()}>
+          
+            //         {this.state.text} Development of Relationship
+            //     </button>                      
+
+            // {this.ActiveView()}
+            // </div>
         )
     }
   }
@@ -81,8 +105,11 @@ class Relationship extends React.Component {
 class Chronologydev extends React.Component {
     render() {
         return (
-            <div >                         
-                <iframe width="100%" scrolling="yes" height="900" title="relationship" src="https://georgeeliotarchive.github.io/chronology/" />         
+            <div className="wrapper" >
+                <div class="h_iframe">                                 
+                    <iframe  scrolling="yes" title="relationship" 
+                        src="https://georgeeliotarchive.github.io/chronology/" />                     
+                </div>
             </div>
         )
     }
@@ -91,8 +118,11 @@ class Chronologydev extends React.Component {
 class Chronologydev2019 extends React.Component {
     render() {
         return (
-            <div >                         
-                <iframe width="100%" scrolling="yes" height="900" title="relationship" src="https://georgeeliotarchive.github.io/chronology/version_2019" />         
+            <div className="wrapper" >
+                <div class="h_iframe">                          
+                <iframe scrolling="yes" title="relationship" 
+                        src="https://georgeeliotarchive.github.io/chronology/version_2019" />         
+                </div>
             </div>
         )
     }
@@ -149,21 +179,42 @@ class Chronology extends React.Component {
             <div className="main_content ongoing sub_ongoing ongoing_chronology">
                 
             <Chronologymd />
-            <div>
-                <button className="glow-on-hover" type="button" id="more" onClick={() => this.toggleView()}>
-                    {/* Show relationship development progress */}
-                    {this.state.text} Development of Chronology
-                </button>    
-                {this.ActiveView()}
+            <div className="nowrapper">
+                <div className="force_center " >
+                    <a className="arrow-icon" id="more" onClick={() => this.toggleView()}>
+                        <div className={this.state.onshow ? "open" : null} >
+                            {/* Show relationship development progress */}
+                            <span className="left-bar"></span>
+                            <span className="right-bar"></span>
+                        </div> 
+                        
+                    </a> 
+                    <div className="arrow_right_text">
+                        {this.state.text} Chronology 1
+                    </div>
+                </div>
+                <div>
+                    <br />                
+                    {this.ActiveView()}
+                </div>
             </div>    
-            <div>
-            <button className="glow-on-hover" type="button" id="more" onClick={() => this.toggleView2019()}>
-                {/* Show relationship development progress */}
-                {this.state.text2019} Another Version of Chronology
-            </button>                   
-
-            
-            {this.ActiveView2019()}
+            <div className="nowrapper">
+                <div className="force_center " >
+                    <a className="arrow-icon" id="more" onClick={() => this.toggleView2019()}>
+                        <div className={this.state.onshow2019 ? "open" : null} >
+                        {/* Show relationship development progress */}
+                        <span className="left-bar"></span>
+                        <span className="right-bar"></span>
+                        </div>                        
+                    </a>  
+                    <div className="arrow_right_text">
+                        {this.state.text2019} Chronology 2
+                    </div>
+                </div>
+                <div>
+                    <br />                                    
+                    {this.ActiveView2019()}
+                </div>
             </div>
             </div>
         )

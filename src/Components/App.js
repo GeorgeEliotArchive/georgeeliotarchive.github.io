@@ -71,7 +71,7 @@ class Greeting extends React.Component {
     var date = new Date()
     var hours = date.getHours()
     var t = ""
-    console.log(date.getHours())
+    // console.log(date.getHours())
     if (hours < 12) {  t = "Morning" }
     else if (hours >= 12 && hours < 17) { t = "Afternoon"}
     else {t = "Evening"}
