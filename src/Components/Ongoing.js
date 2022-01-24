@@ -8,8 +8,14 @@ import Markdown from 'markdown-to-jsx';
 class Relationshipdev extends React.Component {
     render() {
         return (
-            <div >                         
-                <iframe width="100%" scrolling="yes" height="900" title="relationship" src="https://georgeeliotarchive.github.io/relationship/" />         
+            // <div >                         
+            //     <iframe width="100%" scrolling="yes" height="900" title="relationship" src="https://georgeeliotarchive.github.io/relationship/" />         
+            // </div>
+            <div className="wrapper" >
+                <div class="h_iframe">                                 
+                    <iframe  scrolling="yes" title="relationship" 
+                        src="https://georgeeliotarchive.github.io/relationship/" />                     
+                </div>
             </div>
         )
     }
