@@ -4,41 +4,51 @@ Auburn University */
 
 import React from 'react';
 import '../Css/App.css'
-import { setTheme } from  '../Utils/themes'
+import { setTheme} from  '../Utils/themes'
 
 export default class Togglebk extends React.Component {
     constructor(props) {
         super(props)
-        this.state = { togClass: 'dark' }
+        let themeload = localStorage.getItem('theme')
+        this.state = { 
+            theme: themeload ? themeload: "theme-dark" ,
+            checked: themeload==="theme-light"? true: false
+        }
     }
- 
-    // theme = localStorage.getItem('theme');
-
 
     setTogClass =() => {   
         this.setState(prevState => {                          
             return {
-                togClass: prevState.togClass === 'dark' ? 'light': 'dark'
+                theme: prevState.theme === 'theme-dark' ? 'theme-light': 'theme-dark',
+                checked: prevState.checked === false? true: false
             }
         })
     }
 
     componentDidMount (){
 
-        // this.state.togClass = 'dark';
-        setTheme('theme-dark'); 
+        if (localStorage.getItem('theme')){
+            this.setState(()=> {                          
+                return {
+                    theme: localStorage.getItem('theme')
+                }
+            })
+
+        }
+        else{
+            this.setState( ()=> {                          
+                return {
+                    theme: "theme-dark"
+                }
+            })
+        }
+
+        setTheme(this.state.theme); 
 
     }
 
     componentDidUpdate(){
-        
-        if (this.state.togClass === 'light') {
-            setTheme('theme-light');
-            
-        } else {
-            setTheme('theme-dark');
-            
-        }    
+        setTheme(this.state.theme )   
 
     }
 
@@ -46,10 +56,8 @@ export default class Togglebk extends React.Component {
     render(){
         return (                    
             <div className="container--toggle">
-                <input type="checkbox" className="checkbox" id="checkbox" onClick={this.setTogClass}/>
+                <input type="checkbox" className="checkbox" id="checkbox" checked={this.state.checked} onClick={this.setTogClass}/>
                 <label htmlFor="checkbox" className="label">
-                    {/* <i class="fa-moon"></i>
-                    <i class='fa-sun'></i> */}
                     <div className='ball' />
                 </label>
    
