@@ -1,10 +1,13 @@
+/* knowledge.js - knowledge section
+Edited by Libo Sun, Jan 2022 
+Auburn University */
 
 import React from "react"
 import '../Css/App.css';
 import Markdown from 'markdown-to-jsx';
 
 
-// #1
+// default export class - Knowledge
 export default class Knowledge extends React.Component {
     render() {
         return (
@@ -16,6 +19,8 @@ export default class Knowledge extends React.Component {
     }
 }
 
+
+// knowledge text(md) render
 class Knowledgemd extends React.Component {
     _isMounted = false;
 

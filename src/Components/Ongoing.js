@@ -1,16 +1,16 @@
 
+/* Ongoing.js - Show "Ongoing" Page
+Edited by Libo Sun, Jan 2022 
+Auburn University */
 import React from "react"
 import '../Css/App.css';
 import Markdown from 'markdown-to-jsx';
 
 
-
+// Relationship d3 page inserted
 class Relationshipdev extends React.Component {
     render() {
         return (
-            // <div >                         
-            //     <iframe width="100%" scrolling="yes" height="900" title="relationship" src="https://georgeeliotarchive.github.io/relationship/" />         
-            // </div>
             <div className="wrapper" >
                 <div class="h_iframe">                                 
                     <iframe  scrolling="yes" title="relationship" 
@@ -21,7 +21,7 @@ class Relationshipdev extends React.Component {
     }
   }
 
-
+// render Relationship text(md)
 class Relationship extends React.Component {
     _isMounted = false;
 
@@ -75,14 +75,14 @@ class Relationship extends React.Component {
                     <Markdown children={this.state.md} />   
                 </div>
                 <div className="force_center " >
-                    <a className="arrow-icon" id="more" onClick={() => this.toggleView()}>
+                    <button className="arrow-icon force_transparent" id="more" onClick={() => this.toggleView()}>
                         <div className={this.state.onshow ? "open" : null} >
                             {/* Show relationship development progress */}
                             <span className="left-bar"></span>
                             <span className="right-bar"></span>
                         </div> 
                         
-                    </a> 
+                    </button> 
                     <div className="arrow_right_text">
                     {this.state.text} Relationship
                     </div>
@@ -92,41 +92,31 @@ class Relationship extends React.Component {
                     {this.ActiveView()}
                 </div>
             </div> 
-
-            // <div className="main_content ongoing sub_ongoing ongoing_relationship">
-            //     <Markdown children={this.state.md} />      
-            //     <button className="glow-on-hover" type="button"  id="more" onClick={() => this.toggleView()}>
-          
-            //         {this.state.text} Development of Relationship
-            //     </button>                      
-
-            // {this.ActiveView()}
-            // </div>
         )
     }
   }
 
 
-// ------ Chronology --------
+// Chronology page of d3 inserted
 class Chronologydev extends React.Component {
     render() {
         return (
             <div className="wrapper" >
-                <div class="h_iframe">                                 
-                    <iframe  scrolling="yes" title="relationship" 
+                <div className="h_iframe">                                 
+                    <iframe  scrolling="yes" title="chronology" 
                         src="https://georgeeliotarchive.github.io/chronology/" />                     
                 </div>
             </div>
         )
     }
   }
-
+// Chronology page of d3 2019 version inserted
 class Chronologydev2019 extends React.Component {
     render() {
         return (
             <div className="wrapper" >
                 <div class="h_iframe">                          
-                <iframe scrolling="yes" title="relationship" 
+                <iframe scrolling="yes" title="chronology" 
                         src="https://georgeeliotarchive.github.io/chronology/version_2019" />         
                 </div>
             </div>
@@ -134,7 +124,7 @@ class Chronologydev2019 extends React.Component {
     }
   }
 
-
+//Chronolgy buttons - show or hide
 class Chronology extends React.Component {
     constructor(props) {
         super(props)
@@ -187,14 +177,14 @@ class Chronology extends React.Component {
             <Chronologymd />
             <div className="nowrapper">
                 <div className="force_center " >
-                    <a className="arrow-icon" id="more" onClick={() => this.toggleView()}>
+                    <button className="arrow-icon force_transparent" id="more" onClick={() => this.toggleView()}>
                         <div className={this.state.onshow ? "open" : null} >
                             {/* Show relationship development progress */}
                             <span className="left-bar"></span>
                             <span className="right-bar"></span>
                         </div> 
                         
-                    </a> 
+                    </button> 
                     <div className="arrow_right_text">
                         {this.state.text} Chronology 1
                     </div>
@@ -206,13 +196,13 @@ class Chronology extends React.Component {
             </div>    
             <div className="nowrapper">
                 <div className="force_center " >
-                    <a className="arrow-icon" id="more" onClick={() => this.toggleView2019()}>
+                    <button className="arrow-icon force_transparent" id="more" onClick={() => this.toggleView2019()}>
                         <div className={this.state.onshow2019 ? "open" : null} >
                         {/* Show relationship development progress */}
                         <span className="left-bar"></span>
                         <span className="right-bar"></span>
                         </div>                        
-                    </a>  
+                    </button>  
                     <div className="arrow_right_text">
                         {this.state.text2019} Chronology 2
                     </div>
@@ -227,6 +217,8 @@ class Chronology extends React.Component {
     }
   }
 
+
+// Chronology text(md) render
 class Chronologymd extends React.Component {
     _isMounted = false;
     
@@ -253,32 +245,16 @@ class Chronologymd extends React.Component {
       }
     
     render() {
-        // const MyParagraph = ({ children, ...props }) => (
-        //     <div {...props}>{children}</div>
-        // );
-
         return (
-            // <div className="main_content setupenv">
+
                 <Markdown 
-                //     options={{wrapper: "pre", forceWrapper: false,forceBlock: false,
-                //     overrides: {
-                        
-                //         code: {
-                //             component: MyParagraph,
-                //             props: {
-                //                 className: 'highlight_quote',
-                //             },
-                //         },
-                //     }                    
-                // }}
                 children={this.state.md} />
-            // </div>
         )
     }
   }
 
 
-
+//Chronogy class intergrated and export default
 export default class Ongoing extends React.Component {
     _isMounted = false;
 

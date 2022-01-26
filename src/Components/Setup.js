@@ -1,10 +1,13 @@
+/* setup.js - setup environment section
+Edited by Libo Sun, Jan 2022 
+Auburn University */
 
 import React from "react"
 import '../Css/App.css';
 import Markdown from 'markdown-to-jsx';
 
 
-// #1
+// default export
 export default class Setupenv extends React.Component {
     render() {
         return (
@@ -20,6 +23,8 @@ export default class Setupenv extends React.Component {
     }
 }
 
+
+// setup text(md) render
 class SetupEnv extends React.Component {
     _isMounted = false;
 

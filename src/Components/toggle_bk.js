@@ -1,3 +1,7 @@
+/* toggle_bk.js - toggle light/dark theme
+Edited by Libo Sun, Jan 2022 
+Auburn University */
+
 import React from 'react';
 import '../Css/App.css'
 import { setTheme } from  '../Utils/themes'
@@ -7,8 +11,7 @@ export default class Togglebk extends React.Component {
         super(props)
         this.state = { togClass: 'dark' }
     }
-    
-    
+ 
     // theme = localStorage.getItem('theme');
 
 
@@ -22,16 +25,13 @@ export default class Togglebk extends React.Component {
 
     componentDidMount (){
 
-        this.state.togClass = 'dark';
-        setTheme('theme-dark');
-        
-   
+        // this.state.togClass = 'dark';
+        setTheme('theme-dark'); 
 
     }
 
     componentDidUpdate(){
         
-
         if (this.state.togClass === 'light') {
             setTheme('theme-light');
             

@@ -1,3 +1,6 @@
+/* foot.js - footer section
+Edited by Libo Sun, Jan 2022 
+Auburn University */
 
 import React from "react";
 import importImageNnebraska from '../Images/logo_nebraska.jpg';

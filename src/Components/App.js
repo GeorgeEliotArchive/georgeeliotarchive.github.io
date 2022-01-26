@@ -1,4 +1,7 @@
 
+/* APP.js - Main Page
+Edited by Libo Sun, Jan 2022 
+Auburn University */
 import React from "react"
 import ReactDOM from "react-dom"
 
@@ -13,15 +16,7 @@ import Knowledge from "./knowledge";
 import Footer from './footer';
 
 
-/*
-
-Challenge:
-1. Convert all 3 components to be class-based
-2. Fix the small bug
-
-*/
-
-// #1
+// Default App class, export
 class App extends React.Component {
 
     render() {
@@ -44,7 +39,7 @@ class App extends React.Component {
     }
 }
 
-// #2
+// Header text
 class Header extends React.Component {
    
     render() {
@@ -56,9 +51,7 @@ class Header extends React.Component {
     }
 }
 
-// #3
-// Hint: any "display logic" can be placed inside the `render`
-// method before the `return` statement
+// Getting text
 class Greeting extends React.Component {
 
   state = {
@@ -100,13 +93,8 @@ class Greeting extends React.Component {
 }
 
 
-// #3
-// Hint: any "display logic" can be placed inside the `render`
-// method before the `return` statement
+// particles background 
 class Background extends React.Component {
-
-  
-     
     render() {
       return <div id="particles-js"> <Particle /> </div>
     
