@@ -47,7 +47,6 @@ class Knowledgemd extends React.Component {
       }
     
     render() {        
-
         return (
             <div >
             <h1 >Before Going To Work....</h1>

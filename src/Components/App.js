@@ -10,8 +10,8 @@ import Togglebk from "./toggletheme";
 
 import '../Css/App.css';
 import Particle from './particle';
-import Setupenv from "./setup";
-import Ongoing  from "./ongoing";
+import Setupenv from "./setupenv";
+import Ongoing  from "./ongo";
 import Knowledge from "./knowledge";
 import Footer from './footer';
 
