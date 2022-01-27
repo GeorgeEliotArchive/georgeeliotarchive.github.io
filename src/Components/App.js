@@ -26,7 +26,7 @@ class App extends React.Component {
             <Togglebk />
 
             <div>                
-                <Header username="this is the development of George Eliot Programs"/>
+                <Header username="this is the development of George Eliot Digital Projects"/>
                 <Greeting />
                 <Background />
                 <Showmain />
