@@ -1,11 +1,15 @@
-1. Useful tools and websites
+1. __Introduction videos for the GE program__  
+    -   [How to use the program repository and working locally](https://youtu.be/YFzIbuN_GOU)
+
+
+2. Useful tools and websites
 
     -   [playground for html, css and javascript - codepen.io](https://codepen.io)
     -   [CSS designs csszengarden.com](http://www.csszengarden.com/)
     -   [Resources for developers, by developers](https://developer.mozilla.org/en-US/)
 
 
-2. Checking list for learning progress
+3. Checking list for learning progress
 
     -   Lectures and knowledge for the project
 
