@@ -5,13 +5,13 @@ Auburn University */
 import React from "react"
 import ReactDOM from "react-dom"
 
-import Togglebk from "./toggle_bk";
+import Togglebk from "./toggletheme";
 
 
 import '../Css/App.css';
-import Particle from './Particle';
-import Setupenv from "./Setup";
-import Ongoing  from "./Ongoing";
+import Particle from './particle';
+import Setupenv from "./setup";
+import Ongoing  from "./ongoing";
 import Knowledge from "./knowledge";
 import Footer from './footer';
 
