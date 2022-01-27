@@ -11,13 +11,32 @@ import Markdown from 'markdown-to-jsx';
 export default class Knowledge extends React.Component {
     render() {
         return (
-            <div className="main_content">                
+            <div className="main_content">   
+                            
                 <Knowledgemd />
+
+                {/* <Introvideo />  */}
             </div>
             
         )
     }
 }
+
+
+// embeded intro video
+// class Introvideo extends React.Component {
+//     render () {
+//         return (
+//             <div>
+//                 <iframe width="800" height="600" 
+//                 src="https://www.youtube.com/embed/YFzIbuN_GOU" 
+//                 title="YouTube video player" frameborder="0" 
+//                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+//                 allowfullscreen></iframe>
+//             </div>
+//         )
+//     }
+// }
 
 
 // knowledge text(md) render
