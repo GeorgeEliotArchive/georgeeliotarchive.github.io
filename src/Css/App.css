@@ -193,7 +193,8 @@ pre {
 .main_content {
   display: inline-block;
   position: relative;
-  background: inherit;
+  /* background: inherit; */
+  background: var(--dark-background);
   width: 100%;
   border: none;
   padding: 2% 1%;
@@ -214,7 +215,7 @@ pre {
 }
 
 .ongoing {
-  background-color: inherit;
+  /* background-color: inherit; */
 }
 
 .ongoing_chronology{

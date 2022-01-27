@@ -11,7 +11,7 @@ import Togglebk from "./toggletheme";
 import '../Css/App.css';
 import Particle from './particles';
 import Setupenv from "./setupenv";
-import Ongoing  from "./ongo";
+import Ongoing  from "./ongoing";
 import Knowledge from "./knowledge";
 import Footer from './footer';
 
