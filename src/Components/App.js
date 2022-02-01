@@ -14,6 +14,7 @@ import Setupenv from "./setupenv";
 import Ongoing  from "./ongoing";
 import Knowledge from "./knowledge";
 import Footer from './footer';
+import Fetchapi from "./fetchapi";
 
 
 // Default App class, export
@@ -29,7 +30,9 @@ class App extends React.Component {
                 <Header username="this is the development of George Eliot Digital Projects"/>
                 <Greeting />
                 <Background />
+                
                 <Showmain />
+                
                 <Footer />
             </div>
           
@@ -107,7 +110,7 @@ class Background extends React.Component {
 // Show the Main content in the page
 class Showmain extends React.Component {
     state = {
-        active: 1
+        active: 2
       }
 
     toggleView= (selection) => {
@@ -120,11 +123,13 @@ class Showmain extends React.Component {
   
     ActiveView(){
       switch (this.state.active) {
-        case 1:
-          return <Ongoing />;
+        case 1: 
+        return <Fetchapi />;
         case 2:
-          return <Knowledge />;
+          return <Ongoing />;
         case 3:
+          return <Knowledge />;
+        case 4:
           return <Setupenv />
         default:
           return <Ongoing />;
@@ -132,27 +137,35 @@ class Showmain extends React.Component {
     }
   
     render() {
-      
-      
-
-        return (       
+    
+        return (   
+          <div>
+            <nav>
+              <ul className="menu">
+              <li className="menu_list"><button className={this.state.active===1? "navcurrent": ""}  id="navmore" onClick={() => this.toggleView(1)}> 
+              Browser data
+              </button></li>
+              <li  className="menu_list" ><button className={this.state.active===2? "navcurrent": ""}  id="navmore" onClick={() => this.toggleView(2)}>
+              On-going Development
+              </button></li>
+              <li className="menu_list"><button className={this.state.active===3? "navcurrent": ""}  id="navmore" onClick={() => this.toggleView(3)}>
+              Knowledge Center
+              </button></li>
+              <li className="menu_list"><button  className={this.state.active===4? "navcurrent": ""}  id="navmore" onClick={() => this.toggleView(4)}>
+              Setup Enivronment
+              </button></li>
+              </ul>
+            </nav>
+         
           
-
-        <div className="show_main">
-            {/* <button className="onging button_main glow-on-hover button_ongoing"  onClick={() => this.toggleView(1)}> */}
-            <button className="onging button_main glow-on-hover "  onClick={() => this.toggleView(1)}>
-            On-going Development
-            </button>
-            <button className="button_main glow-on-hover " id="more" onClick={() => this.toggleView(2)}>
-            Knowledge Center
-            </button>
-            <button className="button_main glow-on-hover " id="more" onClick={() => this.toggleView(3)}>
-            Setup Enivronment
-            </button>
-            {/* <hr></hr> */}
-            
+          <div>
             {this.ActiveView()}
+          </div>
+
         </div>
+          
+          
+        
 
         );
     }

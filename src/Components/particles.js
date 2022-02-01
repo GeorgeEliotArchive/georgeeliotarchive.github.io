@@ -36,7 +36,7 @@ export default class Particle extends React.Component {
                 color: "#000000"
               },
               polygon: {
-                nb_sides: 5
+                nb_sides: 2
               },
               image: {
                 src: "https://cdn.matteobruni.it/images/particles/github.svg",
@@ -45,24 +45,24 @@ export default class Particle extends React.Component {
               }
             },
             opacity: {
-              value: 0.5,
+              value: 0.3,
               random: true,
               anim: {
                 enable: false,
-                speed: 3,
+                speed: 7,
                 opacity_min: 0.1,
                 sync: false
               }
             },
             size: {
-              value: 5,
+              value: 1,
               random: {
                 enable: true,
                 minimumValue: 1
               },
               animation: {
-                enable: true,
-                speed: 5,
+                enable: false,
+                speed: 2,
                 minimumValue: 2,
                 sync: true,
                 startValue: "min",
@@ -74,7 +74,7 @@ export default class Particle extends React.Component {
             },
             move: {
               enable: true,
-              speed: 3,
+              speed: 2,
               direction: "none",
               random: false,
               straight: false,
@@ -101,14 +101,14 @@ export default class Particle extends React.Component {
             },
             modes: {
               grab: {
-                distance: 400,
+                distance: 200,
                 line_linked: {
                   opacity: 1
                 }
               },
               bubble: {
-                distance: 400,
-                size: 40,
+                distance: 200,
+                size: 20,
                 duration: 2,
                 opacity: 0.8,
                 speed: 3
