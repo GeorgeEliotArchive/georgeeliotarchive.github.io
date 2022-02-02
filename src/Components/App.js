@@ -27,7 +27,6 @@ class App extends React.Component {
             <Togglebk />
 
             <div>                
-                <Header username="this is the development of George Eliot Digital Projects"/>
                 <Greeting />
                 <Background />
                 
@@ -42,17 +41,6 @@ class App extends React.Component {
     }
 }
 
-// Header text
-class Header extends React.Component {
-   
-    render() {
-        return (
-            <header>
-                <p>Welcome, {this.props.username}!</p>
-            </header>
-        )
-    }
-}
 
 // Getting text
 class Greeting extends React.Component {
@@ -87,8 +75,8 @@ class Greeting extends React.Component {
     const Text = () => <div>{Date().toLocaleString()}</div>;
     return (      
       <div>
-        <h1>Good {this.state.timeOfDay} to you, sir or madam!</h1>      
-        <h2 className = 'button_main button_border' id="more" onClick={this.toggleTime}> {this.state.showTime ? "Hide time" : "What Time is it now" }</h2>  
+        <header>Good {this.state.timeOfDay} to you, this is the development of <em>George Eliot Digital Projects!</em></header>      
+        <h2 className = 'button_main button_border' id="more" onClick={this.toggleTime}> {this.state.showTime ? "Hide time" : "What Time is it now?" }</h2>  
         <h2 className="timedate">{this.state.showTime ? <Text /> : null} </h2>
       </div>
     )
@@ -146,13 +134,13 @@ class Showmain extends React.Component {
               Browser data
               </button></li>
               <li  className="menu_list" ><button className={this.state.active===2? "navcurrent": ""}  id="navmore" onClick={() => this.toggleView(2)}>
-              On-going Development
+              Development
               </button></li>
               <li className="menu_list"><button className={this.state.active===3? "navcurrent": ""}  id="navmore" onClick={() => this.toggleView(3)}>
-              Knowledge Center
+              Knowledge
               </button></li>
               <li className="menu_list"><button  className={this.state.active===4? "navcurrent": ""}  id="navmore" onClick={() => this.toggleView(4)}>
-              Setup Enivronment
+              Setup
               </button></li>
               </ul>
             </nav>

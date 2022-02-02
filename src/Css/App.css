@@ -44,32 +44,41 @@
   color: var(--dark-text);
 } */
 button{
-  display: flex;
+  /* display: flex; */
   background: var(--dark-background);
   color: var(--nav-text);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: medium;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
-  border-radius: 10px;
+  border-radius: 2px;
+  margin-top: 6px;
+  width: 150px;
+  height: 40px;
 
 }
 nav {
-  /* background-color: var(--dark-background); */
   color: var(--light-text);
-    /* background-color: var(--light-background);
-  background: var(--light-background); */
+  
+}
+li {
+  position:relative;
+  
+}
+ul {
+  list-style-type: none; 
+  padding-inline-start: 0px;
 }
 .menu{
-  display: flex;
-  margin-left: auto;
+  width: 100%;
+  position: relative;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-content: left;
+  margin-left: 5px;
 }
 .menu_list{
-  margin-left: 20px;
+  
+  margin-right: 10px;
+  margin-left: 0px;
   /* background-color: var(--light-background);
   background: var(--light-background); */
 }
@@ -142,9 +151,8 @@ div#root {
   width: 100vw;
   max-width: 1200px;
   margin: auto;
-
   /* min-width: 1000px; */
-  padding: 50px;
+  padding-top: 50px;
   padding-right: 3%;
   padding-left: 3%;  
   display: flex;
@@ -152,6 +160,15 @@ div#root {
   /* align-items: center; */
   /* background-color: #ddeae1; */
   /* color: #4de76e; */
+}
+
+header{
+  margin: 15px 10px 20px 20px;
+  color: var(--dark-text);
+  font-size: large;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  text-shadow: #f0e8e8 1px;
+  
 }
 
 h1 {
@@ -166,10 +183,7 @@ pre {
   white-space: pre;
   margin: 1em 0px;
 }
-.nav{
-  padding-bottom: 20px;
-  display: flex;
-}
+
 .navcurrent{
   background-color:var(--nav-current-background) !important;
 }
@@ -188,6 +202,7 @@ pre {
   font-size: 16px;
   margin: 4px 2px;
   border-radius: 10px;
+  color: var(--light-text);
 }
 .button_border{
   border: 1px solid dimgray;

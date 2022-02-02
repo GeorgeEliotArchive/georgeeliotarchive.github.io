@@ -2,8 +2,10 @@ import axios from "axios";
 import React from "react";
 import PropTypes from "prop-types";
 
-// const apiurl = "https://cors-anywhere.herokuapp.com/https://georgeeliotarchive.org/api/collections";
-const apiurl = "https://georgeeliotarchive.org/api/collections";
+
+
+const apiurl = "https://cors-anywhere.herokuapp.com/https://georgeeliotarchive.org/api/collections";
+const apiproxylink = `/api/collections`
 
 export default class Fetchapi extends React.Component{
     render(){
@@ -23,12 +25,12 @@ class Fetchdata extends React.Component {
   };
 
   componentDidMount() {
+   
     axios
       .get(apiurl)
       .then(response => {
         // create an array of contacts only with relevant data
         const newCollection = response.data.map(c => {
-            // console.log(c)
           return {
             id: c.id.toString(),
             url: c.url,
@@ -53,7 +55,10 @@ class Fetchdata extends React.Component {
         this.setState(newState);
       })
       .catch(error => console.log(error));
+
+
   }
+  
 
   render() {
     return (
@@ -63,7 +68,7 @@ class Fetchdata extends React.Component {
         {console.log(this.state.collections)}
 
         <CollectionList collections={this.state.collections} />
-        {/* {this.state.collections} */}
+        
       </div>
     );
   }
