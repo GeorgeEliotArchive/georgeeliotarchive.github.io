@@ -396,7 +396,8 @@ mdemail{
 
 
 .footer{
-  margin-top: 0px;
+  margin-top: 15px;
+  margin-left: 1%;
   /* padding: 1rem; */
   /* background-color: rgb(235, 195, 64); */
   /* background-color: darkgoldenrod; */
