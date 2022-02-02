@@ -4,14 +4,20 @@ import PropTypes from "prop-types";
 
 
 
+
 const apiurl = "https://cors-anywhere.herokuapp.com/https://georgeeliotarchive.org/api/collections";
-const apiproxylink = `/api/collections`
+// const apiproxylink = `/api/collections`
 
 export default class Fetchapi extends React.Component{
     render(){
         return (
             <div>
+              <div className="link">
+                <a href={apiurl}> If no collection is showing below, click to a temporary access</a>
+              </div>
+              <div>
                 <Fetchdata />
+              </div>
             </div>
         )
     }
@@ -89,11 +95,14 @@ function CollectionList(props) {
 
 function Collection(props) {
   return (
-    <div className="main_content">
-      <li>ID: {props.id}</li>
-      <li>Title: <em>{props.title}</em></li>
-      <li>URL: {props.url}</li>
-      <li>Item Count: {props.items_count}</li>
+    <div>
+      
+      <div className="main_content">
+        <li>ID: {props.id}</li>
+        <li>Title: <em>{props.title}</em></li>
+        <li>URL: {props.url}</li>
+        <li>Item Count: {props.items_count}</li>
+      </div>
     </div>
   );
 }

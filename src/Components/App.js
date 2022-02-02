@@ -74,10 +74,12 @@ class Greeting extends React.Component {
   render() {
     const Text = () => <div>{Date().toLocaleString()}</div>;
     return (      
-      <div>
-        <header>Good {this.state.timeOfDay} to you, this is the development of <em>George Eliot Digital Projects!</em></header>      
-        <h2 className = 'button_main button_border' id="more" onClick={this.toggleTime}> {this.state.showTime ? "Hide time" : "What Time is it now?" }</h2>  
-        <h2 className="timedate">{this.state.showTime ? <Text /> : null} </h2>
+      <div className="lmarging01" >
+        <header>Good {this.state.timeOfDay} to you, this is the development of <em>George Eliot Digital Projects!</em></header> 
+        <div>
+          <h2 className = 'button_main button_border' id="more" onClick={this.toggleTime}> {this.state.showTime ? "Hide time" : "What Time is it now?" }</h2>          
+          <h2 className="timedate">{this.state.showTime ? <Text /> : null} </h2>
+        </div>
       </div>
     )
   }
