@@ -5,7 +5,8 @@ import PropTypes from "prop-types";
 
 
 
-const apiurl = "https://cors-anywhere.herokuapp.com/https://georgeeliotarchive.org/api/collections";
+// const apiurl = "https://cors-anywhere.herokuapp.com/https://georgeeliotarchive.org/api/collections";
+const apiurl = "https://georgeeliotarchive.org/api/collections";
 // const apiproxylink = `/api/collections`
 
 export default class Fetchapi extends React.Component{
