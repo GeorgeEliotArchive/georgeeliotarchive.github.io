@@ -6,7 +6,7 @@
 
 ## Installation on MAC OSX  
 
--   **Install PHP on Mac**
+-   Install PHP on Mac
     ```
     brew install php
     php -version
@@ -20,8 +20,7 @@
         brew services list
         ```
     
-    -   **Update configuration --**  _Path may vary on httpt installation_
-    
+    -   Update configuration  _Path may vary on httpt installation_
         ```
         sudo vi /usr/local/etc/httpd/httpd.conf
         or sudo vi /opt/homebrew/etc/httpd/httpd.conf

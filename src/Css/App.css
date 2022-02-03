@@ -66,10 +66,11 @@ li {
   
 }
 ul {
-  list-style-type: none; 
+   
   padding-inline-start:2%; 
 }
 .menu{
+  list-style-type: none;
   width: 100%;
   position: relative;
   display: inline-flex;
@@ -152,6 +153,7 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+
 }
 
 div#root {
@@ -190,6 +192,7 @@ pre {
   font-size: 16px;
   white-space: pre;
   margin: 1em 0px;
+  
 }
 
 .navcurrent{
@@ -198,8 +201,16 @@ pre {
 
 .highlight {
   /* background-color: dimgray; */
-  color: darkgreen
+  color: darkgreen;
+  
+  /* background: grey; */
 
+}
+.codeblock{
+  background: var(--light-background);
+  margin-top: 1%;
+  margin-left: 1%;
+  margin-right:2%;
 }
 .button_main {
   border: none;

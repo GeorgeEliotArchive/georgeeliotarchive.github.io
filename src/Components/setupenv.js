@@ -65,7 +65,7 @@ class SetupEnv extends React.Component {
                         code: {
                             component: MyParagraph,
                             props: {
-                                className: 'highlight',
+                                className: 'codeblock',
                             },
                         },
                     }                    
