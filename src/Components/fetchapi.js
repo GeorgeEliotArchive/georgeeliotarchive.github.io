@@ -3,8 +3,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 
-
-
 // const apiurl = "https://cors-anywhere.herokuapp.com/https://georgeeliotarchive.org/api/collections";
 const apiurl = "https://georgeeliotarchive.org/api/collections";
 // const apiproxylink = `/api/collections`
@@ -13,9 +11,9 @@ export default class Fetchapi extends React.Component{
     render(){
         return (
             <div>
-              <div className="link">
+              {/* <div className="link">
                 <a href={apiurl}> If no collection is showing below, click to a temporary access</a>
-              </div>
+              </div> */}
               <div>
                 <Fetchdata />
               </div>

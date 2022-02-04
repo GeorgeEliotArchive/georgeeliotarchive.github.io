@@ -105,7 +105,7 @@ class Chronologydev extends React.Component {
             <div className="wrapper" >
                 <div className="h_iframe">                                 
                     <iframe  scrolling="yes" title="chronology" 
-                        src="https://georgeeliotarchive.github.io/chronology/" />                     
+                        src="https://georgeeliotarchive.github.io/chronology/calendar" />                     
                 </div>
             </div>
         )
@@ -118,7 +118,7 @@ class Chronologydev2019 extends React.Component {
             <div className="wrapper" >
                 <div class="h_iframe">                          
                 <iframe scrolling="yes" title="chronology" 
-                        src="https://georgeeliotarchive.github.io/chronology/version_2019" />         
+                        src="https://georgeeliotarchive.github.io/chronology/chronology-tree" />         
                 </div>
             </div>
         )
