@@ -7,6 +7,7 @@ import '../Css/App.css';
 import Markdown from 'markdown-to-jsx';
 
 
+
 // default export class - Knowledge
 export default class Knowledge extends React.Component {
     render() {
@@ -65,13 +66,13 @@ class Knowledgemd extends React.Component {
         this._isMounted = false;
       }
     
-    render() {        
+    render() {       
         return (
             <div >
             <h1 >Before Going To Work....</h1>
             <div className="main_content knowledge">
             
-                
+
                 <Markdown              
                 children={this.state.md} />
                 </div>

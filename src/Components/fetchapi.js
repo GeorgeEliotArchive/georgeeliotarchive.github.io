@@ -1,22 +1,16 @@
 import axios from "axios";
 import React from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
-
-// const apiurl = "https://cors-anywhere.herokuapp.com/https://georgeeliotarchive.org/api/collections";
 const apiurl = "https://georgeeliotarchive.org/api/collections";
-// const apiproxylink = `/api/collections`
 
 export default class Fetchapi extends React.Component{
     render(){
         return (
             <div>
-              {/* <div className="link">
-                <a href={apiurl}> If no collection is showing below, click to a temporary access</a>
-              </div> */}
-              <div>
+              
                 <Fetchdata />
-              </div>
+              
             </div>
         )
     }
@@ -71,8 +65,14 @@ class Fetchdata extends React.Component {
         
         <h1>Collections on George Eliot Archive </h1>
         {console.log(this.state.collections)}
+        <nav>
+        
+      
+           <CollectionList collections={this.state.collections} /> 
+         
+        </nav>
 
-        <CollectionList collections={this.state.collections} />
+      
         
       </div>
     );
@@ -81,31 +81,45 @@ class Fetchdata extends React.Component {
 
 function CollectionList(props) {
     return (
-      <div>
-        {props.collections.map(c => <Collection 
+        <div>
+          <table id="smileysTable">
+          <tr className="hoverdisabled ">
+            <th>Title</th>
+            <th>Count</th>
+          </tr>
+        {props.collections.map(c =><Collection 
                                 key={c.id} 
                                 id={c.id} 
                                 url={c.url} 
                                 title={c.element_texts[0].text} 
-                                items_count={c.items.count} />)}
-       </div> 
+                                items_count={c.items.count} 
+                                />)}
+       </table>
+       </div>
     ); 
   } 
 
 function Collection(props) {
   return (
-    <div>
+    <tr  className="collection" > 
+      {/* <nav className="collection"> */}
       
-      <div className="main_content">
-        <li>ID: {props.id}</li>
-        <li>Title: <em>{props.title}</em></li>
-        <li>URL: {props.url}</li>
-        <li>Item Count: {props.items_count}</li>
-      </div>
-    </div>
+        {/* <li>ID: {props.id}</li> */}
+        
+          <td>{props.title}</td> 
+          <td> <em>{props.items_count}</em></td> 
+        
+        {/* <li>URL: {props.url}</li> */}
+        {/* <li>Item Count: {props.items_count}</li> */}
+        
+      {/* </nav> */}
+
+    </tr>
+
+    
   );
 }
   
-Collection.propTypes = {
-  id: PropTypes.string.isRequired
-};
+// Collection.propTypes = {
+//   id: PropTypes.string.isRequired
+// };

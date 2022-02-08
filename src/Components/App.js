@@ -17,6 +17,7 @@ import Footer from './footer';
 import Fetchapi from "./fetchapi";
 
 
+
 // Default App class, export
 class App extends React.Component {
 
@@ -127,10 +128,11 @@ class Showmain extends React.Component {
     }
   
     render() {
+      
     
         return (   
           <div>
-            <nav>
+            <nav className="home_bar">
               <ul className="menu">
               <li className="menu_list"><button className={this.state.active===1? "navcurrent": ""}  id="navmore" onClick={() => this.toggleView(1)}> 
               Browser data
@@ -149,7 +151,8 @@ class Showmain extends React.Component {
          
           
           <div>
-            {this.ActiveView()}
+                    
+            {this.ActiveView()} 
           </div>
 
         </div>
