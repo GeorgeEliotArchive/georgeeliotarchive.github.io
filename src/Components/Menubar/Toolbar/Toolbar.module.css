@@ -47,10 +47,11 @@
         height: 50px;
     }
     .forsp {
-        font-size: 8px;
+        display: none;
+        /* font-size: 8px; */
     }
-    .grid {
+    /* .grid {
         width: 90%;
-    }
+    } */
 }
 

@@ -3,11 +3,9 @@ import Logo from '../Logo/Logo';
 
 import classes from './SideDrawer.module.css';
 import Backdrop from '../Backdrop/Backdrop';
-// import Navbar from '../../NavBar/Navbar';
 import Navbar from '../../nav/navbar';
 
 
-// import NavCategory from '../../NavCategory/NavCategory';
 
 const sideDrawer = ( props ) => {
     let attachedClasses = [classes.SideDrawer, classes.Close];
@@ -23,9 +21,10 @@ const sideDrawer = ( props ) => {
                     <Logo />
                 </div>
                 <nav>
-                <div className="Mobile">
-                  {/* <NavCategory clicked={props.closed}/> */}
+                <div className={classes.mobile_container}>
+                  <div className={classes.topnav}>
                   { <Navbar clicked = {props.closed}/> }
+                  </div>
                   </div>
                 </nav>
             </div>

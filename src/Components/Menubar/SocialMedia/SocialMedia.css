@@ -69,7 +69,7 @@ ul.social.ullist a:hover {
     text-decoration: none;
 }
 
-@media screen and (max-width:551px) {
+@media screen and (max-width:800px) {
     .hide ul.ullist {
         box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
     }

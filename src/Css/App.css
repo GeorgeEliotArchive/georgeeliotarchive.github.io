@@ -785,5 +785,8 @@ nav .collection_details td {
   }
   .menu_list {
     font-weight:500;
+    display: inline;
+    width: 100%;
   }
+
 }
