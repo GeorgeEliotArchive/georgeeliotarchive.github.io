@@ -1,26 +1,24 @@
 import axios from "axios";
 import React from "react";
-// import { Link } from "react-router-dom";
-// import { useHistory, useLocation } from "react-router-dom";
 
-import ChildCollection from "./collections/childcollection";
+// import ChildCollection from "./collections/childcollection";
 import TableChildCollection from "./collections/tablechildcollection";
 
 
 const apiurl = "https://georgeeliotarchive.org/api/collections";
 
-export default class Fetchapi extends React.Component{
+export default class CollectionList extends React.Component{
     render(){
         return (
             <div>
               
-                <Fetchdata />            
+                <FetchCollectionList />            
             </div>
         )
     }
 }
 
-class Fetchdata extends React.Component {
+class FetchCollectionList extends React.Component {
 
   // default State object
   state = {

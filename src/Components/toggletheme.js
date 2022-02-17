@@ -11,7 +11,7 @@ export default class Togglebk extends React.Component {
         super(props)
         let themeload = localStorage.getItem('theme')
         this.state = { 
-            theme: themeload ? themeload: "theme-dark" ,
+            theme: themeload ? themeload: "theme-light" ,
             checked: themeload==="theme-light"? true: false
         }
     }

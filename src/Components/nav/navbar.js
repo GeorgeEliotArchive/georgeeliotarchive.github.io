@@ -19,7 +19,7 @@ function Navbar(props) {
         </li>
         <li className="menu_list">
           {" "}
-          <NavLink to="/fetchapi" onClick={props.clicked}>
+          <NavLink to="/collectionlist" onClick={props.clicked}>
             Collections
           </NavLink>
         </li>

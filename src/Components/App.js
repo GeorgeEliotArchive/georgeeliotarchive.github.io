@@ -11,7 +11,8 @@ import Setupenv from "./setupenv";
 import Ongoing  from "./ongoing";
 import Knowledge from "./knowledge";
 import Footer from './footer';
-import Fetchapi from "./fetchapi";
+// import Fetchapi from "./fetchapi";
+import CollectionList from "./collectionList";
 import Blog from "./blog/mediumblog";
 
 import { Routes, Route,  HashRouter } from "react-router-dom";
@@ -41,7 +42,7 @@ class App extends React.Component {
               <Route path="/blog" element={<Blog />} > </Route>
               <Route path="/Knowledge" element={<Knowledge/>}></Route>
               <Route path="/blog/:id" element={<SingleBlog />}></Route>
-              <Route path="/fetchapi" element={<Fetchapi />}></Route>
+              <Route path="/collectionlist" element={<CollectionList />}></Route>
               <Route path="/setup" element={<Setupenv />}></Route>
               <Route path="/" element={<Ongoing />}></Route>
             </Routes>  
