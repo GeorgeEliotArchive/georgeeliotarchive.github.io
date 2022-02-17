@@ -5,9 +5,6 @@ Auburn University */
 import React from "react"
 import ReactDOM from "react-dom"
 
-import Togglebk from "./toggletheme";
-
-
 import '../Css/App.css';
 import Particle from './particles';
 import Setupenv from "./setupenv";
@@ -15,6 +12,15 @@ import Ongoing  from "./ongoing";
 import Knowledge from "./knowledge";
 import Footer from './footer';
 import Fetchapi from "./fetchapi";
+import Blog from "./blog/mediumblog";
+
+import { Routes, Route,  HashRouter } from "react-router-dom";
+
+import SingleBlog from "./blog/singleblog";
+
+import Layout from "./Menubar/Layout/Layout";
+import GitFooter from "./footer/footer";
+
 
 
 
@@ -24,19 +30,31 @@ class App extends React.Component {
     render() {
 
         return (
-          <div>
-            <Togglebk />
 
-            <div>                
-                <Greeting />
-                <Background />
-                
-                <Showmain />
-                
-                <Footer />
-            </div>
-          
+          <div className="App">   
+    
+          <HashRouter >          
+            <Layout />
+            {/* <Togglebk />  */}
+           <Greeting /> 
+            <Routes>
+              <Route path="/blog" element={<Blog />} > </Route>
+              <Route path="/Knowledge" element={<Knowledge/>}></Route>
+              <Route path="/blog/:id" element={<SingleBlog />}></Route>
+              <Route path="/fetchapi" element={<Fetchapi />}></Route>
+              <Route path="/setup" element={<Setupenv />}></Route>
+              <Route path="/" element={<Ongoing />}></Route>
+            </Routes>  
+          </HashRouter>  
+          <GitFooter />
+          <div>
+            <div> 
+            </div>             
+            <Background />             
+            <Footer />
           </div>
+          
+        </div>
             
         )
     }
@@ -98,71 +116,7 @@ class Background extends React.Component {
 
 
 
-// Show the Main content in the page
-class Showmain extends React.Component {
-    state = {
-        active: 2
-      }
 
-    toggleView= (selection) => {
-        this.setState(() => {
-            return {
-                active: selection
-            }
-        })
-    }
-  
-    ActiveView(){
-      switch (this.state.active) {
-        case 1: 
-        return <Fetchapi />;
-        case 2:
-          return <Ongoing />;
-        case 3:
-          return <Knowledge />;
-        case 4:
-          return <Setupenv />
-        default:
-          return <Ongoing />;
-      }
-    }
-  
-    render() {
-      
-    
-        return (   
-          <div>
-            <nav className="home_bar">
-              <ul className="menu">
-              <li className="menu_list"><button className={this.state.active===1? "navcurrent": ""}  id="navmore" onClick={() => this.toggleView(1)}> 
-              Browser data
-              </button></li>
-              <li  className="menu_list" ><button className={this.state.active===2? "navcurrent": ""}  id="navmore" onClick={() => this.toggleView(2)}>
-              Development
-              </button></li>
-              <li className="menu_list"><button className={this.state.active===3? "navcurrent": ""}  id="navmore" onClick={() => this.toggleView(3)}>
-              Knowledge
-              </button></li>
-              <li className="menu_list"><button  className={this.state.active===4? "navcurrent": ""}  id="navmore" onClick={() => this.toggleView(4)}>
-              Setup
-              </button></li>
-              </ul>
-            </nav>
-         
-          
-          <div>
-                    
-            {this.ActiveView()} 
-          </div>
-
-        </div>
-          
-          
-        
-
-        );
-    }
-  }
 
 ReactDOM.render(<App />, document.getElementById("root"))
 

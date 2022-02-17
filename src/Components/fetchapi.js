@@ -1,6 +1,11 @@
 import axios from "axios";
 import React from "react";
-// import PropTypes from "prop-types";
+// import { Link } from "react-router-dom";
+// import { useHistory, useLocation } from "react-router-dom";
+
+import ChildCollection from "./collections/childcollection";
+import TableChildCollection from "./collections/tablechildcollection";
+
 
 const apiurl = "https://georgeeliotarchive.org/api/collections";
 
@@ -9,8 +14,7 @@ export default class Fetchapi extends React.Component{
         return (
             <div>
               
-                <Fetchdata />
-              
+                <Fetchdata />            
             </div>
         )
     }
@@ -20,7 +24,9 @@ class Fetchdata extends React.Component {
 
   // default State object
   state = {
-    collections: []
+    collections: [],
+    showDetails: false,
+    preCollection: []
   };
 
   componentDidMount() {
@@ -55,8 +61,28 @@ class Fetchdata extends React.Component {
       })
       .catch(error => console.log(error));
 
-
   }
+
+
+  chooseCollection= (collection) => {
+    this.setState(prevState => {
+      return {
+          showDetails: prevState.showDetails === true ? false : true,
+          preCollection: collection
+      }
+    })  
+  }
+
+  
+  activeView(){
+    if (this.state.showDetails){
+      // return <ChildCollection dataFromParent = {this.state.preCollection} />
+      return <TableChildCollection dataFromParent = {this.state.preCollection} />
+    }
+    
+  }
+
+
   
 
   render() {
@@ -64,61 +90,67 @@ class Fetchdata extends React.Component {
       <div className="main_content">
         
         <h1>Collections on George Eliot Archive </h1>
-        {console.log(this.state.collections)}
         <nav>
-        
-      
-           <CollectionList collections={this.state.collections} /> 
-         
+           {/* <CollectionList collections={this.state.collections} />           */}
+        <div>
+        <table id="smileysTable">
+        <tr className="hoverdisabled ">
+          <th>Title</th>
+          <th>Count</th>
+        </tr>
+          {this.state.collections.filter(d => d.items.count > 10).map(c => 
+             
+            <tr 
+                // className="collection" 
+                className={this.state.preCollection.id === c.id.toString() && this.state.showDetails ? "collection selected": "collection"} 
+              key={c.id} onClick={() => this.chooseCollection(c)} >         
+            <td >{c.element_texts[0].text}</td> 
+            <td> <em>{c.items.count}</em></td> 
+            </tr>
+            )}
+        </table>
+        </div>
         </nav>
-
-      
-        
+        <div>
+          {this.activeView()}
+        </div>
       </div>
     );
   }
 }
 
-function CollectionList(props) {
-    return (
-        <div>
-          <table id="smileysTable">
-          <tr className="hoverdisabled ">
-            <th>Title</th>
-            <th>Count</th>
-          </tr>
-        {props.collections.map(c =><Collection 
-                                key={c.id} 
-                                id={c.id} 
-                                url={c.url} 
-                                title={c.element_texts[0].text} 
-                                items_count={c.items.count} 
-                                />)}
-       </table>
-       </div>
-    ); 
-  } 
 
-function Collection(props) {
-  return (
-    <tr  className="collection" > 
-      {/* <nav className="collection"> */}
-      
-        {/* <li>ID: {props.id}</li> */}
-        
-          <td>{props.title}</td> 
-          <td> <em>{props.items_count}</em></td> 
-        
-        {/* <li>URL: {props.url}</li> */}
-        {/* <li>Item Count: {props.items_count}</li> */}
-        
-      {/* </nav> */}
+// function CollectionList(props) {
+//   return (
+//       <div>
+//         <table id="smileysTable">
+//         <tr className="hoverdisabled ">
+//           <th>Title</th>
+//           <th>Count</th>
+//         </tr>
+//        {props.collections.filter(d => d.items.count > 10).map(c =><Collection
+//                               key={c.id} 
+//                               id={c.id} 
+//                               url={c.url} 
+//                               title={c.element_texts[0].text} 
+//                               items_count={c.items.count}
+//                               />)}
+//      </table>
+//      </div>
+//   ); 
+// } 
 
-    </tr>
+// function Collection(props) {
+//   return (
+//     <tr  className="collection" onClick={() => CollectionDetail(props)} >         
+//           <td >{props.title}</td> 
+//           <td> <em>{props.items_count}</em></td> 
+//     </tr>
 
     
-  );
-}
+//   );
+// }
+
   
 // Collection.propTypes = {
 //   id: PropTypes.string.isRequired

@@ -55,7 +55,7 @@ export default class Togglebk extends React.Component {
 
     render(){
         return (                    
-            <div className="container--toggle">
+            <div className="container-toggle">
                 <input type="checkbox" className="checkbox" id="checkbox" checked={this.state.checked} onClick={this.setTogClass} readOnly/>
                 <label htmlFor="checkbox" className="label">
                     <div className='ball' />
