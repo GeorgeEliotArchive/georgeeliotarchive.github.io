@@ -23,8 +23,12 @@
         - [x] **1 Hour** A Roadmap [Web Development In 2021 - A Practical Guide](https://www.youtube.com/watch?v=VfGW0Qiy2I0)       
         
         - [x] **17 Hours** [d3.js - Complete Developer Data Visualization Guide](https://www.udemy.com/course/the-complete-d3js-data-visualization-guide/)
+
+        - [ ] **5 Hours** [Learn Class Component on React](https://scrimba.com/learn/classcomponents)
         
         - [ ] **13 hours** by _freeCodeCamp_ [Data Visualization with D3.js](https://www.youtube.com/watch?v=_8V5o2UHG0E)
+
+        
 
     -   Books must be read
 

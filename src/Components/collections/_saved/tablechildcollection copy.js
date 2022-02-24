@@ -5,71 +5,10 @@ Auburn University */
 
 
 import React from 'react'
-import { useTable, useSortBy, useFilters, useGlobalFilter, useAsyncDebounce } from 'react-table'
+// import styled from 'styled-components'
+import { useTable, useSortBy } from 'react-table'
 import axios from "axios";
 import parse from 'html-react-parser';
-
-import { matchSorter } from 'match-sorter' 
-
-// function classNames(...classes) {
-//   return classes.filter(Boolean).join(' ')
-// }
-
-// Define a default UI for filtering
-function GlobalFilter({
-  preGlobalFilteredRows,
-  globalFilter,
-  setGlobalFilter,
-}) {
-  const count = preGlobalFilteredRows.length
-  const [value, setValue] = React.useState(globalFilter)
-  const onChange = useAsyncDebounce(value => {
-    setGlobalFilter(value || undefined)
-  }, 200)
-
-  return (
-    <span>
-      Search:{' '}
-      <input
-        value={value || ""}
-        onChange={e => {
-          setValue(e.target.value);
-          onChange(e.target.value);
-        }}
-        placeholder={`${count} records...`}
-      />
-    </span>
-  )
-}
-
-// Define a default UI for filtering
-function DefaultColumnFilter({
-  column: { filterValue, preFilteredRows, setFilter },
-}) {
-  const count = preFilteredRows.length
-
-  return (
-    <input
-      value={filterValue || ''}
-      onChange={e => {
-        setFilter(e.target.value || undefined) // Set undefined to remove the filter entirely
-      }}
-      placeholder={`Search ${count} records...`}
-    />
-  )
-}
-
-
-
-
-
-function fuzzyTextFilterFn(rows, id, filterValue) {
-  return matchSorter(rows, filterValue, { keys: [row => row.values[id]] })
-}
-
-// Let the table remove the filter if the string is empty
-fuzzyTextFilterFn.autoRemove = val => !val
-
 
 export default class TableChildCollection extends React.Component {
 // class TestChildCollection extends React.Component {
@@ -162,6 +101,26 @@ export default class TableChildCollection extends React.Component {
             </p>
             <nav>
             <div>
+            {/* <table id="smileysTable">
+
+                <tr className="hoverdisabled">
+                <th>ID</th>
+                <th>Title</th>
+                <th>Year</th>
+                <th>Creator</th>
+                <th>Type</th>
+                 </tr>
+                {this.state.collections.map(c =>  
+                <tr   className="collection_details" key={c.id} >  
+                    <td> {c.id}</td>        
+                    <td> {parse(c.title)} </td> 
+                    <td> {c.year}</td> 
+                    <td> {c.creator}</td> 
+                    <td> {c.type}</td>             
+                </tr>
+  
+                )}
+            </table> */}
             <ChildCollectionList collections={this.state.collections} />
             </div>
             </nav>
@@ -174,50 +133,7 @@ export default class TableChildCollection extends React.Component {
 }
 
 
-// Define a custom filter filter function!
-function filterGreaterThan(rows, id, filterValue) {
-  return rows.filter(row => {
-    const rowValue = row.values[id]
-    return rowValue >= filterValue
-  })
-}
-
-// This is an autoRemove method on the filter function that
-// when given the new filter value and returns true, the filter
-// will be automatically removed. Normally this is just an undefined
-// check, but here, we want to remove the filter if it's not a number
-filterGreaterThan.autoRemove = val => typeof val !== 'number'
-
 function Table({ columns, data }) {
-
-  const filterTypes = React.useMemo(
-    () => ({
-      // Add a new fuzzyTextFilterFn filter type.
-      fuzzyText: fuzzyTextFilterFn,
-      // Or, override the default text filter to use
-      // "startWith"
-      text: (rows, id, filterValue) => {
-        return rows.filter(row => {
-          const rowValue = row.values[id]
-          return rowValue !== undefined
-            ? String(rowValue)
-                .toLowerCase()
-                .startsWith(String(filterValue).toLowerCase())
-            : true
-        })
-      },
-    }),
-    []
-  )
-
-  const defaultColumn = React.useMemo(
-    () => ({
-      // Let's set up our default Filter UI
-      Filter: DefaultColumnFilter,
-    }),
-    []
-  )
-
   // Use the state and functions returned from useTable to build your UI
   const {
     getTableProps,
@@ -225,37 +141,26 @@ function Table({ columns, data }) {
     headerGroups,
     rows,
     prepareRow,
-    state,
-    visibleColumns,
-    preGlobalFilteredRows,
-    setGlobalFilter,
-
   } = useTable({
     columns,
     data,
-    defaultColumn, // Be sure to pass the defaultColumn option
-    filterTypes,
   },
-  
-  useFilters, // useFilters!
-  useGlobalFilter, // useGlobalFilter!
-  useSortBy,
+  useSortBy
   )
 
-  return (
+return (
     <>
-      <table  id="smileysTable " {...getTableProps()}>
+      <table  id="smileysTable" {...getTableProps()}>
         <thead>
-        {headerGroups.map(headerGroup => (
-            <tr className='border-dotted h-10 text-center' {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map(column =>  (
+          {headerGroups.map(headerGroup => (
+            <tr {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map(column => (
                 // Add the sorting props to control sorting. For this example
                 // we can add them into the header props
-                
-                <th  className='border-black pl-1.5  not-italic min-w-20' {...column.getHeaderProps(column.getSortByToggleProps())}>
+                <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                   {column.render('Header')}
-                  {/* Add a sort direction indicator */}                 
-                  <span >
+                  {/* Add a sort direction indicator */}
+                  <span>
                     {column.isSorted
                       ? column.isSortedDesc
                         ? ' 🔽'
@@ -263,22 +168,9 @@ function Table({ columns, data }) {
                       : ''}
                   </span>
                 </th>
-                
-                ))}   
+              ))}
             </tr>
-          ))} 
-          <tr>
-            <th className='border-black h-12 pl-1.5 not-italic'
-              colSpan={visibleColumns.length}
-   
-            >
-              <GlobalFilter className='h-12 pl-1.5 not-italic'
-                preGlobalFilteredRows={preGlobalFilteredRows}
-                globalFilter={state.globalFilter}
-                setGlobalFilter={setGlobalFilter}
-              />
-            </th>
-          </tr>
+          ))}
         </thead>
         <tbody {...getTableBodyProps()}>
           {rows.map(
@@ -297,18 +189,11 @@ function Table({ columns, data }) {
         </tbody>
       </table>
       <br />
-      <div>Showing {rows.length} rows</div>
-      <div>
-        <pre>
-          <code>{JSON.stringify(state.filters, null, 2)}</code>
-        </pre>
-      </div>
+  
     </>
   )
 }
 
-
-    
 function test_click(props) {
     console.log(props);
     console.log(props.original.title);
@@ -316,7 +201,37 @@ function test_click(props) {
 
 function ChildCollectionList(props) {
     console.log(props.collections);
-    const columns = React.useMemo(() => COLUMNS, [])
+  const columns = React.useMemo(
+    () => [
+      {
+        Header: ' ',
+        columns: [
+          {
+            Header: 'ID',
+            accessor: 'id',
+          },
+          {
+            Header: 'Title',
+            accessor: 'title',
+          },
+          {
+            Header: 'Date',
+            accessor: 'date',
+          },
+          {
+            Header: 'Creator',
+            accessor: 'creator',
+          },
+          {
+            Header: 'Type',
+            accessor: 'type',
+          },
+        ],
+      },
+    ],
+    []
+  )
+
   const data = makeData(props.collections);
 
   return (
@@ -326,37 +241,6 @@ function ChildCollectionList(props) {
   )
 }
 
-// The colomn data header
-const COLUMNS = [
-  {
-    Header: 'Id',
-    Footer: 'Id',
-    accessor: 'id',
-    sticky: 'left'
-  },
-  {
-    Header: 'Title',
-    Footer: 'Title',
-    accessor: 'title',
-    sticky: 'left'
-  },
-  {
-    Header: 'Date',
-    Footer: 'Date',
-    accessor: 'date',
-    sticky: 'left'
-  },
-  {
-    Header: 'Creator',
-    Footer: 'Creator',
-    accessor: 'creator'
-  },
-  {
-    Header: 'Type',
-    Footer: 'Type',
-    accessor: 'type'
-  },
-]
 
 const newCollection = (props) => {
     return {
@@ -392,7 +276,7 @@ function getDescription (text_string) {
             default:break;
         }
     }
-    if (description !== "") {
+    if (description != "") {
         return description;
     }
     else {

@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
   box-sizing: border-box;
@@ -23,7 +26,7 @@
   --button-border: #B8DBD9;
   --link-color: rgb(73, 177, 196); 
   --link-hover: rgb(68, 68, 233); 
-  --button-background: rgba(84, 146, 209, 0.4);
+  --button-background: rgba(140, 209, 84, 0.15);
   --button-background-solid: rgb(84, 146, 209);
   --button-text-color: rgb(202, 216, 248);
   --nav-current-background: rgba(128, 161, 7, 0.6);
@@ -44,7 +47,7 @@
   --button-border: #5E4B56;
   --link-color: darkblue; 
   --link-hover: rgb(18, 115, 241);
-  --button-background: rgba(221, 174, 19, 0.507);
+  --button-background: rgba(221, 174, 19, 0.2);
   --button-background-solid: rgb(221, 174, 19);
   --button-text-color: rgb(9, 43, 117);
   --nav-current-background: rgba(128, 161, 7, 0.6);
@@ -86,18 +89,6 @@ nav .collection:nth-child(even){
   background-color: var(--dark-background);
 
 }
-/* nav .collection :hover {
-  background: var(--nav-hover);
-} */
-
-/* li {
-  position:relative;
-  
-}
-ul {
-   
-  padding-inline-start:2%; 
-} */
 
 table {
   /* border: 1px solid var(--button-border); */
@@ -117,9 +108,10 @@ table tr td{
   border: 1px solid var(--button-border);
   
 }
-#smileysTable :hover {
+#smileysTable tr:hover {
   background: var(--nav-hover);
 }
+
 #smileysTable {
   /* border: 1px solid #CCCCCC; */
   border: 1px solid var(--button-border);
@@ -129,6 +121,9 @@ table tr td{
 .hoverdisabled {
   pointer-events: none;
   /* opacity: 0.3; */
+}
+.hovercolorinherid {
+  background: inherit;
 }
 #smileysTable .selected{
   background: var(--nav-selected);
@@ -742,6 +737,7 @@ nav .collection_details:nth-child(even){
 
 }
 nav .collection_details tr {
+  
   width: 100%;
 }
 

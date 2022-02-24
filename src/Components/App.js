@@ -15,7 +15,7 @@ import Footer from './footer';
 import CollectionList from "./collectionList";
 import Blog from "./blog/mediumblog";
 
-import { Routes, Route,  HashRouter } from "react-router-dom";
+import { Routes, Route,  BrowserRouter } from "react-router-dom";
 
 import SingleBlog from "./blog/singleblog";
 
@@ -34,7 +34,7 @@ class App extends React.Component {
 
           <div className="App">   
     
-          <HashRouter >          
+          <BrowserRouter >          
             <Layout />
             {/* <Togglebk />  */}
            <Greeting /> 
@@ -46,7 +46,7 @@ class App extends React.Component {
               <Route path="/setup" element={<Setupenv />}></Route>
               <Route path="/" element={<Ongoing />}></Route>
             </Routes>  
-          </HashRouter>  
+          </BrowserRouter>  
           <GitFooter />
           <div>
             <div> 
