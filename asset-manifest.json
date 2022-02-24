@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/static/css/main.40a432a4.css",
-    "main.js": "/static/js/main.0872a3b3.js",
+    "main.css": "/static/css/main.86808c39.css",
+    "main.js": "/static/js/main.0448e719.js",
     "static/js/530.32b38d32.chunk.js": "/static/js/530.32b38d32.chunk.js",
     "static/js/513.a735252a.chunk.js": "/static/js/513.a735252a.chunk.js",
     "static/js/137.409f4696.chunk.js": "/static/js/137.409f4696.chunk.js",
     "static/js/997.d0d44115.chunk.js": "/static/js/997.d0d44115.chunk.js",
-    "static/js/820.f60fd6c1.chunk.js": "/static/js/820.f60fd6c1.chunk.js",
+    "static/js/820.59d01b67.chunk.js": "/static/js/820.59d01b67.chunk.js",
     "static/js/787.804f032f.chunk.js": "/static/js/787.804f032f.chunk.js",
     "static/media/logo2.jpg": "/static/media/logo2.aef26df6b321761394cb.jpg",
     "static/media/logo_archive.jpg": "/static/media/logo_archive.4e325b3ec0bb73a928ac.jpg",
     "static/media/logo_nebraska.jpg": "/static/media/logo_nebraska.0ca2cacad23d2c376357.jpg",
     "static/media/logo_auhorizontal.png": "/static/media/logo_auhorizontal.c2ea09a73c2adb1112ee.png",
     "static/media/setup.md": "/static/media/setup.4b437f87bb7d1f5579d3.md",
-    "static/media/knowledge.md": "/static/media/knowledge.e112ea13f85d39648c37.md",
+    "static/media/knowledge.md": "/static/media/knowledge.23ce0a01e8849298325a.md",
     "static/media/dev_chronology.md": "/static/media/dev_chronology.f6208056fb68125273c9.md",
     "static/media/dev_relationship.md": "/static/media/dev_relationship.b66a39ed9be55df7010e.md",
     "index.html": "/index.html",
     "static/media/ongoing.md": "/static/media/ongoing.a8cd8fc4015213e04af0.md",
-    "main.40a432a4.css.map": "/static/css/main.40a432a4.css.map",
-    "main.0872a3b3.js.map": "/static/js/main.0872a3b3.js.map",
+    "main.86808c39.css.map": "/static/css/main.86808c39.css.map",
+    "main.0448e719.js.map": "/static/js/main.0448e719.js.map",
     "787.804f032f.chunk.js.map": "/static/js/787.804f032f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.40a432a4.css",
-    "static/js/main.0872a3b3.js"
+    "static/css/main.86808c39.css",
+    "static/js/main.0448e719.js"
   ]
 }
