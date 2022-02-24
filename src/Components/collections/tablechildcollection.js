@@ -30,7 +30,7 @@ function GlobalFilter({
   return (
     <span>
       Search:{' '}
-      <input
+      <input className='bg-gray-100'
         value={value || ""}
         onChange={e => {
           setValue(e.target.value);
@@ -272,7 +272,7 @@ function Table({ columns, data }) {
               colSpan={visibleColumns.length}
    
             >
-              <GlobalFilter className='h-12 pl-1.5 not-italic'
+              <GlobalFilter className='h-12 pl-1.5'
                 preGlobalFilteredRows={preGlobalFilteredRows}
                 globalFilter={state.globalFilter}
                 setGlobalFilter={setGlobalFilter}
