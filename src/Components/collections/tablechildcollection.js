@@ -5,11 +5,13 @@ Auburn University */
 
 
 import React from 'react'
-import { useTable, useSortBy, useFilters, useGlobalFilter, useAsyncDebounce } from 'react-table'
+import { useTable, useSortBy, useFilters, useGlobalFilter, useAsyncDebounce, useExpanded } from 'react-table'
 import axios from "axios";
 import parse from 'html-react-parser';
 
 import { matchSorter } from 'match-sorter' 
+
+import ItemDetails from './singleitem';
 
 // function classNames(...classes) {
 //   return classes.filter(Boolean).join(' ')
@@ -93,6 +95,7 @@ export default class TableChildCollection extends React.Component {
                 let c_creator = "";
                 let c_date = "";
                 let c_type = "";
+        
                 for (var i = 0; i < textLen; i++) {
                     const t = c.element_texts[i].text;
                     
@@ -240,6 +243,7 @@ function Table({ columns, data }) {
   useFilters, // useFilters!
   useGlobalFilter, // useGlobalFilter!
   useSortBy,
+  useExpanded,
   )
 
   return (
@@ -285,13 +289,46 @@ function Table({ columns, data }) {
             (row, i) => {
               prepareRow(row);
               return (
-                <tr className="collection_details" onClick={() => test_click(row)} {...row.getRowProps()}>
+                // <tr className="collection_details" onClick={() => test_click(row)} {...row.getRowProps()}>
+                //   {row.cells.map(cell => {
+                //     return (
+                //       <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                //     )
+                //   })}
+                //   <span>  {row.isExpanded ? "" :"TEST"} </span>
+                // </tr>
+                // Use a React.Fragment here so the table markup is still valid
+                <React.Fragment {...row.getRowProps()}>
+                <tr >
                   {row.cells.map(cell => {
                     return (
                       <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
                     )
                   })}
                 </tr>
+                {/*
+                    If the row is in an expanded state, render a row with a
+                    column that fills the entire length of the table.
+                  */}
+                {row.isExpanded ? (
+                  <tr>
+                    <td colSpan={visibleColumns.length}>
+                      {/*
+                          Inside it, call our renderRowSubComponent function. In reality,
+                          you could pass whatever you want as props to
+                          a component like this, including the entire
+                          table instance. But for this example, we'll just
+                          pass the row
+                        */}
+                        {/* <span>{row.values.title} </span>
+                        <button>This is a button</button> */}
+                        <ItemDetails dataFromParent={row} />
+
+                    </td>
+                  </tr>
+                ) : null}
+               </React.Fragment>
+                
               )}
           )}
         </tbody>
@@ -299,20 +336,14 @@ function Table({ columns, data }) {
       <br />
       <div>Showing {rows.length} rows</div>
       <div>
-        <pre>
+        {/* <pre>
           <code>{JSON.stringify(state.filters, null, 2)}</code>
-        </pre>
+        </pre> */}
       </div>
     </>
   )
 }
 
-
-    
-function test_click(props) {
-    console.log(props);
-    console.log(props.original.title);
-}
 
 function ChildCollectionList(props) {
     console.log(props.collections);
@@ -328,6 +359,19 @@ function ChildCollectionList(props) {
 
 // The colomn data header
 const COLUMNS = [
+  {
+    // Make an expander cell
+    Header: () => null, // No header
+    id: 'expander', // It needs an ID
+    Cell: ({ row }) => (
+      // Use Cell to render an expander for each row.
+      // We can use the getToggleRowExpandedProps prop-getter
+      // to build the expander.
+      <span className='pl-3'{...row.getToggleRowExpandedProps()}>
+        {row.isExpanded ? '👇' : '👉'}
+      </span>
+    ),
+  },
   {
     Header: 'Id',
     Footer: 'Id',
@@ -356,6 +400,11 @@ const COLUMNS = [
     Footer: 'Type',
     accessor: 'type'
   },
+  {
+    Header: 'Url',
+    Footer: 'Url',
+    accessor: 'url'
+  }
 ]
 
 const newCollection = (props) => {
@@ -364,7 +413,8 @@ const newCollection = (props) => {
       title: parse(props.title),
       date: props.year,
       creator: props.creator,
-      type: props.type
+      type: props.type,
+      url: props.url
   }
 }
 
@@ -383,7 +433,7 @@ function makeData(props) {
 function getDescription (text_string) {
     let description = "";
     let identifier = "";
-    console.log(text_string);
+    // console.log(text_string);
     for (var i = 0; i < text_string.length; i++) {
         const t = text_string[i].text;
         switch(text_string[i].element.id) {
