@@ -35,7 +35,6 @@ export default class ItemDetails extends React.Component {
         
       })
       .catch(error => console.log(error));
-
   }
 
   render() {
@@ -43,6 +42,7 @@ export default class ItemDetails extends React.Component {
       <div>
         <br />
         <div className="mx-2">
+        
           {this.state.description.map(
             c =>(
               <tr >
@@ -51,6 +51,16 @@ export default class ItemDetails extends React.Component {
               </tr>
             )
           )}
+
+          <tr>
+            <td className="border-none font-bold underline">
+              Tags: 
+            </td>
+            <td className="border-none">         
+              {this.state.tags}
+            </td>
+            </tr>
+
           <tr>
             <td className="border-none font-bold">
               File: 
@@ -66,7 +76,7 @@ export default class ItemDetails extends React.Component {
   }
 }
 
-
+/* parse the tags array */
 function getTags(tagArray) {
   const length = Object.keys(tagArray).length;
   let tags = "";
@@ -78,7 +88,10 @@ function getTags(tagArray) {
   return tags;
 }
 
-
+/* 
+1. list the file links with the original file name
+2. show images if available 
+note: a url for file api is needed.   */
 const ShowFiles = (url) => {
 
   const [posts, setPosts] = useState([
@@ -102,8 +115,7 @@ const ShowFiles = (url) => {
                   }
                   setPosts(oldArray => [...oldArray, newpost]);
                   return c;
-                }
-                
+                }               
               )
           } catch (err) {
               console.log(err);
@@ -124,8 +136,7 @@ const ShowFiles = (url) => {
 
       <div>{posts.map(entry =>    
            entry.mimetype === "image/jpeg" ||  entry.mimetype === "image/png" ?
-          (<img src={entry.url} alt={entry.filename} className="h-40 inline-block mr-2"/>) : "")
-  
+          (<img src={entry.url} alt={entry.filename} className="h-40 inline-block mr-2"/>) : "") 
           }
       </div>
 

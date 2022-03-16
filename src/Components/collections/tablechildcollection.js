@@ -232,10 +232,17 @@ function Table({ columns, data }) {
     visibleColumns,
     preGlobalFilteredRows,
     setGlobalFilter,
+    // setHiddenColumns,
 
   } = useTable({
     columns,
     data,
+    initialState: {
+      hiddenColumns: columns.map(column => {
+          if (column.show === false) return column.accessor || column.id;
+          return column;
+      }),
+  },
     defaultColumn, // Be sure to pass the defaultColumn option
     filterTypes,
   },
@@ -403,7 +410,8 @@ const COLUMNS = [
   {
     Header: 'Url',
     Footer: 'Url',
-    accessor: 'url'
+    accessor: 'url',
+    show: false
   }
 ]
 
