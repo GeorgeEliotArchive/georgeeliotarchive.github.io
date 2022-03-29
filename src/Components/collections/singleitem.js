@@ -137,7 +137,7 @@ const ShowFiles = (data) => {
   return (
     <div> 
       <div>{posts.map(entry =>
-      entry.url != null &&  entry.mimetype !== "application/pdf"? (
+        entry.url != null &&  entry.mimetype !== "application/pdf"? (
           <li className="list-none hover:list-disc">
           <a href={entry.url}>{entry.filename}</a> 
           </li>) :""
@@ -239,6 +239,7 @@ const pdfmakedownload = (text) => {
       title = text[i].text.replace(/<(.|\n)*?>/g, '');
       title = title.replace('"', '');
     }
+
     if (text[i].element.name === "Rights") {
       header_text = "Copyright License";  
     }
@@ -257,6 +258,7 @@ const pdfmakedownload = (text) => {
     2. result in a long text hence being truncated */
     var d2 = text[i].text.replace(/<(.|\n)*?>/g, '');  
     d2 = d2.replace(/&nbsp;/g, ' ');
+    d2 = d2.replace(/amp;/g, ' ');
     d2 =  truncate(d2, len_words);
     
     /* push the text to dd string */
