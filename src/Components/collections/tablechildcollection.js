@@ -135,26 +135,7 @@ export default class TableChildCollection extends React.Component {
         .catch(error => console.log(error));
     
     }
-    
-    
-    // chooseCollection= (collection) => {
-    //     this.setState(prevState => {
-    //     return {
-    //         showDetails: true,
-    //         preCollection: collection
-    //     }
-    //     })  
-    // }
-    
-    
-    // activeView(){
-    //     if (this.state.showDetails){
-    //     return <ChildCollection dataFromParent = {this.state.preCollection} />
-    //     }
-        
-    // }
-    
-    
+      
     render() {  
         return (
         <div className="main_content">
@@ -353,7 +334,7 @@ function Table({ columns, data }) {
 
 
 function ChildCollectionList(props) {
-    console.log(props.collections);
+    // console.log(props.collections);
     const columns = React.useMemo(() => COLUMNS, [])
   const data = makeData(props.collections);
 
