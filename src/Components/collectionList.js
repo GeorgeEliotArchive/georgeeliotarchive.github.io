@@ -20,6 +20,8 @@ export default class CollectionList extends React.Component{
 
 class FetchCollectionList extends React.Component {
 
+  _isMounted = false;
+
   // default State object
   state = {
     collections: [],
@@ -27,7 +29,8 @@ class FetchCollectionList extends React.Component {
     preCollection: []
   };
 
-  componentDidMount() {
+  async componentDidMount() {
+    this._isMounted = true;
    
     axios
       .get(apiurl)
@@ -55,10 +58,15 @@ class FetchCollectionList extends React.Component {
         });
 
         // store the new state object in the component's state
-        this.setState(newState);
+        if (this._isMounted){
+        this.setState(newState);}
       })
       .catch(error => console.log(error));
 
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
   }
 
 
@@ -74,14 +82,10 @@ class FetchCollectionList extends React.Component {
   
   activeView(){
     if (this.state.showDetails){
-      // return <ChildCollection dataFromParent = {this.state.preCollection} />
       return <TableChildCollection dataFromParent = {this.state.preCollection} />
     }
     
   }
-
-
-  
 
   render() {
     return (
@@ -118,40 +122,3 @@ class FetchCollectionList extends React.Component {
     );
   }
 }
-
-
-// function CollectionList(props) {
-//   return (
-//       <div>
-//         <table id="smileysTable">
-//         <tr className="hoverdisabled ">
-//           <th>Title</th>
-//           <th>Count</th>
-//         </tr>
-//        {props.collections.filter(d => d.items.count > 10).map(c =><Collection
-//                               key={c.id} 
-//                               id={c.id} 
-//                               url={c.url} 
-//                               title={c.element_texts[0].text} 
-//                               items_count={c.items.count}
-//                               />)}
-//      </table>
-//      </div>
-//   ); 
-// } 
-
-// function Collection(props) {
-//   return (
-//     <tr  className="collection" onClick={() => CollectionDetail(props)} >         
-//           <td >{props.title}</td> 
-//           <td> <em>{props.items_count}</em></td> 
-//     </tr>
-
-    
-//   );
-// }
-
-  
-// Collection.propTypes = {
-//   id: PropTypes.string.isRequired
-// };
