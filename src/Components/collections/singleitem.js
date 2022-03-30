@@ -136,8 +136,8 @@ const ShowFiles = (data) => {
   return (
     <div> 
       <div>{posts.map(entry =>
-        entry.url !== null &&  entry.mimetype !== "application/pdf"? (
-          <li className="list-none hover:list-disc">
+        entry.url !== null ? (
+          <li className="pt-0 list-none hover:list-disc">
           <a href={entry.url}>{entry.filename}</a> 
           </li>) :""
           )}       
@@ -146,19 +146,6 @@ const ShowFiles = (data) => {
       <div>{posts.map(entry =>   
            entry.mimetype === "image/jpeg" ||  entry.mimetype === "image/png" ?
           (<img src={entry.url} alt={entry.filename} className="h-40 inline-block mr-2"/>) : ""
-          )        
-        }
-      </div>
-
-      <div>{posts.map(entry =>   
-          entry.mimetype ==="application/pdf" && entry.url !== null? 
-          ( 
-            <div> 
-              <li className="pt-0 list-none hover:list-disc"> Original file: 
-                <a href={entry.url}>{entry.filename}</a> 
-              </li>
-            </div>
-            ) : ""
           )        
         }
       </div>
