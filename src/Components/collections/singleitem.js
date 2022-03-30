@@ -48,7 +48,7 @@ export default class ItemDetails extends React.Component {
         <tbody className="mx-2" id={this.state.id}>
           {this.state.description.map(
             c =>(
-              <tr id={this.state.id + c.text}>
+              <tr key={this.state.id + c.text}>
                 <td className="border-none font-bold">{c.element.name}: </td>
                 <td  className="border-none">{parse(c.text)}</td>
               </tr>
@@ -137,7 +137,7 @@ const ShowFiles = (data) => {
     <div> 
       <div>{posts.map(entry =>
         entry.url !== null ? (
-          <li className="pt-0 list-none hover:list-disc">
+          <li className="pt-0 list-none hover:list-disc" key={entry.id}>
           <a href={entry.url}>{entry.filename}</a> 
           </li>) :""
           )}       

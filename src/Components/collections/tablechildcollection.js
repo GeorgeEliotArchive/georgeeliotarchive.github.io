@@ -141,9 +141,9 @@ export default class TableChildCollection extends React.Component {
         <div className="main_content">
             
             <h1>{this.state.mainTitle} </h1>
-            <p className="description">
+            <div className="description">
                 {parse(this.state.description)}
-            </p>
+            </div>
             <nav>
             <div>
             <ChildCollectionList collections={this.state.collections} />
