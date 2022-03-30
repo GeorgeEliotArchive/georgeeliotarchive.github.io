@@ -7,7 +7,7 @@ function Navbar(props) {
     <nav className="home_bar">
       <ul className="menu">
         <li className="menu_list">
-          <NavLink exact={true} to="/" onClick={props.clicked}>
+          <NavLink to="/" onClick={props.clicked}>
             Home
           </NavLink>{" "}
         </li>

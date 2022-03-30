@@ -272,8 +272,15 @@ header{
 }
 
 h1 {
+  font-size:32px;
+  font-weight: 600;
   margin: 0;
 }
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
 
 pre {
   display: inline-block;
@@ -297,7 +304,7 @@ pre {
 .codeblock{
   background: var(--light-background);
   margin-top: 1%;
-  margin-left: 1%;
+  /* margin-left: 1%; */
   margin-right:2%;
 }
 .button_main {
@@ -363,6 +370,27 @@ pre {
   0% {opacity: 0;}
   100% {opacity: 1;}
 } 
+.main_content ul li{
+  list-style-type: square;
+  list-style-position: outside;
+  position: relative;
+  padding-left: 16px;
+  margin-left: 20px;
+  margin-top: 4px;
+}
+
+.main_content ul li li{
+  list-style-type: circle;
+
+}
+.main_content ul li li li{
+  list-style-type: square;
+
+}
+.main_content ul li li li li{
+  list-style-type: circle;
+
+}
 
 .sub_ongoing{
   /* border: 2px solid darkolivegreen; */
@@ -586,10 +614,11 @@ hr {
   background: #CCC
 }
 .nowrapper{
-  flex-wrap:nowrap;
-  padding-top: 20px;
+  flex-wrap: nowrap;
+  padding-top: 10px;
 
 }
+
 
 .h_iframe {
   position: relative;

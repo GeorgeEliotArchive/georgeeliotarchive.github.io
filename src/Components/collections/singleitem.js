@@ -44,13 +44,11 @@ export default class ItemDetails extends React.Component {
 
   render() {
     return (
-      <div>
-        <br />
-        <div className="mx-2" id={this.state.id}>
-        
+      <table className="my-2 ml-2">
+        <tbody className="mx-2" id={this.state.id}>
           {this.state.description.map(
             c =>(
-              <tr>
+              <tr id={this.state.id + c.text}>
                 <td className="border-none font-bold">{c.element.name}: </td>
                 <td  className="border-none">{parse(c.text)}</td>
               </tr>
@@ -65,19 +63,19 @@ export default class ItemDetails extends React.Component {
               {this.state.tags}
             </td>
             </tr>
-
+         
           <tr>
-            <td className="border-none font-bold">
+            <td className="font-bold border-none align-top">
               File: 
             </td>
-            <td className="border-none">         
+            <td className="border-none italic">         
               {/* {this.state.is_ready ? (<ShowFiles url={this.state.file_urls} /> ): ""} */}
               {this.state.is_ready ? (<ShowFiles data={this.state} /> ): ""}
             </td>
           </tr>
-        </div>
-        <br />
-      </div>
+        </tbody>
+  
+      </table>
     );
   }
 }
@@ -107,7 +105,8 @@ const ShowFiles = (data) => {
       description: null,
       filename: null,
       mimetype: null
-    }]
+    }
+  ]
   );
    
   useEffect( () => { 
@@ -137,7 +136,7 @@ const ShowFiles = (data) => {
   return (
     <div> 
       <div>{posts.map(entry =>
-        entry.url != null &&  entry.mimetype !== "application/pdf"? (
+        entry.url !== null &&  entry.mimetype !== "application/pdf"? (
           <li className="list-none hover:list-disc">
           <a href={entry.url}>{entry.filename}</a> 
           </li>) :""
@@ -152,13 +151,10 @@ const ShowFiles = (data) => {
       </div>
 
       <div>{posts.map(entry =>   
-          entry.mimetype ==="application/pdf" ? 
+          entry.mimetype ==="application/pdf" && entry.url !== null? 
           ( 
             <div> 
-              {/* <button className="bg-slate-400 h-10 w-52 inline-block mr-2"
-                    onClick={() => pdfmakedownload(entry.description)} type="primary">
-                Preview Front-page PDF</button> */}
-              <li className="list-none hover:list-disc"> Original file: 
+              <li className="pt-0 list-none hover:list-disc"> Original file: 
                 <a href={entry.url}>{entry.filename}</a> 
               </li>
             </div>
@@ -261,7 +257,7 @@ const pdfmakedownload = (text) => {
     d2 = d2.replace(/amp;/g, ' ');
     d2 =  truncate(d2, len_words);
     
-    /* push the text to dd string */
+    /* push the text to dd object */
     dd.content.push(d1);
     dd.content.push(d2);
   }

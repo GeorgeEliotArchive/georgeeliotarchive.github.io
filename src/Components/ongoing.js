@@ -8,6 +8,7 @@ import '../Css/App.css';
 import Markdown from 'markdown-to-jsx';
 
 
+
 // Relationship d3 page inserted
 class Relationshipdev extends React.Component {
     render() {
@@ -72,7 +73,7 @@ class Relationship extends React.Component {
         return (
                
             <div className="nowrapper">
-                <div className="main_content ongoing sub_ongoing ongoing_relationship">
+                <div className="main_content sub_ongoing ongoing_relationship">
                     <Markdown children={this.state.md} />   
                 </div>
                 <div className="force_center " >
@@ -263,9 +264,6 @@ export default class Ongoing extends React.Component {
         super(props)
         this.state = { 
             md: '' ,
-            // showRelationsip: false,
-            // showChronology: false,
-
         }
     }
     async componentDidMount() {
@@ -287,19 +285,14 @@ export default class Ongoing extends React.Component {
   
   
     render() {
-        
-
-        return (
-            
-            <div className="main_content ongoing">    
-            <Markdown children={this.state.md} />   
-            <br />      
-            {/* <hr /> */}
-            <Relationship />
-            {/* <hr className="new1" /> */}
-            <Chronology />
-               
-
+        return (           
+            <div className="main_content">    
+                <div>
+                    <Markdown children={this.state.md} />   
+                </div>
+                <br />                     
+                <Relationship />
+                <Chronology />             
             </div>
         )
     }

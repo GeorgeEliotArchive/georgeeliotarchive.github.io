@@ -52,7 +52,7 @@ class SetupEnv extends React.Component {
     
     render() {
         const MyParagraph = ({ children, ...props }) => (
-            <div {...props}>{children}</div>
+            <span {...props}>{children}</span>
         );
 
         return (
@@ -61,7 +61,7 @@ class SetupEnv extends React.Component {
                 <Markdown 
                 options={{wrapper: "pre", forceWrapper: false,forceBlock: false,
                     overrides: {
-                        
+              
                         code: {
                             component: MyParagraph,
                             props: {

@@ -92,6 +92,7 @@ class FetchCollectionList extends React.Component {
            {/* <CollectionList collections={this.state.collections} />           */}
         <div>
         <table id="smileysTable">
+        <tbody>
         <tr className="hoverdisabled ">
           <th>Title</th>
           <th>Count</th>
@@ -106,6 +107,7 @@ class FetchCollectionList extends React.Component {
             <td> <em>{c.items.count}</em></td> 
             </tr>
             )}
+            </tbody>
         </table>
         </div>
         </nav>

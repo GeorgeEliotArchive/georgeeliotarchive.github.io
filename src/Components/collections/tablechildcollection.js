@@ -286,7 +286,9 @@ function Table({ columns, data }) {
                 //   <span>  {row.isExpanded ? "" :"TEST"} </span>
                 // </tr>
                 // Use a React.Fragment here so the table markup is still valid
-                <React.Fragment {...row.getRowProps()}>
+                // <React.Fragment {...row.getRowProps()}>
+                  
+                  <React.Fragment key={row.getRowProps().key}>
                 <tr >
                   {row.cells.map(cell => {
                     return (

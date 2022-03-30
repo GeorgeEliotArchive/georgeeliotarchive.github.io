@@ -11,7 +11,6 @@ import Setupenv from "./setupenv";
 import Ongoing  from "./ongoing";
 import Knowledge from "./knowledge";
 import Footer from './footer';
-// import Fetchapi from "./fetchapi";
 import CollectionList from "./collectionList";
 import Blog from "./blog/mediumblog";
 
@@ -108,6 +107,7 @@ class Greeting extends React.Component {
 
 // particles background 
 class Background extends React.Component {
+
     render() {
       return <div id="particles-js"> <Particle /> </div>
     
