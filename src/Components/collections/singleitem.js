@@ -1,3 +1,14 @@
+/* singleitem.js - 
+  1. Single item display 
+    1.1 detailed information
+    1.2 file url diplay
+    1.3 img display
+
+  2. front-page pdf generator
+
+Edited by Libo Sun, Mar 2022 
+Auburn University */
+
 import axios from "axios";
 import React , {useState, useEffect} from "react";
 import parse from 'html-react-parser';
@@ -11,7 +22,7 @@ const len_words = 50;
 
 export default class ItemDetails extends React.Component {
 
-  // default State object
+  /* default State object */
   state = {
     is_ready: false,
     id: "",
@@ -31,7 +42,6 @@ export default class ItemDetails extends React.Component {
         is_ready: true,
         id: res.data.id,
         url: res.data.url,
-        // file_urls: ShowPosts(res.data.files.url),
         file_urls: res.data.files.url,
         title: res.data.title,
         tags: getTags(res.data.tags),
@@ -69,7 +79,6 @@ export default class ItemDetails extends React.Component {
               File: 
             </td>
             <td className="border-none italic">         
-              {/* {this.state.is_ready ? (<ShowFiles url={this.state.file_urls} /> ): ""} */}
               {this.state.is_ready ? (<ShowFiles data={this.state} /> ): ""}
             </td>
           </tr>
@@ -244,12 +253,16 @@ const pdfmakedownload = (text) => {
     d2 = d2.replace(/amp;/g, ' ');
     d2 =  truncate(d2, len_words);
     
-    /* push the text to dd object */
-    dd.content.push(d1);
-    dd.content.push(d2);
+    /* push the text to dd object 
+       Relation and Original Format removed*/
+    if (d1.text!== "Relation" && d1.text !== "Original Format"){
+      dd.content.push(d1);
+      dd.content.push(d2);
+    }
   }
 
-  // dd.content.push(solid_line);
+  /* Adding a solid line if necessary */
+  // dd.content.push(solid_line); 
 
   pdfMake.createPdf(dd).download(title+".pdf");
 
