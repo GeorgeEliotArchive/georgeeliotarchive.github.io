@@ -7,12 +7,13 @@ import ReactDOM from "react-dom"
 
 import '../Css/App.css';
 import Particle from './particles';
-import Setupenv from "./setupenv";
+// import Setupenv from "./setupenv";
 import Ongoing  from "./ongoing";
 import Knowledge from "./knowledge";
 import Footer from './footer';
-import CollectionList from "./collectionList";
-import Blog from "./blog/mediumblog";
+import CollectionList from "./collectionListGE";
+// import Blog from "./blog/mediumblog";
+import Omekaapi from "./omekaapi";
 
 import { Routes, Route,  BrowserRouter } from "react-router-dom";
 
@@ -38,11 +39,12 @@ class App extends React.Component {
             {/* <Togglebk />  */}
            <Greeting /> 
             <Routes>
-              <Route path="/blog" element={<Blog />} > </Route>
-              <Route path="/Knowledge" element={<Knowledge/>}></Route>
+              {/* <Route path="/blog" element={<Blog />} > </Route> */}
+              <Route path="/omeka" element={<Omekaapi />} > </Route>
+              <Route path="/knowledge" element={<Knowledge/>}></Route>
               <Route path="/blog/:id" element={<SingleBlog />}></Route>
               <Route path="/collectionlist" element={<CollectionList />}></Route>
-              <Route path="/setup" element={<Setupenv />}></Route>
+              {/* <Route path="/setup" element={<Setupenv />}></Route> */}
               <Route path="/" element={<Ongoing />}></Route>
             </Routes>  
           </BrowserRouter>  

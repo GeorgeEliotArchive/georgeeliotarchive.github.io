@@ -76,13 +76,36 @@ fuzzyTextFilterFn.autoRemove = val => !val
 export default class TableChildCollection extends React.Component {
 // class TestChildCollection extends React.Component {
     // default State object
-    state = {
-        mainTitle: "Loading...... ",
-        description: "",
-        collections: [],
-        showDetails: false,
-        preCollection: []
-    };
+    // state = {
+    //     mainTitle: "Loading...... ",
+    //     description: "",
+    //     collections: [],
+    //     showDetails: false,
+    //     preCollection: [],
+    //     pdfHeader: "GEORGE ELIOT ARCHIVE",
+    //     pdfFooter: "Sharing is permitted for non-commercial purposes with attribution to this database, the George Eliot Archive, edited by Beverley Park Rilett.",
+    // };
+    constructor(props) {
+      super(props)
+      this.state = { 
+          mainTitle: "Loading...... ",
+          description: "",
+          collections: [],
+          showDetails: false,
+          preCollection: [],
+          pdfHeader: "",
+          pdfFooter: "",
+        }
+  }
+
+    // handleChangepdfHeader(event) {
+    //   this.setState({pdfHeader: event.target.value});
+    // }
+  
+    // handleSubmit(event) {
+    //   event.preventDefault();
+
+    // }
     
     componentDidMount() {    
         axios
@@ -108,6 +131,11 @@ export default class TableChildCollection extends React.Component {
             
                     }
                 }
+            
+            // console.log(this.props)
+            this.setState({pdfHeader: this.props.pdfHeader});
+            this.setState({pdfFooter: this.props.pdfFooter});
+            // console.log(this.state)
 
             return {
                 id: c.id.toString(),
@@ -116,7 +144,9 @@ export default class TableChildCollection extends React.Component {
                 creator: c_creator,
                 // quotation: c.element_texts[3].text,
                 year: c_date,
-                type: c_type
+                type: c_type,
+                pdfheader: this.state.pdfHeader,
+                pdffooter: this.state.pdfFooter,
             };
             });
     
@@ -138,7 +168,20 @@ export default class TableChildCollection extends React.Component {
       
     render() {  
         return (
-        <div className="main_content">
+
+        <div className="main_content">  
+
+              {/* <div className='container'>
+                <li onSubmit={this.handleSubmit}>                      
+                    <span className="font-mono font-bold">Current pdf Header:  </span> 
+                    <span className="font-serif"> {this.state.pdfHeader} </span>
+                    <TextField id="standard-basic" label="Input New Header for pdf" variant="standard"  fullWidth="true" 
+                        value={this.state.pdfHeader}
+                        onChange={this.handleChangepdfHeader}
+                    />             
+                </li>
+                </div>  */}
+                
             
             <h1>{this.state.mainTitle} </h1>
             <div className="description">
@@ -312,7 +355,8 @@ function Table({ columns, data }) {
                         */}
                         {/* <span>{row.values.title} </span>
                         <button>This is a button</button> */}
-                        <ItemDetails dataFromParent={row} />
+                        {/* <ItemDetails dataFromParent={row} /> */}
+                        <ItemDetails data={row} />
 
                     </td>
                   </tr>
@@ -337,8 +381,10 @@ function Table({ columns, data }) {
 
 function ChildCollectionList(props) {
     // console.log(props.collections);
-    const columns = React.useMemo(() => COLUMNS, [])
+  const columns = React.useMemo(() => COLUMNS, [])
   const data = makeData(props.collections);
+  // const pdfHeader = props.pdfHeader;
+  // const pdfFooter = props.Footer;
 
   return (
     <div>
@@ -395,6 +441,18 @@ const COLUMNS = [
     Footer: 'Url',
     accessor: 'url',
     show: false
+  },
+  {
+    Header: 'pdfHeader',
+    Footer: 'pdfHeader',
+    accessor: 'pdfheader',
+    show: false
+  },
+  {
+    Header: 'pdfFooter',
+    Footer: 'pdfFooter',
+    accessor: 'pdffooter',
+    // show: false
   }
 ]
 
@@ -405,7 +463,9 @@ const newCollection = (props) => {
       date: props.year,
       creator: props.creator,
       type: props.type,
-      url: props.url
+      url: props.url,
+      pdfheader: props.pdfheader,
+      pdffooter: props.pdffooter,
   }
 }
 

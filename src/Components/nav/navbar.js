@@ -25,16 +25,23 @@ function Navbar(props) {
         </li>
         <li className="menu_list">
           {" "}
+          <NavLink to="/omeka" onClick={props.clicked}>
+            Omeka Tools
+          </NavLink>
+        </li>
+
+        {/* <li className="menu_list">
+          {" "}
           <NavLink to="/setup" onClick={props.clicked}>
             Setup
           </NavLink>
-        </li>
-        <li className="menu_list">
+        </li> */}
+        {/* <li className="menu_list">
           {" "}
           <NavLink to="/blog" onClick={props.clicked}>
             Blog
           </NavLink>
-        </li>
+        </li> */}
         <li className="menu_list">
           {" "}
           <Togglebk />

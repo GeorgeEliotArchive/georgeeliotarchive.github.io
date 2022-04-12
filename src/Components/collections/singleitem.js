@@ -31,15 +31,19 @@ export default class ItemDetails extends React.Component {
     title:"",
     tags:"",
     description:[],
-    itemlink:""
+    itemlink:"",
+    pdfheader: "",
+    pdffooter: ""
   };
 
   componentDidMount() {
     axios
-      .get(this.props.dataFromParent.values.url)
+      .get(this.props.data.values.url)
       .then(res => {
       this.setState({
         is_ready: true,
+        pdfheader: this.props.data.values.pdfheader,
+        pdffooter: this.props.data.values.pdffooter,
         id: res.data.id,
         url: res.data.url,
         file_urls: res.data.files.url,
@@ -58,7 +62,7 @@ export default class ItemDetails extends React.Component {
         <tbody className="mx-2" id={this.state.id}>
           {this.state.description.map(
             c =>(
-              <tr key={this.state.id + c.text}>
+              <tr key={c.id + c.text + " $key"}>
                 <td className="border-none font-bold">{c.element.name}: </td>
                 <td  className="border-none">{parse(c.text)}</td>
               </tr>
@@ -113,7 +117,9 @@ const ShowFiles = (data) => {
       url: null,
       description: null,
       filename: null,
-      mimetype: null
+      mimetype: null,
+      pdfheader: null,
+      pdffooter: null,
     }
   ]
   );
@@ -129,7 +135,9 @@ const ShowFiles = (data) => {
                     url:c.file_urls.original,
                     description: data.data.description,
                     filename: c.original_filename,
-                    mimetype: c.mime_type
+                    mimetype: c.mime_type,
+                    pdfheader: data.data.pdfheader,
+                    pdffooter: data.data.pdffooter,
                   }
                   setPosts(oldArray => [...oldArray, newpost]);
                   return c;
@@ -161,9 +169,10 @@ const ShowFiles = (data) => {
 
       <div>
         <button className="bg-slate-400 h-10 w-52 inline-block mr-2 hover:bg-sky-500"
-                    onClick={() => pdfmakedownload(posts[1].description)} type="primary">
+                    onClick={() => pdfmakedownload(posts[1].description, posts[1].pdfheader, posts[1].pdffooter)} type="primary">
                 Preview Front-page PDF</button>
       </div>
+      {/* <div>{console.log(posts)}</div> */}
 
     </div> 
 
@@ -172,7 +181,7 @@ const ShowFiles = (data) => {
 
 
 /* make the pdf file and hence download it */
-const pdfmakedownload = (text) => {
+const pdfmakedownload = (text, pdfheader, pdffooter) => {
 
   // var solid_line = {canvas: [ { type: 'line', x1: 0, y1: 0, x2: 515, y2: 0, lineWidth: 1 } ],margin: [0, 2, 0, 5] };
  
@@ -181,14 +190,14 @@ const pdfmakedownload = (text) => {
     header: "",
     footer: {
       columns: [
-        'Sharing is permitted for non-commercial purposes with attribution to this database, the George Eliot Archive, edited by Beverley Park Rilett.',
-       
+        pdffooter,  
       ],alignment: "center",
       style: "small"
     },
     content:[
       {
-        text: "GEORGE ELIOT ARCHIVE",
+        // text: "GEORGE ELIOT ARCHIVE",
+        text: pdfheader,
         style: "brand"
       },
       {canvas: [ 

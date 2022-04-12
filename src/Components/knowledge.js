@@ -5,6 +5,7 @@ Auburn University */
 import React from "react"
 import '../Css/App.css';
 import Markdown from 'markdown-to-jsx';
+import Setupenv from "./setupenv";
 
 
 
@@ -12,11 +13,17 @@ import Markdown from 'markdown-to-jsx';
 export default class Knowledge extends React.Component {
     render() {
         return (
-            <div className="main_content">   
+            <div className="container ml-4 mt-3.5">
+            <div className="pl-0.5 border border-solid border-current ">   
                             
                 <Knowledgemd />
-
-                {/* <Introvideo />  */}
+               
+            </div>
+        
+            <div className="mt-3.5 pl-0.5 border border-solid border-current">    
+                <Setupenv />
+               
+            </div>
             </div>
             
         )
@@ -69,7 +76,7 @@ class Knowledgemd extends React.Component {
     render() {       
         return (
             <div >
-            <h1 >Before Going To Work....</h1>
+            <h1 >Learning list and Knowledge desired:</h1>
             <div className="main_content knowledge">
             
 
