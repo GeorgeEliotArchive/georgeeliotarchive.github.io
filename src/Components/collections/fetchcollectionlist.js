@@ -87,8 +87,7 @@ export default class FetchCollectionList extends React.Component {
     render() {
       return (
         <div className="main_content">
-          
-          <h1>Collections on George Eliot Archive </h1>
+          <h1 className="text-teal-700">Collections of {this.state.pdfHeader} </h1>
           <nav>
              {/* <CollectionList collections={this.state.collections} />           */}
           <div>
