@@ -8,6 +8,7 @@ import FetchCollectionList from "./collections/fetchcollectionlist";
 
 import '../Css/App.css';
 
+
 export default class Omekaapi extends React.Component {
     _isMounted = false;
     
@@ -75,12 +76,12 @@ export default class Omekaapi extends React.Component {
     render() {
         return (
            
-            <div className="container" >
-                <h1 className="background_inherd">Api parser for Omeka</h1>
+            <div className="main_content bg-inherit" >
+                <h1 className="">Api parser for Omeka</h1>
 
                 <div className="main_content">  
                     <span className="font-sans font-bold text-red-400">Current input:  </span> 
-                    <span className="font-serif"> {this.state.link} </span>                    
+                    <span className="font-serif text-indigo-500"> {this.state.link} </span>                    
                 </div>
 
                 <form onSubmit={this.handleSubmit} className="mt-2">       
@@ -91,14 +92,14 @@ export default class Omekaapi extends React.Component {
                 </form>
 
                 <div className="mt-2">
-                 <button className="w-52 bg-cyan-300 border-2 border-gray-400 px-0.5 rounded"  onClick={() => this.toggleView()}> 
+                 <button className="w-52 bg-slate-500 text-slate-300 border-2 border-gray-400 px-0.5 rounded "  onClick={() => this.toggleView()}> 
                        {this.state.text} Collection List. </button>
                 </div>
 
                 <div className='container pl-4 mt-5'>
                 <li >                      
-                    <span className="font-sans font-bold">Current pdf Header:  </span> 
-                    <span className="font-serif"> {this.state.pdfHeader} </span>
+                    <span className="font-sans font-bold text-yellow-600">Current pdf Header:  </span> 
+                    <span className="font-serif text-sky-600"> {this.state.pdfHeader} </span>
                     <form onSubmit={this.handleSubmit} className="mt-2">      
                     <TextField fullWidth id="outlined-basic" label="Input New Header for pdf" variant="outlined" 
                         value={this.state.pdfHeader}
@@ -108,8 +109,8 @@ export default class Omekaapi extends React.Component {
                     </form>          
                 </li>
                 <li className="mt-5">                      
-                    <span className="font-sans font-bold">Current pdf Footer:  </span> 
-                    <span className="font-serif text-xs"> {this.state.pdfFooter} </span>
+                    <span className="font-sans font-bold text-yellow-600">Current pdf Footer:  </span> 
+                    <span className="font-serif text-xs text-sky-600"> {this.state.pdfFooter} </span>
                     <form onSubmit={this.handleSubmit} className="mt-2">
                     <TextField fullWidth id="outlined-basic" label="Input New Footer for pdf" variant="outlined" 
                         value={this.state.pdfFooter}
