@@ -452,7 +452,7 @@ const COLUMNS = [
     Header: 'pdfFooter',
     Footer: 'pdfFooter',
     accessor: 'pdffooter',
-    // show: false
+    show: false
   }
 ]
 

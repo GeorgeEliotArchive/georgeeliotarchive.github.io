@@ -244,6 +244,9 @@ const pdfmakedownload = (text, pdfheader, pdffooter) => {
     if (text[i].element.name === "Rights") {
       header_text = "Copyright License";  
     }
+    else if (text[i].element.name === "Title") {
+      header_text = "";  
+    }
     else{
       header_text = text[i].element.name
     }
@@ -272,6 +275,7 @@ const pdfmakedownload = (text, pdfheader, pdffooter) => {
 
   /* Adding a solid line if necessary */
   // dd.content.push(solid_line); 
+
 
   pdfMake.createPdf(dd).download(title+".pdf");
 

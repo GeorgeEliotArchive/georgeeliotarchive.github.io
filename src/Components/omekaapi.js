@@ -17,7 +17,7 @@ export default class Omekaapi extends React.Component {
         this.state = { 
             link: "https://georgeeliotarchive.org/api/collections",
             pdfHeader: "GEORGE ELIOT ARCHIVE",
-            pdfFooter: "Sharing is permitted for non-commercial purposes with attribution to this database, the George Eliot Archive, edited by Beverley Park Rilett.",
+            pdfFooter: "CC BY-NC-SA 4.0 Sharing is permitted for non-commercial purposes with attribution to this database, the George Eliot Archive, edited by Beverley Park Rilett.",
             onshow: false,
             text: "Show"}
         this.handleChange = this.handleChange.bind(this);
