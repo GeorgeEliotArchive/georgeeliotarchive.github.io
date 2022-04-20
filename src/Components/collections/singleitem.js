@@ -62,7 +62,7 @@ export default class ItemDetails extends React.Component {
         <tbody className="mx-2" id={this.state.id}>
           {this.state.description.map(
             c =>(
-              <tr key={c.id + c.text + " $key"}>
+              <tr key={c.id + c.text + Math.random() + " $key"}>
                 <td className="border-none font-bold">{c.element.name}: </td>
                 <td  className="border-none">{parse(c.text)}</td>
               </tr>
@@ -154,7 +154,7 @@ const ShowFiles = (data) => {
     <div> 
       <div>{posts.map(entry =>
         entry.url !== null ? (
-          <li className="pt-0 list-none hover:list-disc" key={entry.id}>
+          <li className="pt-0 list-none hover:list-disc" key={entry.id + entry.url}>
           <a href={entry.url}>{entry.filename}</a> 
           </li>) :""
           )}       
@@ -168,22 +168,85 @@ const ShowFiles = (data) => {
       </div>
 
       <div>
-        <button className="bg-slate-400 h-10 w-52 inline-block mr-2 hover:bg-sky-500"
-                    onClick={() => pdfmakedownload(posts[1].description, posts[1].pdfheader, posts[1].pdffooter)} type="primary">
-                Preview Front-page PDF</button>
+        <button className="bg-slate-400 h-10 w-52 inline-block mr-2 hover:bg-sky-500 text-left pl-2"
+                    // onClick={() => pdfmakedownload(posts[1].description, posts[1].pdfheader, posts[1].pdffooter)} type="primary">
+                    onClick={() => pdfmakedownload(posts)} type="primary">
+                Download Front-page PDF</button>
       </div>
-      {/* <div>{console.log(posts)}</div> */}
+      <div>
+        {
+          pdfexiting(posts) ?
+           (<button className="bg-slate-400 h-10 w-52 inline-block mr-2 hover:bg-sky-500 text-left pl-2"
+                     onClick={() => pdfmakemerge(posts)} type="primary">
+                 Download Merged PDF</button>)
+                 :
+                 ""     
+        }
+        
+      </div>
+      
 
     </div> 
 
     );
 }
 
+const pdfexiting = (posts) => {
+  var x = false;
+  let lpost=posts.length;
+  for(let i=1; i<lpost; i++){
+    if (posts[i].mimetype === "application/pdf"){
+      x=true;
+    }
+  }
+    
+  return x;
+
+}
 
 /* make the pdf file and hence download it */
-const pdfmakedownload = (text, pdfheader, pdffooter) => {
+const pdfmakedownload = (posts) => {
+
+  let [dd, title] = pdfdata(posts);
+
+  pdfMake.createPdf(dd).download("front_page_"+title+".pdf");
+
+};
+
+
+/* make the pdf file and hence download it */
+const pdfmakemerge = (posts) => {
+
+  let [dd, title] = pdfdata(posts);
+  const pdfDocGenerator = pdfMake.createPdf(dd);
+  
+  const PDFMerger = require('pdf-merger-js');
+
+  var merger = new PDFMerger();
+  // console.log(posts);
+
+  pdfDocGenerator.getDataUrl((dataUrl) => {
+    (async () => {
+      merger.add(dataUrl);
+      // await merger.add(posts[1].url);  //merge all pages. parameter is the path to file and filename.
+      let lpost = posts.length;
+      for(let i=1; i<lpost; i++){
+        if (posts[i].mimetype === "application/pdf"){
+          await merger.add(posts[i].url); }
+      }
+      await merger.save("merged_"+title+".pdf"); //save under given name and reset the internal document
+    })();
+  });
+
+};
+
+
+const pdfdata=(posts)=>{
 
   // var solid_line = {canvas: [ { type: 'line', x1: 0, y1: 0, x2: 515, y2: 0, lineWidth: 1 } ],margin: [0, 2, 0, 5] };
+  let text = posts[1].description;
+  let pdfheader =  posts[1].pdfheader;
+  let pdffooter =  posts[1].pdffooter;
  
   var dd = {
     /* the content of the the pdf */
@@ -196,7 +259,6 @@ const pdfmakedownload = (text, pdfheader, pdffooter) => {
     },
     content:[
       {
-        // text: "GEORGE ELIOT ARCHIVE",
         text: pdfheader,
         style: "brand"
       },
@@ -213,9 +275,15 @@ const pdfmakedownload = (text, pdfheader, pdffooter) => {
         color: "#ff5500",
         bold: true
       },
+      title:{
+        // italics: true, 
+        fontSize: 16
+      },
       header: {
         fontSize: 14,
-        bold: true
+        italics: true, 
+        bold: true,
+        color: "#3b3b3b",
       },
       subheader: {
         fontSize: 12,
@@ -241,16 +309,20 @@ const pdfmakedownload = (text, pdfheader, pdffooter) => {
       title = title.replace('"', '');
     }
 
+    var mstyle = {
+      style: ""
+    }
+
     if (text[i].element.name === "Rights") {
       header_text = "Copyright License";  
     }
     else if (text[i].element.name === "Title") {
       header_text = "";  
+      mstyle.style="title";
     }
     else{
       header_text = text[i].element.name
     }
-
 
     var d1 =  {
           text: header_text,
@@ -260,10 +332,15 @@ const pdfmakedownload = (text, pdfheader, pdffooter) => {
     /* maintain the description which may:
     1. contain html tags hence being removed
     2. result in a long text hence being truncated */
-    var d2 = text[i].text.replace(/<(.|\n)*?>/g, '');  
-    d2 = d2.replace(/&nbsp;/g, ' ');
-    d2 = d2.replace(/amp;/g, ' ');
-    d2 =  truncate(d2, len_words);
+    
+    var d2txt = text[i].text.replace(/<(.|\n)*?>/g, '');  
+    d2txt = d2txt.replace(/&nbsp;/g, ' ');
+    d2txt = d2txt.replace(/amp;/g, ' ');
+    d2txt =  truncate(d2txt, len_words);
+    var d2 = {
+      text: d2txt,
+      style: mstyle.style,
+    }
     
     /* push the text to dd object 
        Relation and Original Format removed*/
@@ -272,14 +349,10 @@ const pdfmakedownload = (text, pdfheader, pdffooter) => {
       dd.content.push(d2);
     }
   }
-
   /* Adding a solid line if necessary */
   // dd.content.push(solid_line); 
-
-
-  pdfMake.createPdf(dd).download(title+".pdf");
-
-};
+  return [dd, title];
+}
 
 /* truncate a string by the number limit of words */
 function truncate(str, no_words) {
