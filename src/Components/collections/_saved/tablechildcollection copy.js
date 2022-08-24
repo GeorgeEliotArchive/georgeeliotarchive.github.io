@@ -276,7 +276,7 @@ function getDescription (text_string) {
             default:break;
         }
     }
-    if (description != "") {
+    if (description !== "") {
         return description;
     }
     else {

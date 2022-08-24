@@ -9,8 +9,8 @@ import Togglebk from "./toggletheme";
 
 
 import '../Css/App.css';
-import Particle from './particles';
-import Setupenv from "./setupenv";
+// import Particle from './particles';
+// import Setupenv from "./setupenv";
 import Ongoing  from "./ongoing";
 import Knowledge from "./knowledge";
 import Footer from './footer';
@@ -32,7 +32,6 @@ class App extends React.Component {
 
             <div>                
                 <Greeting />
-                <Background />
                 
                 <Showmain />
                 
@@ -91,13 +90,11 @@ class Greeting extends React.Component {
 
 
 // particles background 
-class Background extends React.Component {
-    render() {
-      return <div id="particles-js"> <Particle /> </div>
-    
-
-    }
-}
+//class Background extends React.Component {
+//    render() {
+//      return <div id="particles-js"> <Particle /> </div>
+//    }
+//}
 
 
 

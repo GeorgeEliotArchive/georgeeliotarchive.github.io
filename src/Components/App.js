@@ -6,7 +6,7 @@ import React from "react"
 import ReactDOM from "react-dom"
 
 import '../Css/App.css';
-import Particle from './particles';
+// import Particle from './particles';
 // import Setupenv from "./setupenv";
 import Ongoing  from "./ongoing";
 import Knowledge from "./knowledge";
@@ -51,8 +51,7 @@ class App extends React.Component {
           <GitFooter />
           <div>
             <div> 
-            </div>             
-            <Background />             
+            </div>                          
             <Footer />
           </div>
           
@@ -108,14 +107,12 @@ class Greeting extends React.Component {
 
 
 // particles background 
-class Background extends React.Component {
-
-    render() {
-      return <div id="particles-js"> <Particle /> </div>
-    
-
-    }
-}
+//class Background extends React.Component {
+//
+//    render() {
+//      return <div id="particles-js"> <Particle /> </div>    
+//    }
+//}
 
 
 
