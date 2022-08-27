@@ -6,7 +6,7 @@
 
   2. front-page pdf generator
 
-Edited by Libo Sun, Mar 2022 
+Edited by Libo Sun, Mar 2022; Cj Short, Aug 2022 
 Auburn University */
 
 import axios from "axios";
@@ -301,30 +301,36 @@ const pdfdata=(posts)=>{
      * Used for pdfmaker. (Like CSS)
      */
     styles: {
-      brand: {
+      brand: { // repping the George Eliot Archive brand.
         font: 'Times',
         fontSize: 18,
         color: "#c52d2d",
       },
-      title:{
+      title:{ // document title font
         font: 'Times',
         fontSize: 16
       },
-      header: {
+      header: { //normal text. don't let name fool you!
         font: 'Times',
         fontSize: 12,
         color: "#000000",
       },
-      subheader: {
+      subheader: { 
         font: 'Times',
         bold: true,
         fontSize: 12,
       },
-      quote: {
+      quote: { //italics on
         font: 'Times',
         italics: true,
+        fontSize: 12
       },
-      small: {
+      web: { //this one is specifically for hyperlinks
+        font: 'Times',
+        italics: true,
+        color: "#1F67CD"
+      },
+      small: { //tiny font for bottom page
         font: 'Times',
         fontSize: 8
       }
@@ -349,14 +355,15 @@ const pdfdata=(posts)=>{
     if (text[i].element.name === "Rights") {
       header_text = "Copyright License";  
     }
-    else if (text[i].element.name === "Title") {
-      header_text = "";  
-      mstyle.style="title";
-    }
     else{
       header_text = text[i].element.name
     }
-
+    /* doc title is here. cleaned for unnecessary html -Cj */
+    var docTitle = '';
+    if (text[i].element.name === "Title"){
+      docTitle = text[i].text.replace(/<(.|\n)*?>/g, '');
+      docTitle = docTitle.replace('"', '');
+    }
     var d1 =  {
           text: header_text,
           style: 'header'
@@ -376,14 +383,28 @@ const pdfdata=(posts)=>{
     }
     
     /* push the text to dd object 
-       Relation and Original Format removed*/
-    if (d1.text!== "Relation" && d1.text !== "Original Format" && d1.text !== "Email"){
-      dd.content.push(d1);
-      dd.content.push(d2);
+     * Changes meta header wording and separates title from text dump
+     * to better style the cover page. -Cj
+     * removes: title, relation, original format, email, publisher, date, and Copyright 
+     */
+    d1.text = d1.text.replace(/\bCreator\b/gm, 'Author');
+    dd.content.push({text: docTitle + "\n", style:'title'});
+    if (d1.text!== "Relation" && d1.text !== "Original Format" && d1.text !== "Email"
+      && d1.text!== "Publisher" && d1.text !== "Date" && d1.text !=="Copyright License" 
+      && d1.text !== "Title"){
+      dd.content.push({text: d1.text + ": " + d2.text + "\n", style:'header'}) ;
     }
   }
-  /* Adding a solid line if necessary */
-  dd.content.push({canvas:[{type: 'line', x1: 0, y1: 100, x2: 495, y2: 100, lineWidth: 1}], margin:[0,20,0,20]}); 
+  /* Adds a solid line underneath metadata. */
+  dd.content.push({canvas:[{type: 'line', x1: 0, y1: 50, x2: 495, y2: 50, lineWidth: 1}], margin:[0,20,0,20]});
+  /* Adds attribution to cover page. */
+  dd.content.push({text: ["Published by: ",
+  {text:"George Eliot Archive", style:'quote'},
+  ", edited by Beverley Park Rilett, ",
+  {text: 'http://GeorgeEliotArchive.org', link: 'http://GeorgeEliotArchive.org', style: 'web'},
+  ". Please attribute the ",
+  {text: "George Eliot Archive", style:'quote'},
+  " as your source."], style:'header'}) 
   return [dd, title];
 }
 
@@ -391,10 +412,3 @@ const pdfdata=(posts)=>{
 function truncate(str, no_words) {
   return str.split(" ").splice(0,no_words).join(" ");
 }
-
-
-
-
-
-
-
