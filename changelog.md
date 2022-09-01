@@ -1,4 +1,4 @@
-## Version 1.2.5-stable -- 9.1.2022
+## Version 1.2.5-stable -- 1.9.2022
 
 #### Updates
 
