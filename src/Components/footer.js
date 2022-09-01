@@ -24,8 +24,8 @@ const Footer = () => (
       <div className="center_image">
         <img src={importImageCopyright} alt='copy right'></img>
       </div>
-      
-      <div className="foot_text"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+      <div className="foot_text"><a style={{fontSize: "11px", display: "flex", position: "relative", alignItems: "center", justifyContent: "center", textDecorationLine: "underline"}}href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
         Copyright license</a>: CC-BY-NC-SA 4.0 Sharing is permitted for non-commercial purposes with attribution to this database, 
         the George Eliot Archive, edited by Beverley Park Rilett.
       </div>

@@ -363,6 +363,14 @@ const pdfdata=(posts)=>{
     if (text[i].element.name === "Title"){
       docTitle = text[i].text.replace(/<(.|\n)*?>/g, '');
       docTitle = docTitle.replace('"', '');
+      docTitle = docTitle.replace(/"/g, '');
+      //if (docTitle.includes('Original')){
+      //  docTitle = docTitle.replace(/\(.+?\)/gm, '');
+      //}
+      //else if (docTitle.includes('Cabinet')){
+      //  docTitle = docTitle.replace(/\(.+?\)/gm, '')
+      //}
+      docTitle = docTitle.replace(/\(.+?\)/gm, '')
     }
     var d1 =  {
           text: header_text,
@@ -387,14 +395,17 @@ const pdfdata=(posts)=>{
      * to better style the cover page. -Cj
      * removes: title, relation, original format, email, publisher, date, and Copyright 
      */
-    d1.text = d1.text.replace(/\bCreator\b/gm, 'Author');
-    dd.content.push({text: docTitle + "\n", style:'title'});
+    d1.text = d1.text.replace(/\bCreator\b/gm, 'Author(s)');
+    d1.text = d1.text.replace(/\bSource\b/gm, 'Original Source');
+    //ASK ABOUT CONSISTENCY
+    dd.content.push({text: docTitle , style:'quote', margin:[0,2,0,2.5]});
     if (d1.text!== "Relation" && d1.text !== "Original Format" && d1.text !== "Email"
       && d1.text!== "Publisher" && d1.text !== "Date" && d1.text !=="Copyright License" 
-      && d1.text !== "Title"){
-      dd.content.push({text: d1.text + ": " + d2.text + "\n", style:'header'}) ;
+      && d1.text !== "Title" && d1.text !== 'Description'){
+      dd.content.push({text: d1.text + ": " + d2.text, style:'header', margin:[0,0,0,2.5]}) ;
     }
   }
+  dd.content.push({text: "Collection: ", style: 'header', margin: [0,-5,0,2.5]})
   /* Adds a solid line underneath metadata. */
   dd.content.push({canvas:[{type: 'line', x1: 0, y1: 50, x2: 495, y2: 50, lineWidth: 1}], margin:[0,20,0,20]});
   /* Adds attribution to cover page. */
