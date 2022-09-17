@@ -1,5 +1,5 @@
 # Getting Started with Create React App
-# Version 1.1
+# Version 1.3
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
