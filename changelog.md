@@ -1,3 +1,17 @@
+## Version 1.3-stable -- 17.9.2022
+
+#### Updates
+- PDF elements now processed separately
+  - Padding is now corrected from this change
+  - PDF elements can now be further manually formatted based on need - for example, MLA
+- With the above changes, formatting is now aligned to the MLA format for Contemporary collections
+
+#### Future Work
+- Additional meta data, if requested
+- A button for navigation to the sister sites (Scholars, Review)
+
+# Previous Versions
+
 ## Version 1.2.5-stable -- 1.9.2022
 
 #### Updates
@@ -14,8 +28,6 @@
 
 - Pull collection name into cover page
 - Duplication of Archive and specialize to sister websites (Scholar, Review).
-
-# Previous Versions
 
 ## Version 1.2-stable -- 26.8.2022
 
