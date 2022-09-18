@@ -31,7 +31,7 @@ function Navbar(props) {
         </li>
         <li className="menu_list">
           {" "}
-          <NavLink to="/georgeeliotscholars" onClick={props.clicked}>
+          <NavLink to="/georgeeliotscholars/" onClick={props.clicked}>
             Scholars
           </NavLink>
         </li>
