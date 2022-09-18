@@ -29,6 +29,12 @@ function Navbar(props) {
             Omeka Tools
           </NavLink>
         </li>
+        <li className="menu_list">
+          {" "}
+          <NavLink to="/georgeeliotscholars" onClick={props.clicked}>
+            Scholars
+          </NavLink>
+        </li>
 
         {/* <li className="menu_list">
           {" "}
