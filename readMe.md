@@ -60,6 +60,6 @@ ongoing issue that the web development team is resolving and little information 
 #### A note regarding pdf editor errors
 Some pdfs will not be in line with MLA standards. For pdfs with a copyright license, they most likely need to be within MLA standards so that the project does not get
 in trouble. This might require you to go into the pdf using Adobe Acrobat (or equivalent) to edit the pdfs. This is not an issue with the functionality of the website.
-pdfMake is pretty awkward to work with in regards to how our data is stored. There also seems to be some editor discrepancies with how our data was stored (i.e. a lack of <em>
+pdfMake is pretty awkward to work with in regards to how our data is stored. There also seems to be some editor discrepancies with how our data was stored (i.e. a lack of \<em>
  tags when they should be present). These descrepancies will affect the turn out of the generated pdf, so make sure to review them before uploading. 
       
