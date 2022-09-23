@@ -1,13 +1,13 @@
 # Table of Contents
 
 1. PDF Generation
-  i. How is it done?
-  ii. Where is located?
-  iii. How do I use it?
+  a. How is it done?
+  b. Where is located?
+  c. How do I use it?
 2. Instructions for Uploading to Omeka
-  i. How do I upload new files to Omeka?
-  ii. Git Editor's Advice about Omeka Nuances
-  iii. A note regarding original pdf editor errors
+  a. How do I upload new files to Omeka?
+  b. Git Editor's Advice about Omeka Nuances
+  c. A note regarding original pdf editor errors
   
   
 ## 1. PDF Generation
