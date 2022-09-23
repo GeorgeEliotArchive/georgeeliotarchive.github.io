@@ -23,6 +23,8 @@ You can find this functionality by navigating to https://georgeeliotarchive.gith
 -> https://georgeeliotarchive.github.io/collectionlist , you will come across an Error 404 screen. Perhaps this is something that will be addressed later on, but for now
 attention lies elsewhere.
 
+If you're looking for the Scholars version, go to https://georgeeliotarchive.github.io/georgeeliotscholars/ . Same procedure applies as described below.
+
 #### How do I use it?
 
 To begin, 
@@ -38,7 +40,7 @@ After all of this is done, you should have a copy of the original pdf with the n
 #### How do I upload new files to Omeka?
 Upon downloading the newly created pdf,
 
-  1. Login to the admin side of the omeka sites (i.e. georgeeliotarchive.org/admin)
+  1. Login to the admin side of the omeka sites (i.e. georgeeliotarchive.org/admin , georgeeliotscholars.org/admin)
   2. Go to "Collections" and navigate to the collection where the item in question is.
     - Click the total number of items in the collection instead of the name of the collection. This will pull up a nice table that will help with finding
       pdfs in need of change.
