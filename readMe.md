@@ -8,7 +8,7 @@
   - How do I upload new files to Omeka?
   - Git Editor's Advice about Omeka Nuances
   - A note regarding original pdf editor errors
-  
+3. FAQ
   
 ## 1. PDF Generation
 The main feature of these development sites is the capability to automatically procure cover sheets for pdfs that will be hosted on the professional builds of the George
@@ -62,4 +62,10 @@ Some pdfs will not be in line with MLA standards. For pdfs with a copyright lice
 in trouble. This might require you to go into the pdf using Adobe Acrobat (or equivalent) to edit the pdfs. This is not an issue with the functionality of the website.
 pdfMake is pretty awkward to work with in regards to how our data is stored. There also seems to be some editor discrepancies with how our data was stored (i.e. a lack of \<em>
  tags when they should be present). These descrepancies will affect the turn out of the generated pdf, so make sure to review them before uploading. 
-      
+ 
+## 3. FAQ
+
+Q. The mergePDF button doesn't work. What should I do now?
+
+If the mergePDF button doesn't work, it is because the pdf version on Omeka is depricated (older than version 1.7). In order to correct this, you must download the current pdf, optimize it for version 1.7 (Acrobat 8) and then replace the old one on Omeka. To do this, you can use Adobe Acrobat. Adobe Acrobat is free (at the time of writing this) for Auburn students. Simply sign in using your auburn email. After downloading Adobe Acrobat, follow the instructions on this [link](https://answers.acrobatusers.com/How-I-save-pdf-lower-revision-level-q121604.aspx#:~:text=To%20change%20the%20version%20of,PDF%20version%20is%20compatible%20with.)
+    
