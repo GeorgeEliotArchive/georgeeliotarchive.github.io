@@ -1,3 +1,4 @@
+Instructions for generating PDF cover pages for documents we share to indicate original source
 # Table of Contents
 
 1. PDF Generation
@@ -11,8 +12,7 @@
 3. FAQ
   
 ## 1. PDF Generation
-The main feature of these development sites is the capability to automatically procure cover sheets for pdfs that will be hosted on the professional builds of the George
-Eliot Digital Projects websites (Archive, Scholars, Review). 
+The main feature of this repository is to explain to George Eliot Archive project team members how to automatically procure cover sheets for pdfs that will be hosted on the public websites (Archive, Scholars, Review). The cover sheet will remind those who download documents where they procured them so that they can properly cite THEIR SOURCE. Our project website information is provided, along with rights information for further sharing (default is CC BY-NC-SA 4.0). The cover page also provides information on OUR SOURCE --the original publication information and, if not digitized by us, then the organization responsible for digitizing the document, for verification and transparency.
 
 #### How is it done?
 Basically, we've utilized a Javascript library called "pdfMake" to render these cover sheets and attach them to pdfs. This process for the user is thankfully straight-
