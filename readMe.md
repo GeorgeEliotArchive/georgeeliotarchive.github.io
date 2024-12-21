@@ -1,4 +1,5 @@
-Instructions for generating PDF cover pages for documents we share to indicate original source
+Application for generating PDF cover pages for the George Eliot Archive documents. 
+Solves the problem of losing essential source information and other metadata when users download documents from the George Eliot Archive digital humanities project at Auburn University (GeorgeEliotArchive.org).
 # Table of Contents
 
 1. PDF Generation
