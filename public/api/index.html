@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>George Eliot Archive API</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .endpoint {
+            background: #e8f5e9;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        h1 { color: #2e7d32; }
+        h2 { color: #388e3c; }
+        a { color: #1976d2; }
+    </style>
+</head>
+<body>
+    <h1>George Eliot Archive API</h1>
+    
+    <p>Simple API endpoint for accessing George Eliot Archive CSV data.</p>
+    
+    <h2>Quick Start</h2>
+    
+    <div class="endpoint">
+        <strong>Endpoint:</strong> <code>https://georgeeliotarchive.github.io/api/csv.html</code>
+    </div>
+    
+    <h2>Live Examples</h2>
+    <ul>
+        <li><a href="csv.html" target="_blank">Get all items (CSV)</a></li>
+        <li><a href="csv.html?searchTerm=1875" target="_blank">Search for "1875" (CSV)</a></li>
+        <li><a href="csv.html?searchTerm=1875&format=json" target="_blank">Search for "1875" (JSON)</a></li>
+        <li><a href="csv.html?searchTerm=reading&format=json" target="_blank">Search for "reading" (JSON)</a></li>
+    </ul>
+    
+    <h2>Parameters</h2>
+    <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse;">
+        <tr>
+            <th>Parameter</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Default</th>
+        </tr>
+        <tr>
+            <td><code>searchTerm</code></td>
+            <td>string</td>
+            <td>Search term to filter results</td>
+            <td>empty (returns all)</td>
+        </tr>
+        <tr>
+            <td><code>format</code></td>
+            <td>string</td>
+            <td>Response format: <code>csv</code> or <code>json</code></td>
+            <td>csv</td>
+        </tr>
+        <tr>
+            <td><code>callback</code></td>
+            <td>string</td>
+            <td>JSONP callback function name</td>
+            <td>none</td>
+        </tr>
+    </table>
+    
+    <h2>Example Usage</h2>
+    
+    <h3>JavaScript Fetch</h3>
+    <pre><code>fetch('https://georgeeliotarchive.github.io/api/csv.html?searchTerm=1875')
+  .then(response => response.text())
+  .then(csvData => {
+    console.log(csvData);
+  });</code></pre>
+    
+    <h3>With JSON Format</h3>
+    <pre><code>fetch('https://georgeeliotarchive.github.io/api/csv.html?searchTerm=1875&format=json')
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      console.log(data.data); // CSV content
+    }
+  });</code></pre>
+    
+    <h2>Try It</h2>
+    <form onsubmit="tryApi(event); return false;">
+        <label>
+            Search Term: 
+            <input type="text" id="searchInput" placeholder="e.g., 1875">
+        </label>
+        <label>
+            Format: 
+            <select id="formatSelect">
+                <option value="csv">CSV</option>
+                <option value="json">JSON</option>
+            </select>
+        </label>
+        <button type="submit">Try API</button>
+    </form>
+    
+    <div id="result" style="margin-top: 20px;"></div>
+    
+    <script>
+        function tryApi(event) {
+            event.preventDefault();
+            const searchTerm = document.getElementById('searchInput').value;
+            const format = document.getElementById('formatSelect').value;
+            const url = `csv.html?searchTerm=${encodeURIComponent(searchTerm)}&format=${format}`;
+            
+            document.getElementById('result').innerHTML = '<p>Loading...</p>';
+            
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    const resultDiv = document.getElementById('result');
+                    if (format === 'json') {
+                        try {
+                            const json = JSON.parse(data);
+                            resultDiv.innerHTML = '<h3>Result:</h3><pre>' + JSON.stringify(json, null, 2) + '</pre>';
+                        } catch (e) {
+                            resultDiv.innerHTML = '<h3>Result:</h3><pre>' + data + '</pre>';
+                        }
+                    } else {
+                        resultDiv.innerHTML = '<h3>Result:</h3><pre>' + data.substring(0, 1000) + (data.length > 1000 ? '\n...(truncated)' : '') + '</pre>';
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('result').innerHTML = '<p style="color: red;">Error: ' + error.message + '</p>';
+                });
+        }
+    </script>
+</body>
+</html>

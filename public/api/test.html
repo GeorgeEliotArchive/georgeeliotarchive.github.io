@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Test</title>
+</head>
+<body>
+    <h1>George Eliot Archive API Test</h1>
+    <p>This page demonstrates that the API works directly from GitHub Pages without needing Cloudflare Workers.</p>
+    
+    <h2>Test Results:</h2>
+    <div id="results"></div>
+    
+    <script>
+        const resultsDiv = document.getElementById('results');
+        
+        // Test 1: Basic CSV fetch
+        resultsDiv.innerHTML += '<h3>Test 1: Fetching CSV data...</h3>';
+        fetch('csv.html?searchTerm=1875')
+            .then(response => response.text())
+            .then(data => {
+                resultsDiv.innerHTML += '<p style="color: green;">✓ CSV fetch successful. Data length: ' + data.length + ' characters</p>';
+                resultsDiv.innerHTML += '<pre style="max-height: 200px; overflow: auto;">' + data.substring(0, 500) + '...</pre>';
+            })
+            .catch(error => {
+                resultsDiv.innerHTML += '<p style="color: red;">✗ CSV fetch failed: ' + error.message + '</p>';
+            });
+        
+        // Test 2: JSON format
+        setTimeout(() => {
+            resultsDiv.innerHTML += '<h3>Test 2: Fetching JSON format...</h3>';
+            fetch('csv.html?searchTerm=1875&format=json')
+                .then(response => response.json())
+                .then(data => {
+                    resultsDiv.innerHTML += '<p style="color: green;">✓ JSON fetch successful. Success: ' + data.success + '</p>';
+                    resultsDiv.innerHTML += '<pre style="max-height: 200px; overflow: auto;">' + JSON.stringify(data, null, 2).substring(0, 500) + '...</pre>';
+                })
+                .catch(error => {
+                    resultsDiv.innerHTML += '<p style="color: red;">✗ JSON fetch failed: ' + error.message + '</p>';
+                });
+        }, 1000);
+        
+        // Test 3: JSONP callback
+        setTimeout(() => {
+            resultsDiv.innerHTML += '<h3>Test 3: Testing JSONP...</h3>';
+            window.testCallback = function(data) {
+                resultsDiv.innerHTML += '<p style="color: green;">✓ JSONP callback successful. Success: ' + data.success + '</p>';
+            };
+            
+            const script = document.createElement('script');
+            script.src = 'csv.html?searchTerm=reading&callback=testCallback';
+            script.onerror = () => {
+                resultsDiv.innerHTML += '<p style="color: red;">✗ JSONP failed</p>';
+            };
+            document.body.appendChild(script);
+        }, 2000);
+    </script>
+</body>
+</html>
