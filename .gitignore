@@ -25,3 +25,6 @@ yarn-error.log*
 
 # BACKUPS
 backup-*/
+# Single lockfile: npm only. A second lockfile doubles Dependabot alerts.
+yarn.lock
+pnpm-lock.yaml
