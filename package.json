@@ -13,7 +13,7 @@
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
-    "axios": "^1.13.6",
+    "axios": "^1.19.0",
     "buffer": "^6.0.3",
     "html-react-parser": "^1.4.8",
     "markdown-to-jsx": "^7.1.5",
